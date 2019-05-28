@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-
+using UnityEngine.SceneManagement;
 public class FieldOfView : MonoBehaviour
 {
 
@@ -62,6 +62,7 @@ public class FieldOfView : MonoBehaviour
                 {
                     visibleTargets.Add(target);
                     Debug.Log("found");
+                    SceneManager.LoadScene(0); //Temporary
                 }
             }
         }

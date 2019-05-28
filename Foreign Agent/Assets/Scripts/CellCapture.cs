@@ -6,9 +6,10 @@ public class CellCapture : MonoBehaviour
 {
     public GameObject player;
     private bool startCap = false;
-    public static float capTime = 5f;
+    public float capTime = 5f;
     [HideInInspector]
-    public static float currTime;
+    public float currTime;
+    private bool capped = false;
 
     void OnTriggerEnter(Collider other)
     {
@@ -25,9 +26,11 @@ public class CellCapture : MonoBehaviour
         if (startCap)
         {
             currTime -= Time.deltaTime;
-            if (currTime <= 0)
+            if (currTime <= 0 && !capped)
             {
                 Debug.Log("Capped");
+                Score.numCaptures += 1; //temporary
+                capped = true;
             }
         }
     }
@@ -36,7 +39,10 @@ public class CellCapture : MonoBehaviour
 
         if (other.gameObject == player)
         {
-            startCap = false;
+            if (currTime > 0)
+            {
+                startCap = false;
+            }
             currTime = capTime;
         }
     }
