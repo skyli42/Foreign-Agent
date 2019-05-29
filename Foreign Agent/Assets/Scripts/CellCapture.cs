@@ -25,12 +25,12 @@ public class CellCapture : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (startCap)
+        if (startCap && !capped)
         {
             currTime -= Time.deltaTime;
 			float complete = (capTime - currTime) / capTime;
 			slider.value = complete;
-            if (currTime <= 0 && !capped)
+            if (currTime <= 0)
             {
                 Debug.Log("Capped");
                 Score.numCaptures += 1; //temporary
