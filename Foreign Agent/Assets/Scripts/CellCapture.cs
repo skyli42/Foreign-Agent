@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CellCapture : MonoBehaviour
 {
     public GameObject player;
     private bool startCap = false;
     public float capTime = 5f;
+	public Slider slider;
     [HideInInspector]
     public float currTime;
     private bool capped = false;
@@ -26,6 +28,8 @@ public class CellCapture : MonoBehaviour
         if (startCap)
         {
             currTime -= Time.deltaTime;
+			float complete = (capTime - currTime) / capTime;
+			slider.value = complete;
             if (currTime <= 0 && !capped)
             {
                 Debug.Log("Capped");
