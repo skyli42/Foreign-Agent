@@ -19,6 +19,7 @@ public class CellCapture : MonoBehaviour
         {
             startCap = true;
             currTime = capTime;
+			Debug.Log("starting cap");
         }
     }
 
