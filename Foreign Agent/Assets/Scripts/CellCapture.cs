@@ -47,8 +47,10 @@ public class CellCapture : MonoBehaviour
             if (currTime > 0)
             {
                 startCap = false;
+                slider.value = 0;
             }
             currTime = capTime;
+         
         }
     }
 }

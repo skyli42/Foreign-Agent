@@ -21,6 +21,9 @@ public class FieldOfView : MonoBehaviour
 
     public MeshFilter viewMeshFilter;
     Mesh viewMesh;
+    public GameObject visualization;
+    public Material unseenMat;
+    public Material seenMat;
 
     void Start()
     {
@@ -50,7 +53,10 @@ public class FieldOfView : MonoBehaviour
     {
         visibleTargets.Clear();
         Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
-
+        if (targetsInViewRadius.Length == 0)
+        {
+            visualization.GetComponent<Renderer>().material = unseenMat;
+        }
         for (int i = 0; i < targetsInViewRadius.Length; i++)
         {
             Transform target = targetsInViewRadius[i].transform;
@@ -62,8 +68,20 @@ public class FieldOfView : MonoBehaviour
                 {
                     visibleTargets.Add(target);
                     Debug.Log("found");
-                    SceneManager.LoadScene(0); //Temporary
+                    visualization.GetComponent<Renderer>().material = seenMat;
+                    //SceneManager.LoadScene(0); //Temporary
                 }
+                else
+                {
+                   visualization.GetComponent<Renderer>().material = unseenMat;
+                }
+              
+               
+                
+            }
+            else
+            {
+                visualization.GetComponent<Renderer>().material = unseenMat;
             }
         }
     }
