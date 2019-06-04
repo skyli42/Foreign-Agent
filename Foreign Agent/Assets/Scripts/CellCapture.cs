@@ -34,6 +34,7 @@ public class CellCapture : MonoBehaviour
             if (currTime <= 0)
             {
                 Debug.Log("Capped");
+                companionSpawn.numCompanions += 1;
                 Score.numCaptures += 1; //temporary
                 capped = true;
             }
