@@ -23,7 +23,10 @@ public class companionSpawn : MonoBehaviour
     {
         for (int i = 0; i < enemiesList.Count; i++)
         {
-            companionList[i].destination = enemiesList[i].transform.position;
+            if (companionList[i].isActiveAndEnabled)
+            {
+                companionList[i].destination = enemiesList[i].transform.position;
+            }
         }
         if (Input.GetKeyDown("space") && numCompanions > 0)
         {

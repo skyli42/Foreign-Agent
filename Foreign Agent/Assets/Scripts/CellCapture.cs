@@ -45,7 +45,7 @@ public class CellCapture : MonoBehaviour
 
         if (other.gameObject == player)
         {
-            if (currTime > 0)
+            if (currTime > 0 && !capped)
             {
                 startCap = false;
                 slider.value = 0;
