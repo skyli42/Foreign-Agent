@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3865815191752127854}
   - component: {fileID: 3865815191752127849}
-  - component: {fileID: 3865815191752127848}
+  - component: {fileID: 1647809343342958766}
   m_Layer: 0
   m_Name: AntibodyNav
   m_TagString: Untagged
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 3865815191752127855}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.214, y: 1.776, z: -4.696104}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 1418998785980704292}
   m_Father: {fileID: 0}
@@ -55,7 +55,7 @@ NavMeshAgent:
   m_BaseOffset: 0.7
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &3865815191752127848
+--- !u!114 &1647809343342958766
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64,14 +64,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3865815191752127855}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a8a8abaa2e13504f84128da13ed874e, type: 3}
+  m_Script: {fileID: 11500000, guid: 202f0cc84d02a184eb8a63a9bdd242f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   points:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 860757199537375612, guid: 15a482653c6641241a81b2e7e4b041eb, type: 3}
 --- !u!1001 &5369966562518691277
 PrefabInstance:
   m_ObjectHideFlags: 0

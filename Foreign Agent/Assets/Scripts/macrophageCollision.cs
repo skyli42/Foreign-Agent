@@ -22,6 +22,7 @@ public class macrophageCollision : MonoBehaviour
         {
             other.collider.gameObject.SetActive(false);
             agent.speed = 0;
+            plasmaSpawn.activated = true; //probably temp until T helper are implemented
             StartCoroutine(unfreezePosition());
         }
         if (other.gameObject.tag == "Player")

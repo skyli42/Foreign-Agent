@@ -11,9 +11,14 @@ public class companionSpawn : MonoBehaviour
     public GameObject player;
     private float distance;
     public LayerMask enemyMask;
-    public static int numCompanions = 0;
+    public static int numCompanions;
     private List<Collider> enemiesList = new List<Collider>();
     private List<NavMeshAgent> companionList = new List<NavMeshAgent>();
+
+    private void Start()
+    {
+        numCompanions = 0;
+    }
     void Update()
     {
         for (int i = 0; i < enemiesList.Count; i++)
