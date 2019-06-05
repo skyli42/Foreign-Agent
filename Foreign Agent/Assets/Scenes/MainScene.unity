@@ -1242,6 +1242,10 @@ MonoBehaviour:
   - {fileID: 1662456228}
   - {fileID: 1279523986}
   - {fileID: 1610119429}
+  player: {fileID: 1617931266}
+  timeTillReset: 5
+  searchingMat: {fileID: 2100000, guid: 225d2f8cb2dd45e42bedece5c9d94650, type: 2}
+  chaseStart: 0
 --- !u!195 &940061934
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1292,6 +1296,7 @@ MonoBehaviour:
   visualization: {fileID: 1292022334}
   unseenMat: {fileID: 2100000, guid: d5f0123f46eceff45aeb91cbb3dd1a88, type: 2}
   seenMat: {fileID: 2100000, guid: 02285d92ba44d7447915ffbd39cb2550, type: 2}
+  detected: 0
 --- !u!135 &940061936
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2051,6 +2056,10 @@ MonoBehaviour:
   - {fileID: 1479654968}
   - {fileID: 1076407050}
   - {fileID: 964202003}
+  player: {fileID: 1617931266}
+  timeTillReset: 5
+  searchingMat: {fileID: 2100000, guid: 225d2f8cb2dd45e42bedece5c9d94650, type: 2}
+  chaseStart: 0
 --- !u!195 &1335819864
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2101,6 +2110,7 @@ MonoBehaviour:
   visualization: {fileID: 447425604}
   unseenMat: {fileID: 2100000, guid: d5f0123f46eceff45aeb91cbb3dd1a88, type: 2}
   seenMat: {fileID: 2100000, guid: 02285d92ba44d7447915ffbd39cb2550, type: 2}
+  detected: 0
 --- !u!135 &1335819866
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2311,6 +2321,7 @@ MonoBehaviour:
   visualization: {fileID: 284958003}
   unseenMat: {fileID: 2100000, guid: d5f0123f46eceff45aeb91cbb3dd1a88, type: 2}
   seenMat: {fileID: 2100000, guid: 02285d92ba44d7447915ffbd39cb2550, type: 2}
+  detected: 0
 --- !u!114 &1476804646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2328,6 +2339,10 @@ MonoBehaviour:
   - {fileID: 1895684670}
   - {fileID: 687347199}
   - {fileID: 103026976}
+  player: {fileID: 1617931266}
+  timeTillReset: 5
+  searchingMat: {fileID: 2100000, guid: 225d2f8cb2dd45e42bedece5c9d94650, type: 2}
+  chaseStart: 0
 --- !u!195 &1476804647
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2579,7 +2594,7 @@ GameObject:
   - component: {fileID: 1617931272}
   m_Layer: 8
   m_Name: playervirus
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

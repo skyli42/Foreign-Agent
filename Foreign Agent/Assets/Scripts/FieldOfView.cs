@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.AI;
 public class FieldOfView : MonoBehaviour
 {
 
@@ -24,13 +25,13 @@ public class FieldOfView : MonoBehaviour
     public GameObject visualization;
     public Material unseenMat;
     public Material seenMat;
+    public bool detected = false;
 
     void Start()
     {
         viewMesh = new Mesh();
         viewMesh.name = "View Mesh";
         viewMeshFilter.mesh = viewMesh;
-
         StartCoroutine("FindTargetsWithDelay", .2f);
     }
 
@@ -55,7 +56,11 @@ public class FieldOfView : MonoBehaviour
         Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
         if (targetsInViewRadius.Length == 0)
         {
-            visualization.GetComponent<Renderer>().material = unseenMat;
+            if (!GetComponent<Patrol>().chaseStart)
+            {
+                visualization.GetComponent<Renderer>().material = unseenMat;
+            }
+            detected = false; 
         }
         for (int i = 0; i < targetsInViewRadius.Length; i++)
         {
@@ -69,11 +74,16 @@ public class FieldOfView : MonoBehaviour
                     visibleTargets.Add(target);
                     Debug.Log("found");
                     visualization.GetComponent<Renderer>().material = seenMat;
+                    detected = true;
                     //SceneManager.LoadScene(0); //Temporary
                 }
                 else
                 {
-                   visualization.GetComponent<Renderer>().material = unseenMat;
+                    if (!GetComponent<Patrol>().chaseStart)
+                    {
+                        visualization.GetComponent<Renderer>().material = unseenMat;
+                    }
+                    detected = false;
                 }
               
                
@@ -81,7 +91,11 @@ public class FieldOfView : MonoBehaviour
             }
             else
             {
-                visualization.GetComponent<Renderer>().material = unseenMat;
+                if (!GetComponent<Patrol>().chaseStart)
+                {
+                    visualization.GetComponent<Renderer>().material = unseenMat;
+                }
+                detected = false;
             }
         }
     }
