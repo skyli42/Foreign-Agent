@@ -42,7 +42,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 3865815191752127855}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.8
+  m_Radius: 1
   m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 1
@@ -69,6 +69,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points:
   - {fileID: 860757199537375612, guid: 15a482653c6641241a81b2e7e4b041eb, type: 3}
+  macrophages: []
 --- !u!1001 &5369966562518691277
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ public class plasmaSpawn : MonoBehaviour
     public GameObject antibody;
     public float radius = 3f;
     public Transform[] spawnPoints;
+    public GameObject[] macrophages; //list of macrophages so I can loop through and change fov in antibody control. Not a great way to do it probably
 
     // Update is called once per frame
     private void Start()
@@ -30,6 +31,7 @@ public class plasmaSpawn : MonoBehaviour
                 Quaternion rot = Quaternion.Euler(0, angleDegrees, 0);
                 GameObject antibodySpawn = (GameObject)Instantiate(antibody, pos, rot);
                 antibodySpawn.GetComponent<antibodyPatrol>().points = spawnPoints;
+                antibodySpawn.GetComponent<antibodyPatrol>().macrophages = macrophages;
                 alreadySpawned = true;
             }
         }

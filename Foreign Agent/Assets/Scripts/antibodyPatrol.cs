@@ -10,12 +10,13 @@ public class antibodyPatrol : MonoBehaviour
     public Transform[] points;
     private int destPoint = 0;
     private NavMeshAgent agent;
-
-
+    private GameObject player;
+    public GameObject[] macrophages;
+  
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-
+        player = GameObject.Find("playervirus");
         // Disabling auto-braking allows for continuous movement
         // between points (ie, the agent doesn't slow down as it
         // approaches a destination point).
@@ -43,7 +44,16 @@ public class antibodyPatrol : MonoBehaviour
     {
         // Choose the next destination point when the agent gets
         // close to the current one.
-        if (!agent.pathPending && agent.remainingDistance < 0.5f)
+        
+        if (Vector3.Distance(agent.transform.position, player.transform.position) < 1f) 
+        {
+            Destroy(agent.gameObject);
+            for (int i = 0; i < macrophages.Length; i++)
+            {
+                macrophages[i].GetComponent<FieldOfView>().viewRadius += 0.5f;
+            }
+        }
+        else if (!agent.pathPending && agent.remainingDistance < 0.5f)
             GotoNextPoint();
     }
 }

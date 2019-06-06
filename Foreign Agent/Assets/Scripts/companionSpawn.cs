@@ -8,12 +8,12 @@ public class companionSpawn : MonoBehaviour
 {
     public GameObject companionVirus;
     private NavMeshAgent agent;
-    public GameObject player;
     private float distance;
     public LayerMask enemyMask;
     public static int numCompanions;
     private List<Collider> enemiesList = new List<Collider>();
     private List<NavMeshAgent> companionList = new List<NavMeshAgent>();
+   
 
     private void Start()
     {
@@ -35,7 +35,7 @@ public class companionSpawn : MonoBehaviour
             Collider closestEnemy = null;
             for (int i = 0; i < enemies.Length; i++)
             {
-                float dist = Vector3.Distance(enemies[i].transform.position, player.transform.position);
+                float dist = Vector3.Distance(enemies[i].transform.position, gameObject.transform.position);
                 if (dist < minDist)
                 {
                     minDist = dist;
@@ -44,7 +44,7 @@ public class companionSpawn : MonoBehaviour
             }
             if (closestEnemy != null)
             {
-                Vector3 spawn = (player.transform.position - Vector3.Normalize(player.transform.position - closestEnemy.transform.position));
+                Vector3 spawn = (gameObject.transform.position - Vector3.Normalize(gameObject.transform.position - closestEnemy.transform.position));
                 numCompanions -= 1;
                 agent = Instantiate(companionVirus, spawn, Quaternion.identity).GetComponent<NavMeshAgent>();
                 companionList.Add(agent);
