@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class CellCapture : MonoBehaviour
 {
     public GameObject player;
@@ -25,6 +25,7 @@ public class CellCapture : MonoBehaviour
         else if (startCap && other.gameObject.CompareTag("Tcell"))
         {
             Debug.Log("death");
+            SceneManager.LoadScene(0); //temporary
         }
         
     }
