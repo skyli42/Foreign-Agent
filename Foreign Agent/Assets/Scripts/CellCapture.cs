@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class CellCapture : MonoBehaviour
 {
     public GameObject player;
-    private bool startCap = false;
+    [HideInInspector]
+    public bool startCap = false;
     public float capTime = 5f;
 	public Slider slider;
     [HideInInspector]
@@ -15,12 +16,17 @@ public class CellCapture : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == player)
+        if (!capped && other.gameObject == player)
         {
             startCap = true;
             currTime = capTime;
 			Debug.Log("starting cap");
         }
+        else if (startCap && other.gameObject.CompareTag("Tcell"))
+        {
+            Debug.Log("death");
+        }
+        
     }
 
     // Update is called once per frame
@@ -47,11 +53,11 @@ public class CellCapture : MonoBehaviour
         {
             if (currTime > 0 && !capped)
             {
-                startCap = false;
                 slider.value = 0;
             }
             currTime = capTime;
-         
+            startCap = false;
+
         }
     }
 }
