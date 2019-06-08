@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     public float turnSpeed = 20f;
@@ -9,13 +9,26 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody m_Rigidbody;
     Vector3 m_Movement;
     Quaternion m_Rotation = Quaternion.identity;
-    
+    private float originalSpeed;
+    public float maxDash = 2f;
+    public float regeneration = 2;
+    private float dash = 2f;
+    public float dashSpeed;
+    public Slider slider;
+    Quaternion fixedRotation;
+    private bool dashStart = false;
     // Start is called before the first frame update
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
+        dash = maxDash;
+        originalSpeed = moveSpeed;
+        fixedRotation = slider.GetComponentInParent<Canvas>().transform.rotation;
     }
-
+    private void LateUpdate()
+    {
+        slider.GetComponentInParent<Canvas>().transform.rotation = fixedRotation;
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -32,6 +45,54 @@ public class PlayerMovement : MonoBehaviour
         m_Rigidbody.MoveRotation(m_Rotation);
         m_Rigidbody.velocity = Vector3.zero;
         m_Rigidbody.angularVelocity = Vector3.zero;
+
+        //if (dash > 0 && Input.GetKeyDown(KeyCode.LeftShift))
+        //{
+        //    dash -= Time.deltaTime;
+        //}
+        //else
+        //{
+        //    //dash += Time.deltaTime;
+        //}
+        //dash = Mathf.Clamp(dash, 0, maxDash);
+        //slider.value = (maxDash - dash) /maxDash;
+
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+        {
+            dashStart = true;
+           
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
+        {
+            moveSpeed = originalSpeed;
+            dashStart = false;
+        }
+        if (dashStart)
+        {
+            dash -= Time.deltaTime;
+            moveSpeed = dashSpeed;
+            if (dash <= 0)
+            {
+                moveSpeed = originalSpeed;
+            }
+        }
+        else
+        {
+            if (dash < maxDash)
+            {
+                dash += Time.deltaTime;
+                if (dash > maxDash)
+                {
+                    dash = maxDash;
+                }
+            }
+        }
+        float complete = 1 - (maxDash - dash) / maxDash;
+        slider.value = complete;
+
 
 
     }
