@@ -81,6 +81,10 @@ public class PlayerMovement : MonoBehaviour
             moveSpeed = originalSpeed;
             dashStart = false;
         }
+        else if (dash <= 0)
+        {
+            dashStart = false;
+        }
         if (dashStart)
         {
             dash -= Time.deltaTime;
