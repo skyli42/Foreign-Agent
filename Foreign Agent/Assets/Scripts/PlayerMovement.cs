@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public Slider slider;
     Quaternion fixedRotation;
     private bool dashStart = false;
+    private float sliderTimer = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -60,8 +61,18 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
+        if (slider.value == 1)
+        {
+            sliderTimer += Time.deltaTime;
+            if (sliderTimer > 1)
+            {
+                slider.gameObject.SetActive(false);
+            }
+        }
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
         {
+            slider.gameObject.SetActive(true);
+            sliderTimer = 0;
             dashStart = true;
            
         }
