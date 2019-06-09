@@ -11,13 +11,13 @@ public class PlayerMovement : MonoBehaviour
     Quaternion m_Rotation = Quaternion.identity;
     private float originalSpeed;
     public float maxDash = 2f;
-    public float regeneration = 2;
     private float dash = 2f;
     public float dashSpeed;
     public Slider slider;
     Quaternion fixedRotation;
     private bool dashStart = false;
     private float sliderTimer = 0;
+    public float regenRate = 0.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -98,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (dash < maxDash)
             {
-                dash += Time.deltaTime;
+                dash += regenRate * Time.deltaTime;
                 if (dash > maxDash)
                 {
                     dash = maxDash;

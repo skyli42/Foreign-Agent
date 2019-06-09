@@ -747,8 +747,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 345198621}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.024, y: 0.5, z: 3.125}
-  m_LocalScale: {x: 31.532911, y: 1, z: 24.626225}
+  m_LocalPosition: {x: -2.543, y: 0.5, z: 2.776}
+  m_LocalScale: {x: 32.587624, y: 1, z: 25.31576}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -1922,7 +1922,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952678263}
   m_LocalRotation: {x: -0.007850628, y: 0.46607006, z: -0.049918376, w: 0.88330364}
-  m_LocalPosition: {x: -15.52, y: 1.5, z: 13.33}
+  m_LocalPosition: {x: -16.49, y: 1.5, z: 13.33}
   m_LocalScale: {x: 1, y: 1.0000002, z: 2.0000007}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3261,10 +3261,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 20
   moveSpeed: 0.05
-  maxDash: 2
-  regeneration: 2
+  maxDash: 1
   dashSpeed: 0.1
   slider: {fileID: 1258407259}
+  regenRate: 0.5
 --- !u!135 &1617931268
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3960,7 +3960,7 @@ Transform:
   m_GameObject: {fileID: 2009945229}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -15.25, y: 1.5, z: 2.04}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6707, y: 1.6344635, z: 0.81438}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 15
@@ -4147,7 +4147,7 @@ PrefabInstance:
     - target: {fileID: 3565318387205609822, guid: ce998f0e97a093549a2d066aed283c8e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16
+      value: -16.9
       objectReference: {fileID: 0}
     - target: {fileID: 3565318387205609822, guid: ce998f0e97a093549a2d066aed283c8e,
         type: 3}
