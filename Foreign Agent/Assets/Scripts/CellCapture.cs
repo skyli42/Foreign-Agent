@@ -12,7 +12,8 @@ public class CellCapture : MonoBehaviour
 	public Slider slider;
     [HideInInspector]
     public float currTime;
-    private bool capped = false;
+    [HideInInspector]
+    public bool capped = false;
 
     void OnTriggerEnter(Collider other)
     {
