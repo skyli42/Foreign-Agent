@@ -10,5 +10,10 @@ To start an infection, simply walk inside the cell.
 You successfully infected this cell. One of the new viruses have decided to join you as a companion!
 This companion is willing to sacrifice itself for you at any point. Press space if you are in danger to send out a companion.
 
-This is a macrophage. Don't get spotted by it, or it'll chase you down until it catches you!
+This is a <b>macrophage</b>. Don't get spotted by it, or it'll chase you down until it catches you!
 If you are spotted, you can try and sprint away, or send out one of your virus companions to distract it.
+Macrophages will engulf any virus that they come close to, so be careful!
+
+You were engulfed by the macrophage! Since this is a training simulation, I've reset you right back here. But you wont be so lucky during the real invasion.
+
+Congratulations! You've successfully completed your first infection. You are now prepared for your first real mission. Good luck Agent!

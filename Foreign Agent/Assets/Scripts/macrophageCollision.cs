@@ -9,6 +9,7 @@ public class macrophageCollision : MonoBehaviour
     public List<GameObject> Bcells;
     private NavMeshAgent agent;
     private float normalSpeed;
+    public static bool death = false;
 
     private void Start()
     {
@@ -27,7 +28,11 @@ public class macrophageCollision : MonoBehaviour
         }
         if (other.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(0);
+            death = true;
+            if (SceneManager.GetActiveScene().buildIndex != 0) //temporary until proper death system is in place
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
         }
 
     }

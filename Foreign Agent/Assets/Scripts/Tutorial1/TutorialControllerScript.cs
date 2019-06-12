@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class TutorialControllerScript : MonoBehaviour
 {
@@ -13,12 +13,15 @@ public class TutorialControllerScript : MonoBehaviour
     public GameObject tutCell;
     public RPGTalk rpgTalk;
     private bool companionPlayed = false;
-
-   
+    public GameObject finalCell;
+    public GameObject checkpoint;
+    public GameObject macrophage;
+    public RPGTalk endTalk;
+    private bool endPlayed = false;
     public void CancelControls()
     {
-       player.GetComponent<PlayerMovement>().enabled = false;
-       player.GetComponent<companionSpawn>().enabled = false;
+        player.GetComponent<PlayerMovement>().enabled = false;
+        player.GetComponent<companionSpawn>().enabled = false;
     }
 
     //give back the controls to player
@@ -48,9 +51,30 @@ public class TutorialControllerScript : MonoBehaviour
             CancelControls();
             rpgTalk.NewTalk("10", "11", rpgTalk.txtToParse);
             companionPlayed = true;
-  
+
 
         }
+        if (macrophageCollision.death)
+        {
+            macrophageCollision.death = false;
+            macrophage.GetComponent<FieldOfView>().detected = false;
+            macrophage.GetComponent<Patrol>().chaseStart = false;
+            player.transform.position = checkpoint.transform.position;
+            CancelControls();
+            player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            rpgTalk.NewTalk("17", "17", rpgTalk.txtToParse);
+            player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        }
+        if (!endPlayed && finalCell.GetComponentInChildren<CellCapture>().capped)
+        {
+            CancelControls();
+            endTalk.NewTalk("19", "19", endTalk.txtToParse);
+            endPlayed = true;
+        }
+    }
+    public void NextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 }
