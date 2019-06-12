@@ -4,10 +4,10 @@ Move around using WASD or the arrow keys
 
 Press shift to perform a dash! The meter displays your remaining energy. 
 
-This is a human cell. Your goal is to infect all cells in the area. 
+This is a human cell. Your goal is to infect and replicate within all cells in the area. 
 To start an infection, simply walk inside the cell.
 
-You successfully infected this cell. One of the new viruses have decided to join you as a companion!
+You successfully infected this cell. One of the new viruses has decided to join you as a companion!
 This companion is willing to sacrifice itself for you at any point. Press space if you are in danger to send out a companion.
 
 This is a <b>macrophage</b>. Don't get spotted by it, or it'll chase you down until it catches you!
