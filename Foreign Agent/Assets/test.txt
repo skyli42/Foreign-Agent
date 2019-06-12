@@ -9,3 +9,6 @@ To start an infection, simply walk inside the cell.
 
 You successfully infected this cell. One of the new viruses have decided to join you as a companion!
 This companion is willing to sacrifice itself for you at any point. Press space if you are in danger to send out a companion.
+
+This is a macrophage. Don't get spotted by it, or it'll chase you down until it catches you!
+If you are spotted, you can try and sprint away, or send out one of your virus companions to distract it.
