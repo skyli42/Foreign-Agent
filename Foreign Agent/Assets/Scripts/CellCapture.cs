@@ -26,7 +26,7 @@ public class CellCapture : MonoBehaviour
         else if (startCap && other.gameObject.CompareTag("Tcell"))
         {
             Debug.Log("death");
-            SceneManager.LoadScene(0); //temporary
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);//temporary
         }
         
     }

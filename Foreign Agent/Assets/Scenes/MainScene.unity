@@ -2294,6 +2294,7 @@ MonoBehaviour:
   timeTillReset: 5
   searchingMat: {fileID: 2100000, guid: 225d2f8cb2dd45e42bedece5c9d94650, type: 2}
   chaseStart: 0
+  detectedSpeed: 2.75
 --- !u!195 &940061934
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3542,6 +3543,7 @@ MonoBehaviour:
   timeTillReset: 5
   searchingMat: {fileID: 2100000, guid: 225d2f8cb2dd45e42bedece5c9d94650, type: 2}
   chaseStart: 0
+  detectedSpeed: 2.75
 --- !u!195 &1335819864
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3825,6 +3827,7 @@ MonoBehaviour:
   timeTillReset: 5
   searchingMat: {fileID: 2100000, guid: 225d2f8cb2dd45e42bedece5c9d94650, type: 2}
   chaseStart: 0
+  detectedSpeed: 2.75
 --- !u!195 &1476804647
 NavMeshAgent:
   m_ObjectHideFlags: 0

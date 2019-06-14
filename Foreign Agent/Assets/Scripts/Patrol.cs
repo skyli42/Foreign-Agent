@@ -15,8 +15,8 @@ public class Patrol : MonoBehaviour
     private float timer;
     public Material searchingMat;
     public bool chaseStart = false;
-    private float orignalSpeed; 
-
+    private float orignalSpeed;
+    public float detectedSpeed;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -56,7 +56,7 @@ public class Patrol : MonoBehaviour
             timer = 0.0f;
             if (agent.speed != 0.0f)
             {
-                agent.speed = orignalSpeed + 0.5f;
+                agent.speed = detectedSpeed;
             }
             agent.destination = player.transform.position;
             chaseStart = true;
