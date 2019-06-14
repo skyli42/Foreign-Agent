@@ -2207,6 +2207,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 903588701}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &914647691 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7357746626962212072, guid: 853533ce91ac24e44975e5d112cdd36a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2141961759}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &914647697 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7357746626962577608, guid: 853533ce91ac24e44975e5d112cdd36a,
@@ -2333,9 +2339,9 @@ MonoBehaviour:
   - {fileID: 206015443}
   - {fileID: 1848964575}
   macrophages:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 914647691}
+  - {fileID: 2073553374}
+  - {fileID: 1129220387}
 --- !u!1 &960757553
 GameObject:
   m_ObjectHideFlags: 0
@@ -2810,6 +2816,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1129220387 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7357746626962212072, guid: 853533ce91ac24e44975e5d112cdd36a,
+    type: 3}
+  m_PrefabInstance: {fileID: 388317663}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1129220393 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7357746626962577608, guid: 853533ce91ac24e44975e5d112cdd36a,
@@ -4422,6 +4434,12 @@ Transform:
   m_Father: {fileID: 14170401}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2073553374 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7357746626962212072, guid: 853533ce91ac24e44975e5d112cdd36a,
+    type: 3}
+  m_PrefabInstance: {fileID: 996344002}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2073553380 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7357746626962577608, guid: 853533ce91ac24e44975e5d112cdd36a,
