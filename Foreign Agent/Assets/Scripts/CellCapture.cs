@@ -14,11 +14,13 @@ public class CellCapture : MonoBehaviour
     public float currTime;
     [HideInInspector]
     public bool capped = false;
-
+    public GameObject disruptionAnim;
+    private GameObject captureAnim;
     void OnTriggerEnter(Collider other)
     {
         if (!capped && other.gameObject == player)
         {
+            captureAnim = Instantiate(disruptionAnim, gameObject.GetComponent<Collider>().bounds.center, Quaternion.identity);
             startCap = true;
             currTime = capTime;
 			Debug.Log("starting cap");
@@ -54,6 +56,7 @@ public class CellCapture : MonoBehaviour
 
         if (other.gameObject == player)
         {
+            Destroy(captureAnim);
             if (currTime > 0 && !capped)
             {
                 slider.value = 0;
