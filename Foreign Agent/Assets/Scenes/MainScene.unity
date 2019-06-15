@@ -863,7 +863,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 356733485}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Enemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5148,10 +5148,6 @@ PrefabInstance:
     - target: {fileID: 7846485451287338879, guid: 1e25ea8138c5d4a41bd2eff91a3be348,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350091799, guid: 1e25ea8138c5d4a41bd2eff91a3be348, type: 3}
-      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1350091796, guid: 1e25ea8138c5d4a41bd2eff91a3be348, type: 3}
