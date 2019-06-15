@@ -2,7 +2,7 @@
 using UnityEngine.AI;
 using System.Collections;
 using System.Collections.Generic;
-
+using TMPro;
 
 public class companionSpawn : MonoBehaviour
 {
@@ -13,7 +13,8 @@ public class companionSpawn : MonoBehaviour
     public static int numCompanions;
     private List<Collider> enemiesList = new List<Collider>();
     private List<NavMeshAgent> companionList = new List<NavMeshAgent>();
-   
+
+    public GameObject companionUI;
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class companionSpawn : MonoBehaviour
     }
     void Update()
     {
+        companionUI.GetComponent<TextMeshProUGUI>().text = "Companions: " + numCompanions.ToString();
         for (int i = 0; i < enemiesList.Count; i++)
         {
             if (companionList[i].isActiveAndEnabled)

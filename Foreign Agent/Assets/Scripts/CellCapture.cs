@@ -16,6 +16,7 @@ public class CellCapture : MonoBehaviour
     public bool capped = false;
     public GameObject disruptionAnim;
     private GameObject captureAnim;
+
     void OnTriggerEnter(Collider other)
     {
         if (!capped && other.gameObject == player)
