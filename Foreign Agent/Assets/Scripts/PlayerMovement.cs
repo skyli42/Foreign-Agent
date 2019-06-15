@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     private bool dashStart = false;
     private float sliderTimer = 0;
     public float regenRate = 0.5f;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
+
         if (slider.value == 1)
         {
             sliderTimer += Time.deltaTime;
