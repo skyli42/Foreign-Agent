@@ -63,7 +63,7 @@ MonoBehaviour:
   slider: {fileID: 470187044}
   currTime: 0
   capped: 0
-  disruptionAnim: {fileID: 0}
+  disruptionAnim: {fileID: 100002, guid: db50ab1c866680e4bb870bf5eb72dd3d, type: 3}
 --- !u!1 &116764797
 GameObject:
   m_ObjectHideFlags: 0

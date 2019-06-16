@@ -54,13 +54,22 @@ public class GameController : MonoBehaviour
     }
     public IEnumerator waitTillDeathDone()
     {
+        bool isTutorial;
+        isTutorial = SceneManager.GetActiveScene().buildIndex == 0;
+        
         Instantiate(deathAnim, player.GetComponent<Collider>().bounds.center, Quaternion.identity);
         player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         player.gameObject.GetComponent<Renderer>().enabled = false;
-        yield return new WaitForSeconds(1.2f);
-        if (SceneManager.GetActiveScene().buildIndex != 0)
+        if (!isTutorial)
         {
+            yield return new WaitForSeconds(1.2f);
             deathMenu.SetActive(true);
         }
+        else
+        {
+            player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            player.gameObject.GetComponent<Renderer>().enabled = true;
+        }
+        
     }
 }

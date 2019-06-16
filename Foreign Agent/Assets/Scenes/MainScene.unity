@@ -6206,10 +6206,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1617931266}
-    - target: {fileID: 3033702, guid: ce998f0e97a093549a2d066aed283c8e, type: 3}
-      propertyPath: disruptionAnim
-      value: 
-      objectReference: {fileID: 100002, guid: db50ab1c866680e4bb870bf5eb72dd3d, type: 3}
     - target: {fileID: 897092872, guid: ce998f0e97a093549a2d066aed283c8e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6302,6 +6298,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.65777564
       objectReference: {fileID: 0}
+    - target: {fileID: 470187044, guid: ce998f0e97a093549a2d066aed283c8e, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 470187043, guid: ce998f0e97a093549a2d066aed283c8e, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
@@ -6340,10 +6340,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 470187043, guid: ce998f0e97a093549a2d066aed283c8e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 470187044, guid: ce998f0e97a093549a2d066aed283c8e, type: 3}
-      propertyPath: m_Navigation.m_Mode
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
