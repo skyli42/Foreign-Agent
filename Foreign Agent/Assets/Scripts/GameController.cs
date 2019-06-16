@@ -1,22 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    public GameObject menu;
+    public GameObject pauseMenu;
     private bool paused;
+    public GameObject player;
+
+    public static bool death;
+    public GameObject deathMenu;
+    public GameObject deathAnim;
+    private bool alreadyDead = false;
+    void Start()
+    {
+        death = false;
+    }
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) && !death)
         {
             paused = togglePause();
             if (paused)
-                menu.GetComponent<Pause>().Display();
+                pauseMenu.GetComponent<Pause>().Display();
             else
-                menu.GetComponent<Pause>().ReturnToGame();
+                pauseMenu.GetComponent<Pause>().ReturnToGame();
         }
+        if (death && !alreadyDead)
+        {
+            
+            alreadyDead = true;
+            StartCoroutine(waitTillDeathDone());
+            
+        }
+        else if (!death && alreadyDead)
+            alreadyDead = false;
     }
     
     public bool togglePause()
@@ -30,6 +50,17 @@ public class GameController : MonoBehaviour
         {
             Time.timeScale = 0f;
             return (true);
+        }
+    }
+    public IEnumerator waitTillDeathDone()
+    {
+        Instantiate(deathAnim, player.GetComponent<Collider>().bounds.center, Quaternion.identity);
+        player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        player.gameObject.GetComponent<Renderer>().enabled = false;
+        yield return new WaitForSeconds(1.2f);
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            deathMenu.SetActive(true);
         }
     }
 }

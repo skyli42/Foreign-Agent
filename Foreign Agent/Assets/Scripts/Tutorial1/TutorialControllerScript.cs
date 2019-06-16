@@ -54,9 +54,9 @@ public class TutorialControllerScript : MonoBehaviour
 
 
         }
-        if (macrophageCollision.death)
+        if (GameController.death)
         {
-            macrophageCollision.death = false;
+            GameController.death = false;
             macrophage.GetComponent<FieldOfView>().detected = false;
             macrophage.GetComponent<Patrol>().chaseStart = false;
             player.transform.position = checkpoint.transform.position;
