@@ -58,9 +58,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  startCap: 0
   capTime: 5
   slider: {fileID: 470187044}
   currTime: 0
+  capped: 0
+  disruptionAnim: {fileID: 0}
 --- !u!1 &116764797
 GameObject:
   m_ObjectHideFlags: 0

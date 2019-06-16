@@ -16,7 +16,12 @@ public class CellCapture : MonoBehaviour
     public bool capped = false;
     public GameObject disruptionAnim;
     private GameObject captureAnim;
+    private Material mat;
 
+    void Start()
+    {
+        mat = transform.parent.transform.Find("default").GetComponent<Renderer>().material;
+    }
     void OnTriggerEnter(Collider other)
     {
         if (!capped && other.gameObject == player)
@@ -37,6 +42,7 @@ public class CellCapture : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (startCap && !capped)
         {
             currTime -= Time.deltaTime;
@@ -49,6 +55,8 @@ public class CellCapture : MonoBehaviour
                 Score.numCaptures += 1; //temporary
                 capped = true;
                 startCap = false;
+                StartCoroutine(DissolveOverTime(2.0f));
+                Destroy(captureAnim);
             }
         }
     }
@@ -66,5 +74,17 @@ public class CellCapture : MonoBehaviour
             startCap = false;
 
         }
+    }
+    IEnumerator DissolveOverTime(float duration)
+    {
+        for (float t = 0; t <= duration - 0.6f; t += Time.deltaTime)
+        {
+
+            mat.SetFloat("_DissolveAmount", t / duration);
+
+            yield return null;
+        }
+        mat.SetInt("_DissolveAmount", 1);
+        Destroy(transform.parent.gameObject);
     }
 }
