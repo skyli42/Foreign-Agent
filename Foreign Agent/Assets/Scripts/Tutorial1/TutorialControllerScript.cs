@@ -44,7 +44,7 @@ public class TutorialControllerScript : MonoBehaviour
     {
         wasd.gameObject.SetActive(false);
     }
-    void Update()
+    void LateUpdate()
     {
         if (!companionPlayed && tutCell.GetComponentInChildren<CellCapture>().capped)
         {
@@ -54,9 +54,9 @@ public class TutorialControllerScript : MonoBehaviour
 
 
         }
-        if (macrophageCollision.death)
+        if (GameController.death)
         {
-            macrophageCollision.death = false;
+            
             macrophage.GetComponent<FieldOfView>().detected = false;
             macrophage.GetComponent<Patrol>().chaseStart = false;
             player.transform.position = checkpoint.transform.position;
@@ -64,6 +64,7 @@ public class TutorialControllerScript : MonoBehaviour
             player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             rpgTalk.NewTalk("17", "17", rpgTalk.txtToParse);
             player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            GameController.death = false;
         }
         if (!endPlayed && finalCell.GetComponentInChildren<CellCapture>().capped)
         {
