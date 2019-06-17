@@ -8554,7 +8554,7 @@ MonoBehaviour:
   interactionKey: 0
   interactionButton: 
   interactWithMouse: 0
-  checkIfColliderHasTag: 
+  checkIfColliderHasTag: Player
   callbackBeforeTalk:
     m_PersistentCalls:
       m_Calls:
