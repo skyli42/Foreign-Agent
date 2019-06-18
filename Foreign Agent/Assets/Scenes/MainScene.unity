@@ -196,6 +196,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &75829175 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1356995589154663562, guid: 5b89ad06d999c004fa3032d80448046a,
+    type: 3}
+  m_PrefabInstance: {fileID: 5998719074650404739}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &78281272
 GameObject:
   m_ObjectHideFlags: 0
@@ -2599,6 +2605,7 @@ MonoBehaviour:
   - {fileID: 914647691}
   - {fileID: 2073553374}
   - {fileID: 1129220387}
+  activationAlert: {fileID: 75829175}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -4945,10 +4952,6 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.65777564
       objectReference: {fileID: 0}
-    - target: {fileID: 470187044, guid: ce998f0e97a093549a2d066aed283c8e, type: 3}
-      propertyPath: m_Navigation.m_Mode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 470187043, guid: ce998f0e97a093549a2d066aed283c8e, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
@@ -4987,6 +4990,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 470187043, guid: ce998f0e97a093549a2d066aed283c8e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470187044, guid: ce998f0e97a093549a2d066aed283c8e, type: 3}
+      propertyPath: m_Navigation.m_Mode
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5422,15 +5429,20 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5998719075550479382, guid: 5b89ad06d999c004fa3032d80448046a,
-        type: 3}
-      propertyPath: eventSystem
-      value: 
-      objectReference: {fileID: 668317297}
     - target: {fileID: 5998719074079411638, guid: 5b89ad06d999c004fa3032d80448046a,
         type: 3}
       propertyPath: eventSystem
       value: 
       objectReference: {fileID: 668317297}
+    - target: {fileID: 5998719075550479382, guid: 5b89ad06d999c004fa3032d80448046a,
+        type: 3}
+      propertyPath: eventSystem
+      value: 
+      objectReference: {fileID: 668317297}
+    - target: {fileID: 5998719073582590310, guid: 5b89ad06d999c004fa3032d80448046a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b89ad06d999c004fa3032d80448046a, type: 3}
