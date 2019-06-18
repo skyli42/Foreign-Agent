@@ -25,7 +25,7 @@ public class plasmaSpawn : MonoBehaviour
         {
             gameObject.GetComponent<Renderer>().material = activeMat;
             InvokeRepeating("activateAlert", 0.0f, 1f);
-            Invoke("deactivateAlert", 3.5f);
+            Invoke("deactivateAlert", 5f);
            
             for (int i = 0; i < numAntibodies; i++)
             {
