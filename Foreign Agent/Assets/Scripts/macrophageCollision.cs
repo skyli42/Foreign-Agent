@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class macrophageCollision : MonoBehaviour
 {
-    public List<GameObject> Bcells;
     private NavMeshAgent agent;
     private float normalSpeed;
     public GameObject stage;
