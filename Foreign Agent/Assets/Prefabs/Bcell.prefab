@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 881aa9e9448d1be44b86881205f1f8e1, type: 2}
+  - {fileID: 2100000, guid: f3b7d37bafa9bcc4a8ac85483de7a5be, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -111,6 +111,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   activationAlert: {fileID: 0}
+  activeMat: {fileID: 2100000, guid: e5c4934a720f88e43920272deb651c2a, type: 2}
 --- !u!136 &952678264
 CapsuleCollider:
   m_ObjectHideFlags: 0

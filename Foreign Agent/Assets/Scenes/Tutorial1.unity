@@ -770,8 +770,8 @@ MonoBehaviour:
   enablePass: 1
   autoPass: 0
   secondsAutoPass: 3
-  lineToStart: 5
-  lineToBreak: 5
+  lineToStart: dashInstructionStart
+  lineToBreak: dashInstructionEnd
   wordWrap: 1
   maxCharInWidth: 50
   maxCharInHeight: 4
@@ -2255,8 +2255,8 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  lineToStart: 5
-  lineToBreak: 5
+  lineToStart: dashInstructionStart
+  lineToBreak: dashInstructionEnd
   txtToParse: {fileID: 0}
   overwriteCallbackAfterTalk:
     m_PersistentCalls:
@@ -2640,8 +2640,8 @@ MonoBehaviour:
   enablePass: 1
   autoPass: 0
   secondsAutoPass: 3
-  lineToStart: 5
-  lineToBreak: 5
+  lineToStart: cellInfectionStart
+  lineToBreak: cellInfectionEnd
   wordWrap: 1
   maxCharInWidth: 50
   maxCharInHeight: 4
@@ -3034,8 +3034,8 @@ MonoBehaviour:
   enablePass: 1
   autoPass: 0
   secondsAutoPass: 3
-  lineToStart: 10
-  lineToBreak: 11
+  lineToStart: companionInstructionStart
+  lineToBreak: companionInstructionEnd
   wordWrap: 1
   maxCharInWidth: 50
   maxCharInHeight: 4
@@ -3146,8 +3146,8 @@ MonoBehaviour:
   enablePass: 1
   autoPass: 1
   secondsAutoPass: 2
-  lineToStart: 1
-  lineToBreak: 2
+  lineToStart: IntroTalkStart
+  lineToBreak: IntroTalkEnd
   wordWrap: 1
   maxCharInWidth: 50
   maxCharInHeight: 4
@@ -5341,8 +5341,8 @@ MonoBehaviour:
   enablePass: 1
   autoPass: 0
   secondsAutoPass: 3
-  lineToStart: 13
-  lineToBreak: 14
+  lineToStart: macrophageInstructionStart
+  lineToBreak: macrophageInstructionEnd
   wordWrap: 1
   maxCharInWidth: 50
   maxCharInHeight: 4
@@ -5651,8 +5651,8 @@ MonoBehaviour:
   enablePass: 1
   autoPass: 0
   secondsAutoPass: 3
-  lineToStart: 19
-  lineToBreak: 19
+  lineToStart: endLevelStart
+  lineToBreak: endLevelEnd
   wordWrap: 1
   maxCharInWidth: 50
   maxCharInHeight: 4
@@ -6269,8 +6269,8 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  lineToStart: 7
-  lineToBreak: 8
+  lineToStart: cellInfectionStart
+  lineToBreak: cellInfectionEnd
   txtToParse: {fileID: 0}
   overwriteCallbackAfterTalk:
     m_PersistentCalls:
@@ -6574,8 +6574,8 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  lineToStart: 1
-  lineToBreak: 3
+  lineToStart: IntroTalkStart
+  lineToBreak: IntroTalkEnd
   txtToParse: {fileID: 0}
   overwriteCallbackAfterTalk:
     m_PersistentCalls:
@@ -7023,8 +7023,8 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  lineToStart: 13
-  lineToBreak: 15
+  lineToStart: macrophageInstructionStart
+  lineToBreak: macrophageInstructionEnd
   txtToParse: {fileID: 4900000, guid: 1bbc6bd69edac174587ca9ffbb9662e2, type: 3}
   overwriteCallbackAfterTalk:
     m_PersistentCalls:

@@ -50,7 +50,7 @@ public class TutorialControllerScript : MonoBehaviour
         if (!companionPlayed && tutCell.GetComponentInChildren<CellCapture>().capped)
         {
             CancelControls();
-            rpgTalk.NewTalk("10", "11", rpgTalk.txtToParse);
+            rpgTalk.NewTalk("infectionSuccessStart", "infectionSuccessEnd", rpgTalk.txtToParse);
             companionPlayed = true;
 
 
@@ -63,7 +63,7 @@ public class TutorialControllerScript : MonoBehaviour
             player.transform.position = checkpoint.transform.position;
             CancelControls();
             player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-            rpgTalk.NewTalk("17", "17", rpgTalk.txtToParse);
+            rpgTalk.NewTalk("deathStart", "deathEnd", rpgTalk.txtToParse);
             player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             GameController.death = false;
         }
@@ -72,7 +72,7 @@ public class TutorialControllerScript : MonoBehaviour
             CancelControls();
             endMenu.SetActive(false);
             Time.timeScale = 1.0f;
-            endTalk.NewTalk("19", "19", endTalk.txtToParse);
+            endTalk.NewTalk("endLevelStart", "endLevelEnd", endTalk.txtToParse);
             endPlayed = true;
         }
         
