@@ -25,6 +25,8 @@ public class GameController : MonoBehaviour
     public Text TimeSpent;
     private bool atEnd = false;
     public GameObject endMenu;
+
+    public bool isTutorial = false;
     void Start()
     {
         death = false;
@@ -87,8 +89,7 @@ public class GameController : MonoBehaviour
     }
     public IEnumerator waitTillDeathDone()
     {
-        bool isTutorial;
-        isTutorial = SceneManager.GetActiveScene().buildIndex == 0;
+       
         
         Instantiate(deathAnim, player.GetComponent<Collider>().bounds.center, Quaternion.identity);
         player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
@@ -107,8 +108,6 @@ public class GameController : MonoBehaviour
     }
     public IEnumerator waitTillDissolveDone()
     {
-        bool isTutorial;
-        isTutorial = SceneManager.GetActiveScene().buildIndex == 0;
         yield return new WaitForSeconds(1.4f);
         if (!isTutorial)
             Time.timeScale = 0;
