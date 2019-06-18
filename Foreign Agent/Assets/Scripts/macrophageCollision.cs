@@ -10,26 +10,36 @@ public class macrophageCollision : MonoBehaviour
     private NavMeshAgent agent;
     private float normalSpeed;
     public GameObject stage;
+    private SimpleSonarShader_Parent parent;
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         normalSpeed = agent.speed;
+        parent = stage.GetComponent<SimpleSonarShader_Parent>();
 
     }
     private void OnCollisionEnter(Collision other)
     {
-        if (!plasmaSpawn.activated && other.gameObject.tag == "companion")
+        if (other.gameObject.tag == "companion")
         {
             other.collider.gameObject.SetActive(false);
             agent.speed = 0;
-            plasmaSpawn.activated = true;//probably temp until T helper are implemented
-            SimpleSonarShader_Parent parent = stage.GetComponent<SimpleSonarShader_Parent>();
-            if (parent) parent.StartSonarRing(transform.position, 5);
+            if (plasmaSpawn.Instance != null && !plasmaSpawn.Instance.activated)
+            {
+                plasmaSpawn.Instance.activated = true;//probably temp until T helper are implemented
+                
+               
+                if (parent)
+                {
+                    Debug.Log("sonar");
+                    parent.StartSonarRing(transform.position, 5);
+                }
+            }
             StartCoroutine(unfreezePosition());
         }
         if (other.gameObject.tag == "Player")
         {
-            GameController.death = true;
+            GameController.Instance.death = true;
         }
 
     }

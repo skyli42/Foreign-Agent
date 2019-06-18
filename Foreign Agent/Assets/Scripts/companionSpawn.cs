@@ -6,11 +6,12 @@ using TMPro;
 
 public class companionSpawn : MonoBehaviour
 {
+    public static companionSpawn Instance;
     public GameObject companionVirus;
     private NavMeshAgent agent;
     private float distance;
     public LayerMask enemyMask;
-    public static int numCompanions;
+    public  int numCompanions;
     private List<Collider> enemiesList = new List<Collider>();
     private List<NavMeshAgent> companionList = new List<NavMeshAgent>();
 
@@ -18,6 +19,7 @@ public class companionSpawn : MonoBehaviour
 
     private void Start()
     {
+        Instance = this;
         numCompanions = 0;
     }
     void Update()

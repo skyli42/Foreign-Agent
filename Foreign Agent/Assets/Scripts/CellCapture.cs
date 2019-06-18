@@ -20,7 +20,7 @@ public class CellCapture : MonoBehaviour
 
     void Start()
     {
-        mat = transform.parent.transform.Find("default").GetComponent<Renderer>().material;
+        mat = transform.parent.GetComponent<Renderer>().material;
     }
     void OnTriggerEnter(Collider other)
     {
@@ -35,7 +35,7 @@ public class CellCapture : MonoBehaviour
         {
             Debug.Log("death");
             startCap = false;
-            GameController.death = true;
+            GameController.Instance.death = true;
         }
         
     }
@@ -44,7 +44,7 @@ public class CellCapture : MonoBehaviour
     void Update()
     {
         
-        if (startCap && !capped && !GameController.death)
+        if (startCap && !capped && !GameController.Instance.death)
         {
             currTime -= Time.deltaTime;
 			float complete = (capTime - currTime) / capTime;
@@ -52,8 +52,8 @@ public class CellCapture : MonoBehaviour
             if (currTime <= 0)
             {
                 Debug.Log("Capped");
-                companionSpawn.numCompanions += 1;
-                GameController.numCaptures += 1; //temporary
+                companionSpawn.Instance.numCompanions += 1;
+                GameController.Instance.numCaptures += 1; //temporary
                 capped = true;
                 startCap = false;
                 StartCoroutine(DissolveOverTime(2.0f));
@@ -78,14 +78,16 @@ public class CellCapture : MonoBehaviour
     }
     IEnumerator DissolveOverTime(float duration)
     {
-        for (float t = 0; t <= duration - 0.6f; t += Time.deltaTime)
+        for (float t = 0; t <= duration - 0.2f; t += Time.deltaTime)
         {
 
-            mat.SetFloat("_DissolveAmount", t / duration);
+           //mat.SetFloat("_DissolveAmount", t / duration); //getridofifwekeeptest
+            mat.SetFloat("_Cutoff", t / duration);
 
             yield return null;
         }
-        mat.SetInt("_DissolveAmount", 1);
+        //mat.SetInt("_DissolveAmount", 1);//getridofifwekeeptest
+        mat.SetInt("_Cutoff", 1);
         Destroy(transform.parent.gameObject);
     }
 }

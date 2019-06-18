@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class plasmaSpawn : MonoBehaviour
 {
-    public static bool activated;
+    public static plasmaSpawn Instance;
+    public bool activated;
     private bool alreadySpawned = false;
     public int numAntibodies = 3;
     public GameObject antibody;
@@ -18,6 +19,7 @@ public class plasmaSpawn : MonoBehaviour
     // Update is called once per frame
     private void Start()
     {
+        Instance = this;
         activated = false;
     }
     void Update()
@@ -64,7 +66,7 @@ public class plasmaSpawn : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
-        if (!plasmaSpawn.activated && other.gameObject.tag == "Player" && !Bcellcollision)
+        if (activated && other.gameObject.tag == "Player" && !Bcellcollision)
         {
             //plasmaSpawn.activated = true;//probably temp until T helper are implemented
             gameObject.GetComponent<Renderer>().material = activeMat;

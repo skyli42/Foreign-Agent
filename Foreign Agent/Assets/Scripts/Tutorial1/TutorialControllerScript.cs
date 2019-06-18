@@ -55,7 +55,7 @@ public class TutorialControllerScript : MonoBehaviour
 
 
         }
-        if (GameController.death)
+        if (GameController.Instance.death)
         {
             
             macrophage.GetComponent<FieldOfView>().detected = false;
@@ -65,7 +65,7 @@ public class TutorialControllerScript : MonoBehaviour
             player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             rpgTalk.NewTalk("deathStart", "deathEnd", rpgTalk.txtToParse);
             player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-            GameController.death = false;
+            GameController.Instance.death = false;
         }
         if (!endPlayed && finalCell.GetComponentInChildren<CellCapture>().capped)
         {

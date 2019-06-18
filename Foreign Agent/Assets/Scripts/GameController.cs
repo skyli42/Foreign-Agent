@@ -7,7 +7,8 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    public static int numCaptures;
+    public static GameController Instance;
+    public int numCaptures;
     public int numCellsInLevel;
     public GameObject cellsLeftUI;
     private int prevFramenumCaptures;
@@ -16,7 +17,7 @@ public class GameController : MonoBehaviour
     private bool paused;
     public GameObject player;
 
-    public static bool death;
+    public bool death;
     public GameObject deathMenu;
     public GameObject deathAnim;
     private bool alreadyDead = false;
@@ -29,6 +30,7 @@ public class GameController : MonoBehaviour
     public bool isTutorial = false;
     void Start()
     {
+        Instance = this;
         death = false;
         numCaptures = 0;
         prevFramenumCaptures = numCaptures;
@@ -108,7 +110,7 @@ public class GameController : MonoBehaviour
     }
     public IEnumerator waitTillDissolveDone()
     {
-        yield return new WaitForSeconds(1.4f);
+        yield return new WaitForSeconds(2f);
         if (!isTutorial)
             Time.timeScale = 0;
     }
