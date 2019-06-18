@@ -14,6 +14,7 @@ public class plasmaSpawn : MonoBehaviour
     public GameObject activationAlert;
 
     public Material activeMat;
+    private bool Bcellcollision = false;
     // Update is called once per frame
     private void Start()
     {
@@ -23,24 +24,30 @@ public class plasmaSpawn : MonoBehaviour
     {
         if (activated && !alreadySpawned)
         {
+
             gameObject.GetComponent<Renderer>().material = activeMat;
             InvokeRepeating("activateAlert", 0.0f, 1f);
             Invoke("deactivateAlert", 5f);
-           
-            for (int i = 0; i < numAntibodies; i++)
+            if (!Bcellcollision)
             {
-                float angle = i * Mathf.PI * 2 / numAntibodies;
-                float x = Mathf.Cos(angle) * radius;
-                float z = Mathf.Sin(angle) * radius;
-                Vector3 pos = transform.position + new Vector3(x, 0, z);
-                float angleDegrees = -angle * Mathf.Rad2Deg;
-                Quaternion rot = Quaternion.Euler(0, angleDegrees, 0);
-                GameObject antibodySpawn = (GameObject)Instantiate(antibody, pos, rot);
-                antibodySpawn.GetComponent<antibodyPatrol>().points = spawnPoints;
-                antibodySpawn.GetComponent<antibodyPatrol>().macrophages = macrophages;
-                alreadySpawned = true;
+                for (int i = 0; i < numAntibodies; i++)
+                {
+                    float angle = i * Mathf.PI * 2 / numAntibodies;
+                    float x = Mathf.Cos(angle) * radius;
+                    float z = Mathf.Sin(angle) * radius;
+                    Vector3 pos = transform.position + new Vector3(x, 0, z);
+                    float angleDegrees = -angle * Mathf.Rad2Deg;
+                    Quaternion rot = Quaternion.Euler(0, angleDegrees, 0);
+                    GameObject antibodySpawn = (GameObject)Instantiate(antibody, pos, rot);
+                    antibodySpawn.GetComponent<antibodyPatrol>().points = spawnPoints;
+                    antibodySpawn.GetComponent<antibodyPatrol>().macrophages = macrophages;
+                   
+                }
             }
+            alreadySpawned = true;
         }
+
+        
        
     }
     void activateAlert()
@@ -54,5 +61,27 @@ public class plasmaSpawn : MonoBehaviour
     {
         CancelInvoke();
         activationAlert.SetActive(false);
+    }
+    private void OnCollisionEnter(Collision other)
+    {
+        if (!plasmaSpawn.activated && other.gameObject.tag == "Player" && !Bcellcollision)
+        {
+            //plasmaSpawn.activated = true;//probably temp until T helper are implemented
+            gameObject.GetComponent<Renderer>().material = activeMat;
+            for (int i = 0; i < numAntibodies; i++)
+            {
+                float angle = i * Mathf.PI * 2 / numAntibodies;
+                float x = Mathf.Cos(angle) * radius;
+                float z = Mathf.Sin(angle) * radius;
+                Vector3 pos = transform.position + new Vector3(x, 0, z);
+                float angleDegrees = -angle * Mathf.Rad2Deg;
+                Quaternion rot = Quaternion.Euler(0, angleDegrees, 0);
+                GameObject antibodySpawn = (GameObject)Instantiate(antibody, pos, rot);
+                antibodySpawn.GetComponent<antibodyPatrol>().points = spawnPoints;
+                antibodySpawn.GetComponent<antibodyPatrol>().macrophages = macrophages;
+            }
+            Bcellcollision = true;
+        }
+
     }
 }
