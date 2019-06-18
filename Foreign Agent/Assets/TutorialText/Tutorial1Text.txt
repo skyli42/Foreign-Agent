@@ -10,12 +10,14 @@ Press shift to perform a dash! The meter displays your remaining energy.
 
 [title=cellInfectionStart]
 This is a human cell. Your goal is to infect and replicate within all cells in the area. 
+The number of cells left to infect is found in the upper left corner.
 To start an infection, simply walk inside the cell.
 [title=cellInfectionEnd]
 
 [title=infectionSuccessStart]
 You successfully infected this cell. One of the new viruses has decided to join you as a companion!
 This companion is willing to sacrifice itself for you at any point. Press space if you are in danger to send out a companion.
+You can see the number of companions you have in the upper left corner.
 [title=infectionSuccessEnd]
 
 [title=macrophageInstructionStart]

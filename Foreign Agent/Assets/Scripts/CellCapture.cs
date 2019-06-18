@@ -34,6 +34,7 @@ public class CellCapture : MonoBehaviour
         else if (startCap && other.gameObject.CompareTag("Tcell"))
         {
             Debug.Log("death");
+            startCap = false;
             GameController.death = true;
         }
         
@@ -43,7 +44,7 @@ public class CellCapture : MonoBehaviour
     void Update()
     {
         
-        if (startCap && !capped)
+        if (startCap && !capped && !GameController.death)
         {
             currTime -= Time.deltaTime;
 			float complete = (capTime - currTime) / capTime;
