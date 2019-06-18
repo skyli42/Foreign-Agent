@@ -66,7 +66,7 @@ public class plasmaSpawn : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
-        if (activated && other.gameObject.tag == "Player" && !Bcellcollision)
+        if (!activated && other.gameObject.tag == "Player" && !Bcellcollision)
         {
             //plasmaSpawn.activated = true;//probably temp until T helper are implemented
             gameObject.GetComponent<Renderer>().material = activeMat;
