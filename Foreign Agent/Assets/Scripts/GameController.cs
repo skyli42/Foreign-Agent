@@ -66,8 +66,8 @@ public class GameController : MonoBehaviour
             int sec = Mathf.FloorToInt(timeLeft % 60);
             TimeSpent.text = min.ToString("00") + ":" + sec.ToString();
             endMenu.SetActive(true);
-            Time.timeScale = 0;
             atEnd = true;
+            StartCoroutine(waitTillDissolveDone());
         }
         prevFramenumCaptures = numCaptures;
     }
@@ -104,5 +104,13 @@ public class GameController : MonoBehaviour
             player.gameObject.GetComponent<Renderer>().enabled = true;
         }
         
+    }
+    public IEnumerator waitTillDissolveDone()
+    {
+        bool isTutorial;
+        isTutorial = SceneManager.GetActiveScene().buildIndex == 0;
+        yield return new WaitForSeconds(1.4f);
+        if (!isTutorial)
+            Time.timeScale = 0;
     }
 }
