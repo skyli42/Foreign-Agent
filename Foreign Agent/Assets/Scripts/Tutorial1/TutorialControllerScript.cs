@@ -71,6 +71,7 @@ public class TutorialControllerScript : MonoBehaviour
         {
             CancelControls();
             endMenu.SetActive(false);
+            Time.timeScale = 1.0f;
             endTalk.NewTalk("19", "19", endTalk.txtToParse);
             endPlayed = true;
         }
@@ -79,6 +80,7 @@ public class TutorialControllerScript : MonoBehaviour
     public void activateEndMenu()
     {
         endMenu.SetActive(true);
+        Time.timeScale = 0f;
     }
     
     

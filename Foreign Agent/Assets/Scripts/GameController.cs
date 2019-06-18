@@ -61,7 +61,7 @@ public class GameController : MonoBehaviour
 
         if (numCaptures == numCellsInLevel && !atEnd)
         {
-            TargetDestroyed.text = numCaptures.ToString() +"/" + numCellsInLevel.ToString();
+            TargetDestroyed.text = numCaptures.ToString() +" / " + numCellsInLevel.ToString();
             float timeLeft = Time.timeSinceLevelLoad;
             int min = Mathf.FloorToInt(timeLeft / 60);
             int sec = Mathf.FloorToInt(timeLeft % 60);
