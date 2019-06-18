@@ -56,7 +56,6 @@ public class GameController : MonoBehaviour
         if (prevFramenumCaptures != numCaptures)
         {
             cellsLeftUI.GetComponent<TextMeshProUGUI>().text = "Cells Left: " + (numCellsInLevel - numCaptures).ToString();
-            prevFramenumCaptures = numCaptures;
         }
 
         if (numCaptures == numCellsInLevel && !atEnd)
