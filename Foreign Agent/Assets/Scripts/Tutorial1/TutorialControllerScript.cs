@@ -17,6 +17,7 @@ public class TutorialControllerScript : MonoBehaviour
     public GameObject checkpoint;
     public GameObject macrophage;
     public RPGTalk endTalk;
+    public GameObject endMenu;
     private bool endPlayed = false;
     public void CancelControls()
     {
@@ -69,13 +70,17 @@ public class TutorialControllerScript : MonoBehaviour
         if (!endPlayed && finalCell.GetComponentInChildren<CellCapture>().capped)
         {
             CancelControls();
+            endMenu.SetActive(false);
             endTalk.NewTalk("19", "19", endTalk.txtToParse);
             endPlayed = true;
         }
+        
     }
-    public void NextScene()
+    public void activateEndMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        endMenu.SetActive(true);
     }
+    
+    
 
 }

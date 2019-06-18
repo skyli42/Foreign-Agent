@@ -2,9 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    public static int numCaptures;
+    public int numCellsInLevel;
+    public GameObject cellsLeftUI;
+    private int prevFramenumCaptures;
+
     public GameObject pauseMenu;
     private bool paused;
     public GameObject player;
@@ -13,13 +20,21 @@ public class GameController : MonoBehaviour
     public GameObject deathMenu;
     public GameObject deathAnim;
     private bool alreadyDead = false;
+
+    public Text TargetDestroyed;
+    public Text TimeSpent;
+    private bool atEnd = false;
+    public GameObject endMenu;
     void Start()
     {
         death = false;
+        numCaptures = 0;
+        prevFramenumCaptures = numCaptures;
+        cellsLeftUI.GetComponent<TextMeshProUGUI>().text = "Cells Left: " + (numCellsInLevel - numCaptures).ToString();
     }
     // Update is called once per frame
     void Update()
-    {
+    {   
         if(Input.GetKeyDown(KeyCode.Escape) && !death)
         {
             paused = togglePause();
@@ -37,6 +52,25 @@ public class GameController : MonoBehaviour
         }
         else if (!death && alreadyDead)
             alreadyDead = false;
+
+        if (prevFramenumCaptures != numCaptures)
+        {
+            cellsLeftUI.GetComponent<TextMeshProUGUI>().text = "Cells Left: " + (numCellsInLevel - numCaptures).ToString();
+            prevFramenumCaptures = numCaptures;
+        }
+
+        if (numCaptures == numCellsInLevel && !atEnd)
+        {
+            TargetDestroyed.text = numCaptures.ToString() +"/" + numCellsInLevel.ToString();
+            float timeLeft = Time.timeSinceLevelLoad;
+            int min = Mathf.FloorToInt(timeLeft / 60);
+            int sec = Mathf.FloorToInt(timeLeft % 60);
+            TimeSpent.text = min.ToString("00") + ":" + sec.ToString();
+            endMenu.SetActive(true);
+            Time.timeScale = 0;
+            atEnd = true;
+        }
+        prevFramenumCaptures = numCaptures;
     }
     
     public bool togglePause()
