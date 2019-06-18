@@ -11,6 +11,7 @@ public class plasmaSpawn : MonoBehaviour
     public float radius = 3f;
     public Transform[] spawnPoints;
     public GameObject[] macrophages; //list of macrophages so I can loop through and change fov in antibody control. Not a great way to do it probably
+    public GameObject activationAlert;
 
     // Update is called once per frame
     private void Start()
@@ -19,8 +20,12 @@ public class plasmaSpawn : MonoBehaviour
     }
     void Update()
     {
+        
         if (activated && !alreadySpawned)
         {
+            InvokeRepeating("activateAlert", 0.0f, 1f);
+            Invoke("deactivateAlert", 3.5f);
+           
             for (int i = 0; i < numAntibodies; i++)
             {
                 float angle = i * Mathf.PI * 2 / numAntibodies;
@@ -35,6 +40,18 @@ public class plasmaSpawn : MonoBehaviour
                 alreadySpawned = true;
             }
         }
-
+       
+    }
+    void activateAlert()
+    {
+        if (activationAlert.activeSelf)
+            activationAlert.SetActive(false);
+        else
+            activationAlert.SetActive(true);
+    }
+    void deactivateAlert()
+    {
+        CancelInvoke();
+        activationAlert.SetActive(false);
     }
 }
