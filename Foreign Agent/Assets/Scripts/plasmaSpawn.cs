@@ -13,6 +13,7 @@ public class plasmaSpawn : MonoBehaviour
     public GameObject[] macrophages; //list of macrophages so I can loop through and change fov in antibody control. Not a great way to do it probably
     public GameObject activationAlert;
 
+    public Material activeMat;
     // Update is called once per frame
     private void Start()
     {
@@ -20,9 +21,9 @@ public class plasmaSpawn : MonoBehaviour
     }
     void Update()
     {
-        
         if (activated && !alreadySpawned)
         {
+            gameObject.GetComponent<Renderer>().material = activeMat;
             InvokeRepeating("activateAlert", 0.0f, 1f);
             Invoke("deactivateAlert", 3.5f);
            
