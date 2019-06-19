@@ -1,6 +1,7 @@
 [title=IntroTalkStart]
 For our last basic training session, I will introduce you to <color=green><b>Killer T-cells</b></color>.
-These cells will not pose any danger to you as you roam the level, but as soon as you begin replication the killer T-cells will bind to the human cell to destroy it and any viruses replicating within it before the cell becomes infected. 
+These cells will not pose any danger to you as you roam the level...
+but as soon as you begin replication the killer T-cells will bind to the human cell to destroy it and any viruses replicating within it before the cell becomes infected. 
 Try to replicate within the cell now.
 [title=IntroTalkEnd]
 
