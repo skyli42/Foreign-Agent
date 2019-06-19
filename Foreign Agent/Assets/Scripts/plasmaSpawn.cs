@@ -5,7 +5,7 @@ using UnityEngine;
 public class plasmaSpawn : MonoBehaviour
 {
     public static plasmaSpawn Instance;
-    public bool activated;
+    public bool activated = false;
     private bool alreadySpawned = false;
     public int numAntibodies = 3;
     public GameObject antibody;
@@ -13,23 +13,27 @@ public class plasmaSpawn : MonoBehaviour
     public Transform[] spawnPoints;
     public GameObject[] macrophages; //list of macrophages so I can loop through and change fov in antibody control. Not a great way to do it probably
     public GameObject activationAlert;
-
+    private bool alertPlayed = false;
     public Material activeMat;
-    private bool Bcellcollision = false;
+    [HideInInspector]
+    public bool Bcellcollision = false;
     // Update is called once per frame
     private void Start()
     {
         Instance = this;
         activated = false;
     }
-    void Update()
+    void LateUpdate()
     {
+        if (plasmaSpawn.Instance.activated)
+        {
+            activated = true;
+        }
+        
         if (activated && !alreadySpawned)
         {
-
             gameObject.GetComponent<Renderer>().material = activeMat;
-            InvokeRepeating("activateAlert", 0.0f, 1f);
-            Invoke("deactivateAlert", 5f);
+            
             if (!Bcellcollision)
             {
                 for (int i = 0; i < numAntibodies; i++)
@@ -47,6 +51,12 @@ public class plasmaSpawn : MonoBehaviour
                 }
             }
             alreadySpawned = true;
+            if(plasmaSpawn.Instance.activated && !plasmaSpawn.Instance.alertPlayed)
+            {
+                InvokeRepeating("activateAlert", 0.0f, 1f);
+                Invoke("deactivateAlert", 5f);
+                plasmaSpawn.Instance.alertPlayed = true;
+            }
         }
 
         
