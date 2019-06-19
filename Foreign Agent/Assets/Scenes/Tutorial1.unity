@@ -1777,7 +1777,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 1956664039}
   player: {fileID: 1617931266}
   death: 0
-  deathMenu: {fileID: 0}
+  deathMenu: {fileID: 2005499900}
   deathAnim: {fileID: 8078104501941085803, guid: 5cc07f7b74b2f3940825ed3297f38cbf,
     type: 3}
   TargetDestroyed: {fileID: 1177397060}
@@ -7224,6 +7224,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8663401811153991051, guid: 77934b29a0964e14abb658531c6f0f30,
     type: 3}
   m_PrefabInstance: {fileID: 539396470}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2005499900 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5998719074079411634, guid: 5b89ad06d999c004fa3032d80448046a,
+    type: 3}
+  m_PrefabInstance: {fileID: 327328643}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2027482173
 GameObject:

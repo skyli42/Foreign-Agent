@@ -15,6 +15,8 @@ public class MinimapGenerator : MonoBehaviour
 			GameObject wall = Instantiate(wallParent.transform.GetChild(i).gameObject);
 			wall.layer = 12;
 			wall.GetComponent<Renderer>().material = mat;
+			BoxCollider col = wall.GetComponent<BoxCollider>();
+			col.isTrigger = true;
 			MeshFilter mF = wall.GetComponent<MeshFilter>();
 			Mesh mesh = mF.mesh;
 			LineRenderer lRender = wall.AddComponent<LineRenderer>();
