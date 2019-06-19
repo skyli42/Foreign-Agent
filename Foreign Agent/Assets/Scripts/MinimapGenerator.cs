@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MinimapGenerator : MonoBehaviour
 {
@@ -17,6 +18,10 @@ public class MinimapGenerator : MonoBehaviour
 			wall.GetComponent<Renderer>().material = mat;
 			BoxCollider col = wall.GetComponent<BoxCollider>();
 			col.isTrigger = true;
+            if (wall.GetComponent<NavMeshObstacle>() != null)
+            {
+                wall.GetComponent<NavMeshObstacle>().enabled = false;
+            }
 			MeshFilter mF = wall.GetComponent<MeshFilter>();
 			Mesh mesh = mF.mesh;
 			LineRenderer lRender = wall.AddComponent<LineRenderer>();

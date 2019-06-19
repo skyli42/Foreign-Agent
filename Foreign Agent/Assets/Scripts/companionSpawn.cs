@@ -51,6 +51,7 @@ public class companionSpawn : MonoBehaviour
                 Vector3 spawn = (gameObject.transform.position - Vector3.Normalize(gameObject.transform.position - closestEnemy.transform.position));
                 numCompanions -= 1;
                 agent = Instantiate(companionVirus, spawn, Quaternion.identity).GetComponent<NavMeshAgent>();
+               
                 companionList.Add(agent);
                 enemiesList.Add(closestEnemy);
                 agent.autoBraking = false;
