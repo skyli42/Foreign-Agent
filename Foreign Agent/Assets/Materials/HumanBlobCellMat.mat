@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: testCellMat
+  m_Name: HumanBlobCellMat
   m_Shader: {fileID: 4800000, guid: 36bfc6e9a6a132948bbca259e0c48ab0, type: 3}
   m_ShaderKeywords: _ALPHABLEND_ON
   m_LightmapFlags: 4
