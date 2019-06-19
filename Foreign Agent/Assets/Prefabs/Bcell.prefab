@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 168515627669818143}
   - component: {fileID: 168515627669818138}
   - component: {fileID: 952678264}
+  - component: {fileID: 1933733361}
   m_Layer: 0
   m_Name: Bcell
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 168515627669818129}
   m_LocalRotation: {x: -0.007847579, y: 0.4660734, z: -0.04991736, w: 0.8833019}
   m_LocalPosition: {x: -16.18, y: 1.5, z: 12.8}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.50000024, y: 0.5000001, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -91,6 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebf7a956f153b6943ba1990aceea2839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activated: 0
   numAntibodies: 3
   antibody: {fileID: 3865815191752127855, guid: 33ccb7a99fd439842b8aa118098e3079,
     type: 3}
@@ -101,14 +103,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   macrophages:
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   activationAlert: {fileID: 0}
   activeMat: {fileID: 2100000, guid: e5c4934a720f88e43920272deb651c2a, type: 2}
@@ -126,3 +121,19 @@ CapsuleCollider:
   m_Height: 4.7383013
   m_Direction: 1
   m_Center: {x: -0.07099986, y: -1.1720462, z: -1.0164707}
+--- !u!208 &1933733361
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168515627669818129}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 2.1790001, y: 2.3690002, z: 2.1790001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.071, y: -1.172, z: -0.33900002}
+  m_TimeToStationary: 0.5

@@ -15,7 +15,8 @@ public class plasmaSpawn : MonoBehaviour
     public GameObject activationAlert;
     private bool alertPlayed = false;
     public Material activeMat;
-    private bool Bcellcollision = false;
+    [HideInInspector]
+    public bool Bcellcollision = false;
     // Update is called once per frame
     private void Start()
     {
