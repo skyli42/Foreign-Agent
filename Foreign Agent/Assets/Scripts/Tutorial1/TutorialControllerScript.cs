@@ -20,7 +20,11 @@ public class TutorialControllerScript : MonoBehaviour
     public RPGTalk endTalk;
     public GameObject endMenu;
     private bool endPlayed = false;
-    public GameObject pointer; 
+    public GameObject pointer;
+    public Image UIpointer;
+    public RPGTalk UITalk;
+    public RPGTalk deathTalk;
+    
     public void CancelControls()
     {
         player.GetComponent<PlayerMovement>().enabled = false;
@@ -73,7 +77,7 @@ public class TutorialControllerScript : MonoBehaviour
             player.transform.position = checkpoint.transform.position;
             CancelControls();
             player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-            rpgTalk.NewTalk("deathStart", "deathEnd", rpgTalk.txtToParse);
+            deathTalk.NewTalk("deathStart", "deathEnd", deathTalk.txtToParse);
             player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             GameController.Instance.death = false;
         }
@@ -85,7 +89,15 @@ public class TutorialControllerScript : MonoBehaviour
             endTalk.NewTalk("endLevelStart", "endLevelEnd", endTalk.txtToParse);
             endPlayed = true;
         }
-        
+        if (UIpointer.gameObject.activeSelf)
+        {
+            Vector3 pos = UIpointer.transform.position;
+            Debug.Log(pos);
+            //calculate what the new Y position will be
+            float newY = Mathf.Sin(Time.time * 4) + pos.y;
+            //set the object's Y to the new calculated Y
+            UIpointer.transform.position = new Vector3(pos.x, newY, pos.z);
+        }
     }
     public void activateEndMenu()
     {
@@ -114,6 +126,21 @@ public class TutorialControllerScript : MonoBehaviour
     {
         deactivatepointer(pointer);
     }
+    public void UIemphasis()
+    {
+        UIpointer.gameObject.SetActive(true);
+    }
+    public void HideUIemphasis()
+    {
+        UIpointer.gameObject.SetActive(false);
+    }
+    public void playUITalk()
+    {
+        CancelControls();
+        UIemphasis();
+        UITalk.NewTalk("UIemphasisStart", "UIemphasisEnd", UITalk.txtToParse);
+    }
+    
 
 
 }

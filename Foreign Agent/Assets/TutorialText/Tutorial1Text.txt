@@ -10,15 +10,17 @@ Press and hold shift while moving to sprint! The meter displays your remaining e
 
 [title=cellInfectionStart]
 This is a human cell. Your goal is to infect and replicate within all cells in the area. 
-The number of cells left to infect is found in the upper left corner.
 To start an infection, simply walk inside the cell.
 [title=cellInfectionEnd]
 
 [title=infectionSuccessStart]
 You successfully infected this cell. One of the new viruses has decided to join you as a companion!
 Press <b>space</b> if you are in danger to send out a companion to stun the defenses!
-You can see the number of companions you have in the upper left corner.
 [title=infectionSuccessEnd]
+
+[title=UIemphasisStart]
+You can see the number of companions you have as well as the number of cells left to infect in the upper left corner.
+[title=UIemphasisEnd]
 
 [title=macrophageInstructionStart]
 This is a <color=green><b>macrophage</b></color>. Macrophages will engulf any virus that they come close to, so be careful!
