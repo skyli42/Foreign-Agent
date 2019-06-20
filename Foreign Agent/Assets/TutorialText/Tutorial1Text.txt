@@ -1,11 +1,11 @@
 [title=IntroTalkStart]
 Hello! Welcome to the agency.
 Since you're new here I'll walk you through our basic protocol.
-Move around using WASD or the arrow keys
+Move around using WASD
 [title=IntroTalkEnd]
 
 [title=dashInstructionStart]
-Press shift to perform a dash! The meter displays your remaining energy. 
+Press and hold shift while moving to sprint! The meter displays your remaining energy. 
 [title=dashInstructionEnd]
 
 [title=cellInfectionStart]
@@ -16,14 +16,12 @@ To start an infection, simply walk inside the cell.
 
 [title=infectionSuccessStart]
 You successfully infected this cell. One of the new viruses has decided to join you as a companion!
-This companion is willing to sacrifice itself for you at any point. Press space if you are in danger to send out a companion.
+Press <b>space</b> if you are in danger to send out a companion to stun the defenses!
 You can see the number of companions you have in the upper left corner.
 [title=infectionSuccessEnd]
 
 [title=macrophageInstructionStart]
-This is a <color=green><b>macrophage</b></color>. Don't get spotted by it, or it'll chase you down until it catches you!
-If you are spotted, you can try and sprint away, or send out one of your virus companions to distract it.
-Macrophages will engulf any virus that they come close to, so be careful!
+This is a <color=green><b>macrophage</b></color>. Macrophages will engulf any virus that they come close to, so be careful!
 [title=macrophageInstructionEnd]
 
 [title=deathStart]

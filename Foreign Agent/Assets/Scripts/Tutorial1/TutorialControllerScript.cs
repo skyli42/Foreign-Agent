@@ -10,6 +10,7 @@ public class TutorialControllerScript : MonoBehaviour
     public GameObject wall;
     public GameObject player;
     public Image wasd;
+    public Image shift;
     public GameObject tutCell;
     public RPGTalk rpgTalk;
     private bool companionPlayed = false;
@@ -19,6 +20,7 @@ public class TutorialControllerScript : MonoBehaviour
     public RPGTalk endTalk;
     public GameObject endMenu;
     private bool endPlayed = false;
+    public GameObject pointer; 
     public void CancelControls()
     {
         player.GetComponent<PlayerMovement>().enabled = false;
@@ -40,6 +42,14 @@ public class TutorialControllerScript : MonoBehaviour
     public void DisplayWasd()
     {
         wasd.gameObject.SetActive(true);
+    }
+    public void DisplayShift()
+    {
+        shift.gameObject.SetActive(true);
+    }
+    public void HideShift()
+    {
+        shift.gameObject.SetActive(false);
     }
     public void HideWasd()
     {
@@ -82,7 +92,28 @@ public class TutorialControllerScript : MonoBehaviour
         endMenu.SetActive(true);
         Time.timeScale = 0f;
     }
-    
-    
+    public void flashPointer()
+    {
+        if (pointer.activeSelf)
+            pointer.SetActive(false);
+        else
+            pointer.SetActive(true);
+    }
+    public void displayPointer1()
+    {
+        InvokeRepeating("flashPointer", 0.0f, 1f);
+    }
+    public void deactivatepointer(GameObject pointer)
+    {
+        CancelInvoke();
+        pointer.SetActive(false);
+        pointer.transform.position = pointer.transform.position +  new Vector3 (0, 0, 8);
+
+    }
+    public void hidePointer1()
+    {
+        deactivatepointer(pointer);
+    }
+
 
 }
