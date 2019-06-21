@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-
+		Debug.Log(dashStart);
         if (slider.value == 1)
         {
             sliderTimer += Time.deltaTime;
