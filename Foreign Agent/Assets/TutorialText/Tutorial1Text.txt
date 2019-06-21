@@ -5,7 +5,7 @@ Move around using the WASD keys.
 [title=IntroTalkEnd]
 
 [title=dashInstructionStart]
-Press and hold shift while moving to sprint! The meter displays your remaining energy. 
+Press and hold <b>SHIFT</b> while moving to sprint! The meter displays your remaining energy. 
 [title=dashInstructionEnd]
 
 [title=cellInfectionStart]
@@ -15,7 +15,7 @@ To start an infection, simply walk inside the cell.
 
 [title=infectionSuccessStart]
 You successfully infected this cell. One of the new viruses has decided to join you as a companion!
-Press <b>space</b> if you are in danger to send out a companion to stun the defenses!
+Press <b>SPACE</b> if you are in danger to send out a companion to stun the defenses!
 [title=infectionSuccessEnd]
 
 [title=UIemphasisStart]
@@ -23,7 +23,7 @@ You can see the number of companions you have as well as the number of cells lef
 [title=UIemphasisEnd]
 
 [title=macrophageInstructionStart]
-This is a <color=green><b>macrophage</b></color>. Macrophages will engulf any virus that they come close to, so be careful!
+This is a <color=green><b>MACROPHAGE</b></color>. Macrophages will engulf any virus that they come close to, so be careful!
 [title=macrophageInstructionEnd]
 
 [title=deathStart]
