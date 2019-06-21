@@ -1,7 +1,7 @@
 [title=IntroTalkStart]
 Hello! Welcome to the agency.
 Since you're new here I'll walk you through our basic protocol.
-Move around using WASD
+Move around using the WASD keys.
 [title=IntroTalkEnd]
 
 [title=dashInstructionStart]

@@ -113,7 +113,7 @@ public class TutorialControllerScript : MonoBehaviour
     }
     public void displayPointer1()
     {
-        InvokeRepeating("flashPointer", 0.0f, 1f);
+        InvokeRepeating("flashPointer", 0.0f, 0.75f);
     }
     public void deactivatepointer(GameObject pointer)
     {
