@@ -72,19 +72,25 @@ public class PlayerMovement : MonoBehaviour
                 slider.gameObject.SetActive(false);
             }
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+        if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0))
         {
             slider.gameObject.SetActive(true);
             sliderTimer = 0;
             dashStart = true;
-           
         }
-        else if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
+        //if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift)) && (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0))
+        //{
+        //    slider.gameObject.SetActive(true);
+        //    sliderTimer = 0;
+        //    dashStart = true;
+
+        //}
+        else if ((Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift)) || (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0))
         {
             moveSpeed = originalSpeed;
             dashStart = false;
         }
-        else if (dash <= 0)
+        if (dash <= 0)
         {
             dashStart = false;
         }

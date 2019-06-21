@@ -92,7 +92,7 @@ public class TutorialControllerScript : MonoBehaviour
         if (UIpointer.gameObject.activeSelf)
         {
             Vector3 pos = UIpointer.transform.position;
-            Debug.Log(pos);
+         
             //calculate what the new Y position will be
             float newY = Mathf.Sin(Time.time * 4) + pos.y;
             //set the object's Y to the new calculated Y
