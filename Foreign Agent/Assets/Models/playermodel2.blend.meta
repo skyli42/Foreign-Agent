@@ -21,7 +21,7 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: "Avatar Rig Configuration mis-match. Bone length in configuration
       does not match position in animation file:\n\t'LowerLeg_R' : position error
-      = 3.538195 mm\n"
+      = 3.541239 mm\n"
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -268,18 +268,18 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: Thigh_L
       parentName: Hip_L
-      position: {x: -0.20295945, y: 0.000000013969839, z: -0.00000000372529}
-      rotation: {x: -0.20577252, y: -0.54797655, z: -0.020941027, w: 0.81051886}
+      position: {x: -0.20295945, y: 0.000000014901161, z: -0.000000015366822}
+      rotation: {x: -0.2011221, y: -0.5993088, z: -0.057439443, w: 0.77270925}
       scale: {x: 1.0000002, y: 1, z: 1.0000001}
     - name: LowerLeg_L
       parentName: Thigh_L
-      position: {x: -0.3060372, y: 0.00000081956387, z: -0.00000041723246}
-      rotation: {x: -0.46239263, y: 0.06841499, z: -0.16958186, w: 0.86761427}
+      position: {x: -0.30603725, y: 0.00000081956387, z: -0.0000005066394}
+      rotation: {x: -0.45128667, y: 0.10601814, z: -0.09062534, w: 0.88141227}
       scale: {x: 0.9999999, y: 0.9999999, z: 0.9999999}
     - name: Foot_L
       parentName: LowerLeg_L
-      position: {x: -0.32138035, y: 0.000000730157, z: 0.0000006854535}
-      rotation: {x: 0.76569825, y: -0.01607398, z: 0.64056915, w: 0.05584905}
+      position: {x: -0.32138065, y: 0.0000011324884, z: 0.0000005923212}
+      rotation: {x: 0.69813436, y: -0.034997556, z: 0.7132435, w: 0.051648013}
       scale: {x: 1.0000002, y: 1, z: 1}
     - name: Hip_R
       parentName: Armature_001
@@ -294,12 +294,12 @@ ModelImporter:
     - name: LowerLeg_R
       parentName: Thigh_R
       position: {x: -0.36000106, y: -0.009996362, z: -0.0099999895}
-      rotation: {x: 0.507322, y: 0.07072764, z: 0.123239145, w: 0.8499613}
+      rotation: {x: 0.5095143, y: 0.001422733, z: 0.10526, w: 0.8539986}
       scale: {x: 1.0000001, y: 1.0000001, z: 1}
     - name: Foot_R
       parentName: LowerLeg_R
-      position: {x: -0.3540496, y: 0.000001233071, z: 0.0000010356307}
-      rotation: {x: 0.67948675, y: 0.018558497, z: 0.73344976, w: -0.0022065502}
+      position: {x: -0.35404897, y: 0.0000017620621, z: 0.0000025257468}
+      rotation: {x: 0.6623041, y: 0.019879991, z: 0.7489617, w: -0.0038136442}
       scale: {x: 1, y: 0.99999994, z: 1.0000001}
     - name: Spine
       parentName: Armature_001
@@ -325,7 +325,7 @@ ModelImporter:
     - name: Arm_UL
       parentName: Shoulder_L
       position: {x: -0.5416708, y: 0.000002682209, z: 0.0000015646222}
-      rotation: {x: 0.10360731, y: 0.17221224, z: -0.065569974, w: 0.9773991}
+      rotation: {x: 0.10360732, y: 0.17221224, z: -0.06556998, w: 0.9773991}
       scale: {x: 0.9999999, y: 1, z: 0.99999994}
     - name: Arm_BL
       parentName: Arm_UL
