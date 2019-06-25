@@ -1826,6 +1826,18 @@ MonoBehaviour:
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &887180449 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2745945667681997887, guid: 0b0bda85b1cac8e42aab9b8b63cc967b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2745945668604694884}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &914647691 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7357746626962212072, guid: 853533ce91ac24e44975e5d112cdd36a,
@@ -3935,6 +3947,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2745945666996616551, guid: 0b0bda85b1cac8e42aab9b8b63cc967b,
+        type: 3}
+      propertyPath: maxDash
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745945666996616551, guid: 0b0bda85b1cac8e42aab9b8b63cc967b,
+        type: 3}
+      propertyPath: dashSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745945666996616551, guid: 0b0bda85b1cac8e42aab9b8b63cc967b,
+        type: 3}
+      propertyPath: slider
+      value: 
+      objectReference: {fileID: 887180449}
     - target: {fileID: 2745945666996616557, guid: 0b0bda85b1cac8e42aab9b8b63cc967b,
         type: 3}
       propertyPath: companionUI
