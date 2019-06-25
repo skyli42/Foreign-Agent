@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
 		bool isWalking = hasHorizontalInput || hasVerticalInput;
 	
 		m_Animator.SetBool("IsWalking", isWalking);
-		m_Animator.SetBool("IsRunning", dashStart);
+		
 		Vector3 desiredForward = Vector3.RotateTowards(transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);
 		m_Rotation = Quaternion.LookRotation(desiredForward);
 	}
@@ -110,7 +110,8 @@ public class PlayerMovement : MonoBehaviour
 				}
 			}
 		}
-		float complete = 1 - (maxDash - dash) / maxDash;
+        m_Animator.SetBool("IsRunning", dashStart);
+        float complete = 1 - (maxDash - dash) / maxDash;
 		slider.value = complete;
 	}
 }
