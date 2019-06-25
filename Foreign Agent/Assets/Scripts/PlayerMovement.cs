@@ -6,12 +6,23 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
-	public float turnSpeed = 20f;
-	public float moveSpeed = 0.05f;
-	private float originalSpeed;
-	public float maxDash = 2f;
-	private float dash = 2f;
-	public float dashSpeed;
+
+    public float turnSpeed = 20f;
+    public float moveSpeed = 0.05f;
+    Rigidbody m_Rigidbody;
+    Vector3 m_Movement;
+    Quaternion m_Rotation = Quaternion.identity;
+    private float originalSpeed;
+    public float maxDash = 2f;
+    private float dash = 2f;
+    public float dashSpeed;
+    public Slider slider;
+    Quaternion fixedRotation;
+    [HideInInspector]
+    public bool dashStart = false;
+    private float sliderTimer = 0;
+    public float regenRate = 0.5f;
+    Animator m_Animator;
 
 	public Slider slider;
 	private bool dashStart = false;
@@ -19,13 +30,11 @@ public class PlayerMovement : MonoBehaviour
 	public float regenRate = 0.5f;
 	Quaternion fixedRotation;
 
-
 	Animator m_Animator;
 	Rigidbody m_Rigidbody;
 	AudioSource m_AudioSource;
 	Vector3 m_Movement;
 	Quaternion m_Rotation = Quaternion.identity;
-
 
 
 	void Start()
@@ -51,7 +60,8 @@ public class PlayerMovement : MonoBehaviour
 		bool isWalking = hasHorizontalInput || hasVerticalInput;
 	
 		m_Animator.SetBool("IsWalking", isWalking);
-		
+		m_Animator.SetBool("IsRunning", dashStart);
+
 		Vector3 desiredForward = Vector3.RotateTowards(transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);
 		m_Rotation = Quaternion.LookRotation(desiredForward);
 	}
