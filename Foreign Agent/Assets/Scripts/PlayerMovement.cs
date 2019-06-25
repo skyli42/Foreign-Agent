@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
 
 	void OnAnimatorMove()
 	{
-		Vector3 delPos = m_Movement * m_Animator.deltaPosition.magnitude * moveSpeed;
+		Vector3 delPos = m_Movement * (m_Animator.deltaPosition.magnitude + moveSpeed);
 		m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * m_Animator.deltaPosition.magnitude);
 		m_Rigidbody.MoveRotation(m_Rotation);
 	}
