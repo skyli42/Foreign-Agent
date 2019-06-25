@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
 	public float maxDash = 2f;
 	private float dash = 2f;
 	public float dashSpeed;
-
 	public Slider slider;
 	private bool dashStart = false;
 	private float sliderTimer = 0;
@@ -25,8 +24,6 @@ public class PlayerMovement : MonoBehaviour
 	AudioSource m_AudioSource;
 	Vector3 m_Movement;
 	Quaternion m_Rotation = Quaternion.identity;
-
-
 
 	void Start()
 	{
@@ -51,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
 		bool isWalking = hasHorizontalInput || hasVerticalInput;
 	
 		m_Animator.SetBool("IsWalking", isWalking);
-		
+		m_Animator.SetBool("IsWalking", dashStart);
 		Vector3 desiredForward = Vector3.RotateTowards(transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);
 		m_Rotation = Quaternion.LookRotation(desiredForward);
 	}

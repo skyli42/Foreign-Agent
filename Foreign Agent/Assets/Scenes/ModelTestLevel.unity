@@ -291,6 +291,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 217046134}
   m_PrefabAsset: {fileID: 0}
+
 --- !u!1 &252030478
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,7 +664,6 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
@@ -2114,4 +2114,5 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+
   m_SourcePrefab: {fileID: 100100000, guid: 4e63ad224dc58d147804fe58ae6f54a4, type: 3}
