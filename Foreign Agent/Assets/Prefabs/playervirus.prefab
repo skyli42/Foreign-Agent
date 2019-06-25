@@ -181,13 +181,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2745945666996616550}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a32d66f9e887af4490bdc93f7413abb, type: 3}
+  m_Script: {fileID: 11500000, guid: 56b2cfb9174a093419d0f8db96a60eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   turnSpeed: 20
   moveSpeed: 0.05
-  maxDash: 1
-  dashSpeed: 0.1
+  maxDash: 2
+  dashSpeed: 0
   slider: {fileID: 2745945667681997887}
   regenRate: 0.5
 --- !u!54 &2745945666996616556
