@@ -16,7 +16,7 @@ public class antibodyPatrol : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        player = GameObject.Find("playervirus");
+        player = GameObject.FindGameObjectsWithTag("Player")[0];
         // Disabling auto-braking allows for continuous movement
         // between points (ie, the agent doesn't slow down as it
         // approaches a destination point).
