@@ -15,7 +15,8 @@ public class PlayerMovement : MonoBehaviour
     public float dashSpeed;
     public Slider slider;
     Quaternion fixedRotation;
-    private bool dashStart = false;
+    [HideInInspector]
+    public bool dashStart = false;
     private float sliderTimer = 0;
     public float regenRate = 0.5f;
     Animator m_Animator;

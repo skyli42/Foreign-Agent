@@ -33,10 +33,12 @@ public class TutorialControllerScript : MonoBehaviour
     }
     public void CancelControls()
     {
+        player.GetComponent<PlayerMovement>().dashStart = false;
         player.GetComponent<PlayerMovement>().enabled = false;
         player.GetComponent<companionSpawn>().enabled = false;
         m_Animator.SetBool("IsWalking", false);
         m_Animator.SetBool("IsRunning", false);
+        
     }
 
     //give back the controls to player
