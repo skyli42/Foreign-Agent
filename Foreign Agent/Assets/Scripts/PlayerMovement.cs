@@ -18,11 +18,13 @@ public class PlayerMovement : MonoBehaviour
     private bool dashStart = false;
     private float sliderTimer = 0;
     public float regenRate = 0.5f;
+    Animator m_Animator;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        m_Animator = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
         dash = maxDash;
         originalSpeed = moveSpeed;
@@ -40,12 +42,16 @@ public class PlayerMovement : MonoBehaviour
 
         m_Movement.Set(horizontal, 0f, vertical);
         m_Movement.Normalize();
-
+        bool hasHorizontalInput = !Mathf.Approximately(horizontal, 0f);
+        bool hasVerticalInput = !Mathf.Approximately(vertical, 0f);
+        bool isWalking = hasHorizontalInput || hasVerticalInput;
+        m_Animator.SetBool("IsWalking", isWalking);
+        m_Animator.SetBool("IsRunning", dashStart);
         Vector3 desiredForward = Vector3.RotateTowards(transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);
         m_Rotation = Quaternion.LookRotation(desiredForward);
 
-        m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * moveSpeed);
-        m_Rigidbody.MoveRotation(m_Rotation);
+        //m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * moveSpeed);
+        // m_Rigidbody.MoveRotation(m_Rotation);
         m_Rigidbody.velocity = Vector3.zero;
         m_Rigidbody.angularVelocity = Vector3.zero;
 
@@ -60,6 +66,11 @@ public class PlayerMovement : MonoBehaviour
         //dash = Mathf.Clamp(dash, 0, maxDash);
         //slider.value = (maxDash - dash) /maxDash;
 
+    }
+    void OnAnimatorMove()
+    {
+        m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * moveSpeed * m_Animator.deltaPosition.magnitude);
+        m_Rigidbody.MoveRotation(m_Rotation);
     }
     private void Update()
     {
