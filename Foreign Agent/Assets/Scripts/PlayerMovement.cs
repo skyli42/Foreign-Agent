@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
 	private float dash = 2f;
 	public float dashSpeed;
 	public Slider slider;
-	private bool dashStart = false;
+	public bool dashStart = false;
 	private float sliderTimer = 0;
 	public float regenRate = 0.5f;
 	Quaternion fixedRotation;
@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
 		bool isWalking = hasHorizontalInput || hasVerticalInput;
 	
 		m_Animator.SetBool("IsWalking", isWalking);
-		m_Animator.SetBool("IsWalking", dashStart);
+		m_Animator.SetBool("IsRunning", dashStart);
 		Vector3 desiredForward = Vector3.RotateTowards(transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);
 		m_Rotation = Quaternion.LookRotation(desiredForward);
 	}
