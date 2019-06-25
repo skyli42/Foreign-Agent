@@ -308,6 +308,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerVirusModel
       objectReference: {fileID: 0}
+    - target: {fileID: 321542107617919660, guid: 4e63ad224dc58d147804fe58ae6f54a4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3615547240043737279, guid: 4e63ad224dc58d147804fe58ae6f54a4,
         type: 3}
       propertyPath: m_LocalPosition.x
