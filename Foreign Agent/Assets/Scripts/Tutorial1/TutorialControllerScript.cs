@@ -24,11 +24,20 @@ public class TutorialControllerScript : MonoBehaviour
     public Image UIpointer;
     public RPGTalk UITalk;
     public RPGTalk deathTalk;
-    
+    private Animator m_Animator;
+
+    void Start()
+    {
+        m_Animator = player.GetComponent<Animator>();
+       
+    }
     public void CancelControls()
     {
+        player.GetComponent<PlayerMovement>().dashStart = false;
         player.GetComponent<PlayerMovement>().enabled = false;
         player.GetComponent<companionSpawn>().enabled = false;
+		player.GetComponent<Animator>().SetBool("IsWalking", false);
+		player.GetComponent<Animator>().SetBool("IsRunning", false);	
     }
 
     //give back the controls to player
