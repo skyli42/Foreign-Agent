@@ -17,6 +17,7 @@ public class macrophageCollision : MonoBehaviour
         parent = stage.GetComponent<SimpleSonarShader_Parent>();
 
     }
+
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "companion")
