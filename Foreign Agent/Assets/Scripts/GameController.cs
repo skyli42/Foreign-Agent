@@ -18,6 +18,8 @@ public class GameController : MonoBehaviour
     public GameObject player;
 
     public bool death;
+    public Text TargetDestroyedDeath;
+    public Text TimeSpentDeath;
     public GameObject deathMenu;
     public GameObject deathAnim;
     private bool alreadyDead = false;
@@ -26,6 +28,11 @@ public class GameController : MonoBehaviour
     public Text TimeSpent;
     private bool atEnd = false;
     public GameObject endMenu;
+    private UnityEngine.EventSystems.EventSystem myEventSystem;
+
+    public GameObject restartLevelDeathButton;
+    public GameObject nextLevelEndButton;
+    public GameObject returnToGameButton;
 
     public bool isTutorial = false;
     void Start()
@@ -35,6 +42,8 @@ public class GameController : MonoBehaviour
         numCaptures = 0;
         prevFramenumCaptures = numCaptures;
         cellsLeftUI.GetComponent<TextMeshProUGUI>().text = "Cells Left: " + (numCellsInLevel - numCaptures).ToString();
+        myEventSystem = GameObject.Find("EventSystem").GetComponent<UnityEngine.EventSystems.EventSystem>();
+
     }
     // Update is called once per frame
     void Update()
@@ -43,13 +52,18 @@ public class GameController : MonoBehaviour
         {
             paused = togglePause();
             if (paused)
+            {
+                myEventSystem.SetSelectedGameObject(returnToGameButton);
+                returnToGameButton.GetComponent<Button>().OnSelect(null);
                 pauseMenu.GetComponent<Pause>().Display();
+            }
             else
                 pauseMenu.GetComponent<Pause>().ReturnToGame();
         }
         if (death && !alreadyDead)
         {
-            
+            myEventSystem.SetSelectedGameObject(restartLevelDeathButton);
+            restartLevelDeathButton.GetComponent<Button>().OnSelect(null);
             alreadyDead = true;
             StartCoroutine(waitTillDeathDone());
             
@@ -68,9 +82,11 @@ public class GameController : MonoBehaviour
             float timeLeft = Time.timeSinceLevelLoad;
             int min = Mathf.FloorToInt(timeLeft / 60);
             int sec = Mathf.FloorToInt(timeLeft % 60);
-            TimeSpent.text = min.ToString("00") + ":" + sec.ToString();
+            TimeSpent.text = min.ToString("00") + ":" + sec.ToString("00");
             endMenu.SetActive(true);
             atEnd = true;
+            myEventSystem.SetSelectedGameObject(nextLevelEndButton);
+            nextLevelEndButton.GetComponent<Button>().OnSelect(null);
             StartCoroutine(waitTillDissolveDone());
         }
         prevFramenumCaptures = numCaptures;
@@ -99,6 +115,11 @@ public class GameController : MonoBehaviour
         if (!isTutorial)
         {
             yield return new WaitForSeconds(1.2f);
+            TargetDestroyedDeath.text = numCaptures.ToString() + " / " + numCellsInLevel.ToString();
+            float timeLeft = Time.timeSinceLevelLoad;
+            int min = Mathf.FloorToInt(timeLeft / 60);
+            int sec = Mathf.FloorToInt(timeLeft % 60);
+            TimeSpentDeath.text = min.ToString("00") + ":" + sec.ToString("00");
             deathMenu.SetActive(true);
         }
         else
