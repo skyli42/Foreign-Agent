@@ -341,9 +341,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnSpeed: 20
-  moveSpeed: 2
+  moveSpeed: 1.5
   maxDash: 2
-  dashSpeed: 3
+  dashSpeed: 2.5
   slider: {fileID: 8599541857295676359}
   dashStart: 0
   regenRate: 0.5
