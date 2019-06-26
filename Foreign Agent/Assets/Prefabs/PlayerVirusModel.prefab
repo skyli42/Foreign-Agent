@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 828513726}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 14.6, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
   m_Father: {fileID: 3615547240043737279}
   m_RootOrder: 3
@@ -117,7 +117,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700610287}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 106, z: 0}
+  m_LocalPosition: {x: 0, y: 589, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3615547240043737279}
@@ -133,7 +133,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0.4392157}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -149,8 +149,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 20
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -251,8 +251,8 @@ GameObject:
   - component: {fileID: 6676308059094506949}
   - component: {fileID: 8599541857225305710}
   - component: {fileID: 8599541857225305711}
-  - component: {fileID: 7418378960843217616}
-  - component: {fileID: 813120674}
+  - component: {fileID: 825963088}
+  - component: {fileID: 825963089}
   m_Layer: 8
   m_Name: PlayerVirusModel
   m_TagString: Player
@@ -269,7 +269,7 @@ Transform:
   m_GameObject: {fileID: 321542107617919660}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.6, y: 1.16, z: -29.3}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_Children:
   - {fileID: 3244927141993379728}
   - {fileID: 7432671142445958863}
@@ -327,25 +327,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 20, y: 20, z: 10}
   m_Center: {x: 0, y: 10, z: 0}
---- !u!114 &7418378960843217616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 321542107617919660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a32d66f9e887af4490bdc93f7413abb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turnSpeed: 20
-  moveSpeed: 1.5
-  maxDash: 2
-  dashSpeed: 2
-  slider: {fileID: 8599541857295676359}
-  regenRate: 0.5
---- !u!114 &813120674
+--- !u!114 &825963088
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -364,6 +346,25 @@ MonoBehaviour:
     m_Bits: 1024
   numCompanions: 0
   companionUI: {fileID: 0}
+--- !u!114 &825963089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321542107617919660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a32d66f9e887af4490bdc93f7413abb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnSpeed: 20
+  moveSpeed: 1.5
+  maxDash: 2
+  dashSpeed: 2.5
+  slider: {fileID: 8599541857295676359}
+  dashStart: 0
+  regenRate: 0.5
 --- !u!1 &658515340302262953
 GameObject:
   m_ObjectHideFlags: 0
