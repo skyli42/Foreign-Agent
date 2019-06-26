@@ -29,15 +29,16 @@ public class TutorialControllerScript : MonoBehaviour
     void Start()
     {
         m_Animator = player.GetComponent<Animator>();
-       
+
     }
     public void CancelControls()
     {
         player.GetComponent<PlayerMovement>().dashStart = false;
         player.GetComponent<PlayerMovement>().enabled = false;
         player.GetComponent<companionSpawn>().enabled = false;
-		player.GetComponent<Animator>().SetBool("IsWalking", false);
-		player.GetComponent<Animator>().SetBool("IsRunning", false);	
+        m_Animator.SetBool("IsWalking", false);
+        m_Animator.SetBool("IsRunning", false);
+
     }
 
     //give back the controls to player
@@ -80,7 +81,7 @@ public class TutorialControllerScript : MonoBehaviour
         }
         if (GameController.Instance.death)
         {
-            
+
             macrophage.GetComponent<FieldOfView>().detected = false;
             macrophage.GetComponent<Patrol>().chaseStart = false;
             player.transform.position = checkpoint.transform.position;
@@ -101,7 +102,7 @@ public class TutorialControllerScript : MonoBehaviour
         if (UIpointer.gameObject.activeSelf)
         {
             Vector3 pos = UIpointer.transform.position;
-         
+
             //calculate what the new Y position will be
             float newY = Mathf.Sin(Time.time * 4) + pos.y;
             //set the object's Y to the new calculated Y
@@ -128,7 +129,7 @@ public class TutorialControllerScript : MonoBehaviour
     {
         CancelInvoke();
         pointer.SetActive(false);
-        pointer.transform.position = pointer.transform.position +  new Vector3 (0, 0, 8);
+        pointer.transform.position = pointer.transform.position + new Vector3(0, 0, 8);
 
     }
     public void hidePointer1()
@@ -149,7 +150,8 @@ public class TutorialControllerScript : MonoBehaviour
         UIemphasis();
         UITalk.NewTalk("UIemphasisStart", "UIemphasisEnd", UITalk.txtToParse);
     }
-    
+
 
 
 }
+
