@@ -610,6 +610,14 @@ PrefabInstance:
       propertyPath: companionUI
       value: 
       objectReference: {fileID: 1723897419}
+    - target: {fileID: 927351580, guid: 1a5b6de503af8b447a7b34338add2645, type: 3}
+      propertyPath: moveSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 927351580, guid: 1a5b6de503af8b447a7b34338add2645, type: 3}
+      propertyPath: dashSpeed
+      value: 500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a5b6de503af8b447a7b34338add2645, type: 3}
 --- !u!1 &154803986 stripped
