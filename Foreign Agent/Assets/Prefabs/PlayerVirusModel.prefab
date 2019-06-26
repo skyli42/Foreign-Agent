@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 8599541857225305711}
   - component: {fileID: 4617091418556997901}
   - component: {fileID: 825963085}
+  - component: {fileID: 825963084}
   m_Layer: 8
   m_Name: PlayerVirusModel
   m_TagString: Player
@@ -365,6 +366,14 @@ MonoBehaviour:
     m_Bits: 1024
   numCompanions: 0
   companionUI: {fileID: 0}
+--- !u!81 &825963084
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321542107617919660}
+  m_Enabled: 1
 --- !u!1 &658515340302262953
 GameObject:
   m_ObjectHideFlags: 0
