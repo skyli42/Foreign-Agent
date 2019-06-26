@@ -251,8 +251,9 @@ GameObject:
   - component: {fileID: 6676308059094506949}
   - component: {fileID: 8599541857225305710}
   - component: {fileID: 8599541857225305711}
-  - component: {fileID: 825963088}
-  - component: {fileID: 825963089}
+  - component: {fileID: 4617091418556997901}
+  - component: {fileID: 825963084}
+  - component: {fileID: 825963085}
   m_Layer: 8
   m_Name: PlayerVirusModel
   m_TagString: Player
@@ -327,7 +328,45 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 20, y: 20, z: 10}
   m_Center: {x: 0, y: 10, z: 0}
---- !u!114 &825963088
+--- !u!114 &4617091418556997901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321542107617919660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b2cfb9174a093419d0f8db96a60eda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnSpeed: 20
+  moveSpeed: 2
+  maxDash: 2
+  dashSpeed: 3
+  slider: {fileID: 8599541857295676359}
+  dashStart: 0
+  regenRate: 0.5
+--- !u!114 &825963084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321542107617919660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b2cfb9174a093419d0f8db96a60eda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnSpeed: 20
+  moveSpeed: 2
+  maxDash: 3
+  dashSpeed: 2
+  slider: {fileID: 8599541857295676359}
+  dashStart: 0
+  regenRate: 0.5
+--- !u!114 &825963085
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -346,25 +385,6 @@ MonoBehaviour:
     m_Bits: 1024
   numCompanions: 0
   companionUI: {fileID: 0}
---- !u!114 &825963089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 321542107617919660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a32d66f9e887af4490bdc93f7413abb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turnSpeed: 20
-  moveSpeed: 1.5
-  maxDash: 2
-  dashSpeed: 2.5
-  slider: {fileID: 8599541857295676359}
-  dashStart: 0
-  regenRate: 0.5
 --- !u!1 &658515340302262953
 GameObject:
   m_ObjectHideFlags: 0
