@@ -15,12 +15,20 @@ public class TutorialController3 : MonoBehaviour
     public Transform[] largerPatrol;
     public RPGTalk endTalk;
     public GameObject endMenu;
+    private Animator m_Animator;
     private bool endPlayed = false;
 
+    void Start()
+    {
+        m_Animator = player.GetComponent<Animator>();
+    }
     public void CancelControls()
     {
+        player.GetComponent<PlayerMovement>().dashStart = false;
         player.GetComponent<PlayerMovement>().enabled = false;
         player.GetComponent<companionSpawn>().enabled = false;
+        m_Animator.SetBool("IsWalking", false);
+        m_Animator.SetBool("IsRunning", false);
         player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
 

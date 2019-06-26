@@ -95,7 +95,7 @@ public class GameController : MonoBehaviour
         
         Instantiate(deathAnim, player.GetComponent<Collider>().bounds.center, Quaternion.identity);
         player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-        player.gameObject.GetComponent<Renderer>().enabled = false;
+        player.gameObject.GetComponentInChildren<Renderer>().enabled = false;
         if (!isTutorial)
         {
             yield return new WaitForSeconds(1.2f);
@@ -104,7 +104,7 @@ public class GameController : MonoBehaviour
         else
         {
             player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-            player.gameObject.GetComponent<Renderer>().enabled = true;
+            player.gameObject.GetComponentInChildren<Renderer>().enabled = true;
         }
         
     }

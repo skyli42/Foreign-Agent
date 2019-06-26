@@ -17,8 +17,8 @@ public class MinimapGenerator : MonoBehaviour
             wall.transform.parent = wallParent.transform.GetChild(i);
 			wall.layer = 12;
 			wall.GetComponent<Renderer>().material = mat;
-			BoxCollider col = wall.GetComponent<BoxCollider>();
-			col.isTrigger = true;
+			//BoxCollider col = wall.GetComponent<BoxCollider>();
+			//col.isTrigger = true;
             if (wall.GetComponent<NavMeshObstacle>() != null)
             {
                 wall.GetComponent<NavMeshObstacle>().enabled = false;

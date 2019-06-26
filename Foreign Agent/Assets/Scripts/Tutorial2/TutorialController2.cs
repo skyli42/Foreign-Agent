@@ -25,10 +25,22 @@ public class TutorialController2 : MonoBehaviour
     public GameObject endMenu;
     private bool endPlayed = false;
 
+    private Animator m_Animator;
+
+    void Start()
+    {
+        m_Animator = player.GetComponent<Animator>();
+
+    }
     public void CancelControls()
     {
+        player.GetComponent<PlayerMovement>().dashStart = false;
         player.GetComponent<PlayerMovement>().enabled = false;
         player.GetComponent<companionSpawn>().enabled = false;
+        m_Animator.SetBool("IsWalking", false);
+        m_Animator.SetBool("IsRunning", false);
+
+
         player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
 
