@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7e2f4b60299bd74d81b2e7a0fa2a9b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bcells: []
+  stage: {fileID: 0}
 --- !u!114 &149230225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,6 +312,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: a148bf2bf5d309646bda1b56264c815e, type: 3}
       propertyPath: m_Name
       value: Macrophage
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: a148bf2bf5d309646bda1b56264c815e, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a148bf2bf5d309646bda1b56264c815e, type: 3}
       propertyPath: m_LocalPosition.x
