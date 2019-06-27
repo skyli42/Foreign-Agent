@@ -17,39 +17,10 @@ public class MinimapGenerator : MonoBehaviour
             wall.transform.parent = wallParent.transform.GetChild(i);
 			wall.layer = 12;
 			wall.GetComponent<Renderer>().material = mat;
-			//BoxCollider col = wall.GetComponent<BoxCollider>();
-			//col.isTrigger = true;
             if (wall.GetComponent<NavMeshObstacle>() != null)
             {
                 wall.GetComponent<NavMeshObstacle>().enabled = false;
             }
-			//MeshFilter mF = wall.GetComponent<MeshFilter>();
-			//Mesh mesh = mF.mesh;
-			//LineRenderer lRender = wall.AddComponent<LineRenderer>();
-			//lRender.material = new Material(Shader.Find("Standard"));
-			//lRender.material.color = new Color(0.255f, 1.0f, 0.0f);
-			//SortedSet<float> yvals = new SortedSet<float>();
-			//foreach(Vector3 point in mesh.vertices)
-			//{
-			//	Vector3 truePos = wall.transform.TransformPoint(point);
-			//	yvals.Add(truePos.y);
-			//}
-			//List<Vector3> points = new List<Vector3>();
-			//foreach(Vector3 vertex in mesh.vertices)
-			//{
-			//	Vector3 truePos = wall.transform.TransformPoint(vertex);
-
-			//	if (truePos.y == yvals.Max) {
-			//		truePos.y += 0.5f;
-			//		points.Add(truePos);
-			//	}
-			//}
-			//lRender.startWidth = 0.1f;
-			//lRender.endWidth = 0.1f;
-			//lRender.positionCount = points.Count;
-			//lRender.SetPositions(points.ToArray());
-			//lRender.startColor = new Color(0.255f, 1.0f, 0.0f);
-			//lRender.endColor = new Color(0.255f, 1.0f, 0.0f);
 		}
 
 	}

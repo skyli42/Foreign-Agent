@@ -21,7 +21,6 @@ public class plasmaSpawn : MonoBehaviour
     private void Start()
     {
         Instance = this;
-        activated = false;
     }
     void LateUpdate()
     {

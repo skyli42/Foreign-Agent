@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class TcellPatrol : MonoBehaviour
 {
-
     public Transform[] points;
     private int destPoint = 0;
     private NavMeshAgent agent;
@@ -17,6 +16,7 @@ public class TcellPatrol : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.autoBraking = false;
         GotoNextPoint();
+		
     }
     void GotoNextPoint()
     {
