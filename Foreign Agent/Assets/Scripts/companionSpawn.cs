@@ -40,31 +40,39 @@ void OnDrawGizmosSelected()
             bool validSpawn = false;
             int tries = 0;
             Vector3 spawn = new Vector3(0, 0, 0);
-            while (!validSpawn && tries < 5000)
+            while (!validSpawn && tries < 10000)
             {
-                spawn = Random.insideUnitSphere * 2 + transform.position;
 
-                Collider[] colliders = Physics.OverlapSphere(spawn, 0.5f);
-                bool collisionFound = false;
-                foreach (Collider col in colliders)
+                spawn = Random.insideUnitSphere * 2 + transform.position;
+                if (spawn.y < 1f || spawn.y > 1.5f)
                 {
-                    // If this collider is tagged "Obstacle"
-                    if (col.tag == "Obstacle"|| col.tag == "companion"|| col.tag == "Player")
-                    {
-                        // Then this position is not a valid spawn position
-                        validSpawn= false;
-                        collisionFound = true;
-                        tries += 1;
-                        break;
-                    }
+                    tries++;
                 }
-                if (!collisionFound)
+                else
                 {
-                    validSpawn = true;
+                    Collider[] colliders = Physics.OverlapSphere(spawn, 0.5f);
+                    bool collisionFound = false;
+                    foreach (Collider col in colliders)
+                    {
+                        // If this collider is tagged "Obstacle"
+                        if (col.tag == "Obstacle" || col.tag == "companion" || col.tag == "Player")
+                        {
+                            // Then this position is not a valid spawn position
+                            validSpawn = false;
+                            collisionFound = true;
+                            tries += 1;
+                            break;
+                        }
+                    }
+                    if (!collisionFound)
+                    {
+                        validSpawn = true;
+                    }
                 }
             }
             if (validSpawn)
             {
+                Debug.Log(spawn);
                 agent = Instantiate(companionVirus, spawn, Quaternion.identity).GetComponent<NavMeshAgent>();
                
                 companionToEnemy.Add(agent, gameObject);

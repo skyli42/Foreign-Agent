@@ -3628,6 +3628,8 @@ MonoBehaviour:
   numCaptures: 0
   numCellsInLevel: 2
   cellsLeftUI: {fileID: 707072519}
+  secondInfection: 0
+  stage: {fileID: 2108651897}
   pauseMenu: {fileID: 1248752528}
   player: {fileID: 438362110}
   death: 0
@@ -3642,6 +3644,7 @@ MonoBehaviour:
   restartLevelDeathButton: {fileID: 10633703}
   nextLevelEndButton: {fileID: 1411388942}
   returnToGameButton: {fileID: 429194371}
+  portalAnim: {fileID: 100000, guid: 3d4907e6bd39f474b8fd8220920e65c4, type: 3}
   isTutorial: 0
 --- !u!1 &2073553374 stripped
 GameObject:

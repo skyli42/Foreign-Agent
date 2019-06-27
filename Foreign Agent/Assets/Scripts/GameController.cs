@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class GameController : MonoBehaviour
 {
@@ -13,7 +14,10 @@ public class GameController : MonoBehaviour
     public GameObject cellsLeftUI;
     private int prevFramenumCaptures;
 
-	public bool secondInfection;
+    Rigidbody m_Rigidbody;
+    Quaternion m_Rotation = Quaternion.identity;
+
+    public bool secondInfection;
 	public GameObject stage;
 	private SimpleSonarShader_Parent parent;
 
@@ -38,10 +42,17 @@ public class GameController : MonoBehaviour
     public GameObject nextLevelEndButton;
     public GameObject returnToGameButton;
 
+    public GameObject portalAnim;
+    Animator m_Animator;
     public bool isTutorial = false;
+
+    private CinemachineVirtualCamera vcam;
+
     void Start()
     {
-		parent = stage.GetComponent<SimpleSonarShader_Parent>();
+        vcam = GameObject.Find("VirtualCamera").GetComponent< CinemachineVirtualCamera>();
+        m_Animator = player.GetComponent<Animator>();
+        parent = stage.GetComponent<SimpleSonarShader_Parent>();
 		Instance = this;
         death = false;
         numCaptures = 0;
@@ -91,16 +102,57 @@ public class GameController : MonoBehaviour
 
         if (numCaptures == numCellsInLevel && !atEnd)
         {
-            TargetDestroyed.text = numCaptures.ToString() +" / " + numCellsInLevel.ToString();
+            TargetDestroyed.text = numCaptures.ToString() + " / " + numCellsInLevel.ToString();
             float timeLeft = Time.timeSinceLevelLoad;
             int min = Mathf.FloorToInt(timeLeft / 60);
             int sec = Mathf.FloorToInt(timeLeft % 60);
             TimeSpent.text = min.ToString("00") + ":" + sec.ToString("00");
-            endMenu.SetActive(true);
+
             atEnd = true;
             myEventSystem.SetSelectedGameObject(nextLevelEndButton);
             nextLevelEndButton.GetComponent<Button>().OnSelect(null);
-            StartCoroutine(waitTillDissolveDone());
+
+            bool validSpawn = false;
+            int tries = 0;
+
+            Vector3 spawn = new Vector3(0, 0, 0);
+            while (!validSpawn && tries < 10000)
+            {
+
+                spawn = Random.insideUnitSphere * 4 + player.transform.position;
+                if (spawn.y < 1.5f || spawn.y > 2f)
+                {
+                    tries++;
+                }
+                else
+                {
+                    Collider[] colliders = Physics.OverlapSphere(spawn, 1.2f);
+                    bool collisionFound = false;
+                    foreach (Collider col in colliders)
+                    {
+                        // If this collider is tagged "Obstacle"
+                        if (col.tag == "Obstacle")
+                        {
+                            // Then this position is not a valid spawn position
+                            validSpawn = false;
+                            collisionFound = true;
+                            tries += 1;
+                            break;
+                        }
+                    }
+                    if (!collisionFound)
+                    {
+                        validSpawn = true;
+                    }
+                }
+            }
+            if (validSpawn)
+            {
+                GameObject portal = Instantiate(portalAnim, spawn, portalAnim.transform.rotation);
+                StartCoroutine(movePlayerToPortal(portal));
+                // player.transform.position = Vector3.MoveTowards(player.transform.position, spawn, Time.deltaTime);
+            }
+
         }
         prevFramenumCaptures = numCaptures;
     }
@@ -140,10 +192,43 @@ public class GameController : MonoBehaviour
         }
         
     }
-    public IEnumerator waitTillDissolveDone()
+   
+    public IEnumerator movePlayerToPortal(GameObject portal)
     {
-        yield return new WaitForSeconds(2f);
+        player.GetComponent<PlayerMovement>().enabled = false;
+        player.GetComponent<companionSpawn>().enabled = false;
+        player.GetComponent<Collider>().enabled = false;
+        player.GetComponent<Rigidbody>().isKinematic = true;
+        m_Animator.SetBool("IsWalking", false);
+        m_Animator.SetBool("IsRunning", false);
+        m_Animator.SetBool("IsJumping", true);
+        m_Rigidbody = player.GetComponent<Rigidbody>();
+        while (player.transform.position.x != portal.transform.position.x || (player.transform.position.y != portal.transform.position.y))
+        {
+            Vector3 targetDir = portal.transform.position - player.transform.position;
+            targetDir.Normalize();
+            Vector3 desiredForward = Vector3.RotateTowards(player.transform.forward, new Vector3(targetDir.x, 0f, targetDir.z), 20f * Time.deltaTime, 0f);
+            m_Rotation = Quaternion.LookRotation(desiredForward);
+            m_Rigidbody.MoveRotation(m_Rotation);
+            player.transform.position = Vector3.MoveTowards(player.transform.position, portal.transform.position, Time.deltaTime * 2);
+            //player.transform.position = new Vector3(player.transform.position.x, Mathf.PingPong(Time.time, 3) + 1, player.transform.position.z);
+
+            yield return null;
+        }
+
+        vcam.m_Follow = null;
+        player.GetComponent<Rigidbody>().isKinematic = false;
+        yield return new WaitForSeconds(1f);
+        player.GetComponent<PlayerMovement>().enabled = true;
+        player.GetComponent<companionSpawn>().enabled = true;
+        player.GetComponent<Collider>().enabled = true;
+        m_Animator.SetBool("IsJumping", false);
+        
         if (!isTutorial)
+        {
+            endMenu.SetActive(true);
             Time.timeScale = 0;
+        }
+
     }
 }
