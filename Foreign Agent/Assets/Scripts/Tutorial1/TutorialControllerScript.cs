@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.AI;
 public class TutorialControllerScript : MonoBehaviour
 {
 
@@ -25,11 +25,12 @@ public class TutorialControllerScript : MonoBehaviour
     public RPGTalk UITalk;
     public RPGTalk deathTalk;
     private Animator m_Animator;
+	private companionSpawn companionScript;
 
     void Start()
     {
         m_Animator = player.GetComponent<Animator>();
-
+		companionScript = player.GetComponent<companionSpawn>();
     }
     public void CancelControls()
     {
@@ -90,7 +91,53 @@ public class TutorialControllerScript : MonoBehaviour
             deathTalk.NewTalk("deathStart", "deathEnd", deathTalk.txtToParse);
             player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             GameController.Instance.death = false;
-        }
+			//TODO: reset companion
+			int tries = 0;
+		
+			Vector3 spawn = new Vector3(0, 0, 0);
+			Debug.Log("Death");
+			while (tries < 5000)
+			{
+				spawn = Random.insideUnitSphere * 2 + player.transform.position;
+
+				Collider[] colliders = Physics.OverlapSphere(spawn, 0.5f);
+				bool collisionFound = false;
+				foreach (Collider col in colliders)
+				{
+					// If this collider is tagged "Obstacle"
+					if (col.tag == "Obstacle" || col.tag == "companion" || col.tag == "Player")
+					{
+						collisionFound = true;
+						tries += 1;
+						break;
+					}
+				}
+				if (!collisionFound)
+				{
+					GameObject[] allObjects = GameObject.FindGameObjectsWithTag("companion");
+					foreach (GameObject obj in allObjects)
+					{
+						Destroy(obj);
+						
+					}
+					companionScript.numCompanions = 0;
+					companionScript.companionList.Clear();
+					companionScript.companionToEnemy.Clear();
+					
+					NavMeshAgent agent = Instantiate(companionScript.companionVirus, spawn, Quaternion.identity).GetComponent<NavMeshAgent>();
+
+					companionScript.companionToEnemy.Add(agent, player);
+					agent.avoidancePriority = Random.Range(0, 101);
+					agent.autoBraking = false;
+					companionScript.companionList.Add(agent);
+					agent.stoppingDistance = 2;
+					companionScript.numCompanions = 1;
+					companionScript.prevFrameNumCompanions = 1;
+					Debug.Log("New Companion Spawned");
+					break;
+				}
+			}
+		}
         if (!endPlayed && finalCell.GetComponentInChildren<CellCapture>().capped)
         {
             CancelControls();

@@ -27,7 +27,7 @@ This is a <color=green><b>MACROPHAGE</b></color>. Macrophages will engulf any vi
 [title=macrophageInstructionEnd]
 
 [title=deathStart]
-You were engulfed by the macrophage! Since this is a training simulation, I've reset you right back here. But you wont be so lucky during the real invasion.
+You were engulfed by the macrophage! Since this is a training simulation, I've reset you right back here and given your companion back. But you wont be so lucky during the real invasion.
 [title=deathEnd]
 
 [title=endLevelStart]

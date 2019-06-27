@@ -13,10 +13,10 @@ public class companionSpawn : MonoBehaviour
     public LayerMask enemyMask;
     public  int numCompanions;
     private List<Collider> enemiesList = new List<Collider>();
-    private List<NavMeshAgent> companionList = new List<NavMeshAgent>();
-    private int prevFrameNumCompanions;
+    public List<NavMeshAgent> companionList = new List<NavMeshAgent>();
+    public int prevFrameNumCompanions;
     public GameObject companionUI;
-    private Dictionary<NavMeshAgent, GameObject> companionToEnemy;
+    public Dictionary<NavMeshAgent, GameObject> companionToEnemy;
 
     private void Start()
     {
@@ -24,16 +24,19 @@ public class companionSpawn : MonoBehaviour
         numCompanions = 0;
         prevFrameNumCompanions = numCompanions;
         companionToEnemy = new Dictionary<NavMeshAgent, GameObject>();
-    }
-    void OnDrawGizmosSelected()
+		companionList = new List<NavMeshAgent>();
+
+}
+void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, 2f);
     }
     void Update()
     {
-        if (prevFrameNumCompanions == numCompanions - 1)
+        if (prevFrameNumCompanions == numCompanions - 1) // Aidan why would you do this to me
         {
+			Debug.Log("Spawning new Companion (from companionSpawn)");
             bool validSpawn = false;
             int tries = 0;
             Vector3 spawn = new Vector3(0, 0, 0);
@@ -116,8 +119,8 @@ public class companionSpawn : MonoBehaviour
                 // enemiesList.Add(closestEnemy);
                 NavMeshAgent agent2 = null;
                 foreach (KeyValuePair<NavMeshAgent, GameObject> entry in companionToEnemy)
-                {
-                    if (entry.Value == gameObject)
+				{
+					if (entry.Value == gameObject)
                     {
                         agent2 = entry.Key;
                         break;
