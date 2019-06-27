@@ -8006,6 +8006,8 @@ MonoBehaviour:
   numCaptures: 0
   numCellsInLevel: 8
   cellsLeftUI: {fileID: 707072519}
+  secondInfection: 0
+  stage: {fileID: 2108651897}
   pauseMenu: {fileID: 1248752528}
   player: {fileID: 438362110}
   death: 0

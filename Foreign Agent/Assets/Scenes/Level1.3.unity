@@ -7014,15 +7014,22 @@ MonoBehaviour:
   numCaptures: 0
   numCellsInLevel: 6
   cellsLeftUI: {fileID: 520202267}
+  secondInfection: 0
+  stage: {fileID: 2033715506}
   pauseMenu: {fileID: 1447552264}
   player: {fileID: 2031043505}
   death: 0
-  deathMenu: {fileID: 1615703577}
+  TargetDestroyedDeath: {fileID: 0}
+  TimeSpentDeath: {fileID: 0}
+  deathMenu: {fileID: 0}
   deathAnim: {fileID: 8078104501941085803, guid: 5cc07f7b74b2f3940825ed3297f38cbf,
     type: 3}
   TargetDestroyed: {fileID: 226892224}
   TimeSpent: {fileID: 1285076437}
   endMenu: {fileID: 1550075193}
+  restartLevelDeathButton: {fileID: 0}
+  nextLevelEndButton: {fileID: 0}
+  returnToGameButton: {fileID: 0}
   isTutorial: 0
 --- !u!4 &903028858
 Transform:
@@ -9942,12 +9949,6 @@ Transform:
   m_Father: {fileID: 1946538722}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1615703577 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5998719074079411634, guid: 5b89ad06d999c004fa3032d80448046a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1671997746}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1618589289
 GameObject:
   m_ObjectHideFlags: 0

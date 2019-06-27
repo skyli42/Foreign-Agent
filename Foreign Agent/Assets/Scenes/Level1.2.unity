@@ -4542,6 +4542,8 @@ MonoBehaviour:
   numCaptures: 0
   numCellsInLevel: 3
   cellsLeftUI: {fileID: 707072519}
+  secondInfection: 0
+  stage: {fileID: 2108651897}
   pauseMenu: {fileID: 1248752528}
   player: {fileID: 1447972652}
   death: 0

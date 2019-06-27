@@ -976,16 +976,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5998719074079411638, guid: 5b89ad06d999c004fa3032d80448046a,
-        type: 3}
-      propertyPath: eventSystem
-      value: 
-      objectReference: {fileID: 668317297}
-    - target: {fileID: 5998719075550479382, guid: 5b89ad06d999c004fa3032d80448046a,
-        type: 3}
-      propertyPath: eventSystem
-      value: 
-      objectReference: {fileID: 668317297}
     - target: {fileID: 8432983764911044112, guid: 5b89ad06d999c004fa3032d80448046a,
         type: 3}
       propertyPath: m_text
@@ -1043,6 +1033,16 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5998719074079411638, guid: 5b89ad06d999c004fa3032d80448046a,
+        type: 3}
+      propertyPath: eventSystem
+      value: 
+      objectReference: {fileID: 668317297}
+    - target: {fileID: 5998719075550479382, guid: 5b89ad06d999c004fa3032d80448046a,
+        type: 3}
+      propertyPath: eventSystem
+      value: 
+      objectReference: {fileID: 668317297}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b89ad06d999c004fa3032d80448046a, type: 3}
 --- !u!1 &327328644 stripped
@@ -1610,6 +1610,8 @@ MonoBehaviour:
   numCaptures: 0
   numCellsInLevel: 2
   cellsLeftUI: {fileID: 212550712}
+  secondInfection: 0
+  stage: {fileID: 1546779888}
   pauseMenu: {fileID: 1956664039}
   player: {fileID: 1846883328}
   death: 0
