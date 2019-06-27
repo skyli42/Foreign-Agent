@@ -13,7 +13,11 @@ public class GameController : MonoBehaviour
     public GameObject cellsLeftUI;
     private int prevFramenumCaptures;
 
-    public GameObject pauseMenu;
+	public bool secondInfection;
+	public GameObject stage;
+	private SimpleSonarShader_Parent parent;
+
+	public GameObject pauseMenu;
     private bool paused;
     public GameObject player;
 
@@ -37,13 +41,22 @@ public class GameController : MonoBehaviour
     public bool isTutorial = false;
     void Start()
     {
-        Instance = this;
+		parent = stage.GetComponent<SimpleSonarShader_Parent>();
+		Instance = this;
         death = false;
         numCaptures = 0;
         prevFramenumCaptures = numCaptures;
         cellsLeftUI.GetComponent<TextMeshProUGUI>().text = "Cells Left: " + (numCellsInLevel - numCaptures).ToString();
         myEventSystem = GameObject.Find("EventSystem").GetComponent<UnityEngine.EventSystems.EventSystem>();
-
+		if (secondInfection)
+		{
+			plasmaSpawn.Instance.activated = true;//probably temp until T helper are implemented
+			if (parent)
+			{
+				Debug.Log("sonar");
+				parent.StartSonarRing(transform.position, 5);
+			}
+		}
     }
     // Update is called once per frame
     void Update()
@@ -106,9 +119,7 @@ public class GameController : MonoBehaviour
         }
     }
     public IEnumerator waitTillDeathDone()
-    {
-       
-        
+    {  
         Instantiate(deathAnim, player.GetComponent<Collider>().bounds.center, Quaternion.identity);
         player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         player.gameObject.GetComponentInChildren<Renderer>().enabled = false;

@@ -48,10 +48,17 @@ public class SimpleSonarShader_Parent : MonoBehaviour
     {
         // Put values into the queue
         position.w = Time.timeSinceLevelLoad;
-        positionsQueue.Dequeue();
+		if(positionsQueue.Count > 0)
+		{
+			positionsQueue.Dequeue();
+		}
+        
         positionsQueue.Enqueue(position);
 
-        intensityQueue.Dequeue();
+		if(intensityQueue.Count > 0)
+		{
+			intensityQueue.Dequeue();
+		}
         intensityQueue.Enqueue(intensity);
 
         // Send updated queues to the shaders
