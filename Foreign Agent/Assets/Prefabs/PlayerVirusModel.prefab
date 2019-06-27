@@ -326,8 +326,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 13.4732685, y: 25.572346, z: 10}
-  m_Center: {x: -0.6012031, y: 12.786173, z: 0}
+  m_Size: {x: 16.155146, y: 25.572346, z: 10.700793}
+  m_Center: {x: 1.1412678, y: 12.786173, z: 0.35039613}
 --- !u!114 &4617091418556997901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,6 +365,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   numCompanions: 0
+  companionList: []
+  prevFrameNumCompanions: 0
   companionUI: {fileID: 0}
 --- !u!81 &825963084
 AudioListener:

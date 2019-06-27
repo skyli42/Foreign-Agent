@@ -31,5 +31,5 @@ You were engulfed by the macrophage! Since this is a training simulation, I've r
 [title=deathEnd]
 
 [title=endLevelStart]
-Congratulations! You've successfully completed your first infection. You are now prepared for your first real mission. Good luck Agent!
+Congratulations! You've successfully completed your first infection. In the next round of training you'll learn about more defenses you'll have to overcome.
 [title=endLevelEnd]
