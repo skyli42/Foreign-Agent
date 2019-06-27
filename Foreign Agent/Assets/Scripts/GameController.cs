@@ -198,37 +198,50 @@ public class GameController : MonoBehaviour
         player.GetComponent<PlayerMovement>().enabled = false;
         player.GetComponent<companionSpawn>().enabled = false;
         player.GetComponent<Collider>().enabled = false;
-        player.GetComponent<Rigidbody>().isKinematic = true;
+        player.GetComponent<Rigidbody>().useGravity = false;
+      
         m_Animator.SetBool("IsWalking", false);
         m_Animator.SetBool("IsRunning", false);
         m_Animator.SetBool("IsJumping", true);
         m_Rigidbody = player.GetComponent<Rigidbody>();
-        while (player.transform.position.x != portal.transform.position.x || (player.transform.position.y != portal.transform.position.y))
+       
+        while (!Mathf.Approximately(player.transform.position.x, portal.transform.position.x) || !Mathf.Approximately(player.transform.position.z, portal.transform.position.z))
         {
             Vector3 targetDir = portal.transform.position - player.transform.position;
             targetDir.Normalize();
             Vector3 desiredForward = Vector3.RotateTowards(player.transform.forward, new Vector3(targetDir.x, 0f, targetDir.z), 20f * Time.deltaTime, 0f);
             m_Rotation = Quaternion.LookRotation(desiredForward);
+            //m_Rotation = Quaternion.LookRotation(targetDir);
+            //m_Rigidbody.MoveRotation(Quaternion.Slerp(player.transform.rotation, m_Rotation, Time.deltaTime * 20f));
+            //player.transform.rotation = Quaternion.Slerp(player.transform.rotation, m_Rotation, Time.deltaTime * 20f);
             m_Rigidbody.MoveRotation(m_Rotation);
             player.transform.position = Vector3.MoveTowards(player.transform.position, portal.transform.position, Time.deltaTime * 2);
             //player.transform.position = new Vector3(player.transform.position.x, Mathf.PingPong(Time.time, 3) + 1, player.transform.position.z);
 
             yield return null;
         }
-
         vcam.m_Follow = null;
-        player.GetComponent<Rigidbody>().isKinematic = false;
-        yield return new WaitForSeconds(1f);
+        player.GetComponent<Rigidbody>().useGravity = true;
+
+        while (player.transform.position.y > -2f)
+        {
+            player.transform.position = Vector3.MoveTowards(player.transform.position, new Vector3(portal.transform.position.x, -2.5f, portal.transform.position.z), Time.deltaTime * 2);
+            //player.transform.position = new Vector3(player.transform.position.x, Mathf.PingPong(Time.time, 3) + 1, player.transform.position.z);
+
+            yield return null;
+        }
         player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<companionSpawn>().enabled = true;
         player.GetComponent<Collider>().enabled = true;
         m_Animator.SetBool("IsJumping", false);
-        
+
         if (!isTutorial)
         {
             endMenu.SetActive(true);
             Time.timeScale = 0;
         }
+        
 
     }
+   
 }
