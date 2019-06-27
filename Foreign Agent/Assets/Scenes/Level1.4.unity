@@ -8022,6 +8022,7 @@ MonoBehaviour:
   restartLevelDeathButton: {fileID: 10633703}
   nextLevelEndButton: {fileID: 1411388942}
   returnToGameButton: {fileID: 429194371}
+  portalAnim: {fileID: 100000, guid: 3d4907e6bd39f474b8fd8220920e65c4, type: 3}
   isTutorial: 0
 --- !u!1001 &2058156225
 PrefabInstance:

@@ -7019,17 +7019,18 @@ MonoBehaviour:
   pauseMenu: {fileID: 1447552264}
   player: {fileID: 2031043505}
   death: 0
-  TargetDestroyedDeath: {fileID: 0}
-  TimeSpentDeath: {fileID: 0}
-  deathMenu: {fileID: 0}
+  TargetDestroyedDeath: {fileID: 226892224}
+  TimeSpentDeath: {fileID: 1285076437}
+  deathMenu: {fileID: 1671997750}
   deathAnim: {fileID: 8078104501941085803, guid: 5cc07f7b74b2f3940825ed3297f38cbf,
     type: 3}
   TargetDestroyed: {fileID: 226892224}
   TimeSpent: {fileID: 1285076437}
   endMenu: {fileID: 1550075193}
-  restartLevelDeathButton: {fileID: 0}
-  nextLevelEndButton: {fileID: 0}
-  returnToGameButton: {fileID: 0}
+  restartLevelDeathButton: {fileID: 1671997749}
+  nextLevelEndButton: {fileID: 1671997748}
+  returnToGameButton: {fileID: 1671997747}
+  portalAnim: {fileID: 100000, guid: 3d4907e6bd39f474b8fd8220920e65c4, type: 3}
   isTutorial: 0
 --- !u!4 &903028858
 Transform:
@@ -10438,6 +10439,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b89ad06d999c004fa3032d80448046a, type: 3}
+--- !u!1 &1671997747 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6634651196074960238, guid: 5b89ad06d999c004fa3032d80448046a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1671997746}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1671997748 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5998719074173864473, guid: 5b89ad06d999c004fa3032d80448046a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1671997746}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1671997749 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7874236450581153342, guid: 5b89ad06d999c004fa3032d80448046a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1671997746}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1671997750 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5349042328357983321, guid: 5b89ad06d999c004fa3032d80448046a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1671997746}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1675931715
 GameObject:
   m_ObjectHideFlags: 0

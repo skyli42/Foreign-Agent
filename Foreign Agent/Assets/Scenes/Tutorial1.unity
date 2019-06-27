@@ -1891,6 +1891,7 @@ MonoBehaviour:
   restartLevelDeathButton: {fileID: 1608429467}
   nextLevelEndButton: {fileID: 1719655286}
   returnToGameButton: {fileID: 1623101816}
+  portalAnim: {fileID: 100000, guid: 3d4907e6bd39f474b8fd8220920e65c4, type: 3}
   isTutorial: 1
 --- !u!4 &506513129
 Transform:
