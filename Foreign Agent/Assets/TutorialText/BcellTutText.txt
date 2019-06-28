@@ -1,7 +1,10 @@
 [title=IntroTalkStart]
 Since your last mission was such a success, we've decided to train you to deal with more advanced defenses.
-This is a <color=yellow><b>B-cell</b></color>! B-cells are harmless as is, but I invite you to touch the B-cell now and see what happens. 
 [title=IntroTalkEnd]
+
+[title=BcellTalkStart]
+This is a <color=yellow><b>B-cell</b></color>! B-cells are harmless as is, but touch the B-cell now and see what happens. 
+[title=BcellTalkEnd]
 
 [title=plasmaSpawnStart]
 The B-cell differentiated into a <color=#00ffffff><b>plasma cell!</b></color> The plasma cell secretes <b>antibodies</b> that will roam the area randomly. 
@@ -11,7 +14,7 @@ Infect the cell in front of you to move onto the next stage of training.
 
 [title=companionStart]
 Now that you have a companion virus from replicating, I can demonstrate the chain of events that occurs when a macrophage engulfs a virus.
-This macrophage in front of you is locked in place so don't worry. Press space to send out your companion to see what happens.
+This macrophage in front of you is locked in place so don't worry about it chasing you. Press space to send out your companion to see what happens.
 [title=companionEnd]
 
 [title=THelperStart]

@@ -211,9 +211,6 @@ public class GameController : MonoBehaviour
             targetDir.Normalize();
             Vector3 desiredForward = Vector3.RotateTowards(player.transform.forward, new Vector3(targetDir.x, 0f, targetDir.z), 20f * Time.deltaTime, 0f);
             m_Rotation = Quaternion.LookRotation(desiredForward);
-            //m_Rotation = Quaternion.LookRotation(targetDir);
-            //m_Rigidbody.MoveRotation(Quaternion.Slerp(player.transform.rotation, m_Rotation, Time.deltaTime * 20f));
-            //player.transform.rotation = Quaternion.Slerp(player.transform.rotation, m_Rotation, Time.deltaTime * 20f);
             m_Rigidbody.MoveRotation(m_Rotation);
             player.transform.position = Vector3.MoveTowards(player.transform.position, portal.transform.position, Time.deltaTime * 2);
             //player.transform.position = new Vector3(player.transform.position.x, Mathf.PingPong(Time.time, 3) + 1, player.transform.position.z);
@@ -225,9 +222,8 @@ public class GameController : MonoBehaviour
 
         while (player.transform.position.y > -2f)
         {
-            player.transform.position = Vector3.MoveTowards(player.transform.position, new Vector3(portal.transform.position.x, -2.5f, portal.transform.position.z), Time.deltaTime * 2);
-            //player.transform.position = new Vector3(player.transform.position.x, Mathf.PingPong(Time.time, 3) + 1, player.transform.position.z);
-
+            player.transform.position = Vector3.MoveTowards(player.transform.position, new Vector3(portal.transform.position.x, -2.5f, portal.transform.position.z), Time.deltaTime * 5);
+    
             yield return null;
         }
         player.GetComponent<PlayerMovement>().enabled = true;

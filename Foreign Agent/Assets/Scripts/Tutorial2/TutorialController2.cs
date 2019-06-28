@@ -24,8 +24,11 @@ public class TutorialController2 : MonoBehaviour
     public RPGTalk endTalk;
     public GameObject endMenu;
     private bool endPlayed = false;
-
+    public GameObject pointer;
+    public GameObject wallFirst;
+    public GameObject wallThird;
     private Animator m_Animator;
+    public Image spacebar;
 
     void Start()
     {
@@ -56,18 +59,28 @@ public class TutorialController2 : MonoBehaviour
     {
         wall.SetActive(false);
     }
+    public void DestroyWallFirst()
+    {
+        wallFirst.SetActive(false);
+    }
+    public void DestroyWallThird()
+    {
+        wallThird.SetActive(false);
+    }
 
     void LateUpdate()
     {
         if (!plasmaSpawnPlayed && tutBCell.GetComponent<plasmaSpawn>().Bcellcollision)
         {
             CancelControls();
+            hidePointer1();
             plasmaSpawnTalk.NewTalk("plasmaSpawnStart", "plasmaSpawnEnd", plasmaSpawnTalk.txtToParse);
             plasmaSpawnPlayed = true;
         }
         if (!companionTalkPlayed && tutCell.GetComponentInChildren<CellCapture>().capped)
         {
             CancelControls();
+            hidePointer1();
             companionTalk.NewTalk("companionStart", "companionEnd", companionTalk.txtToParse);
             companionTalkPlayed = true;
         }
@@ -86,6 +99,7 @@ public class TutorialController2 : MonoBehaviour
         if (plasmaSpawn.Instance.activated && !ThelpPlayed)
         {
             CancelControls();
+            hideSpace();
             THelperTalk.NewTalk("THelperStart", "THelperEnd", THelperTalk.txtToParse);
             ThelpPlayed = true;
         }
@@ -104,7 +118,37 @@ public class TutorialController2 : MonoBehaviour
         endMenu.SetActive(true);
         Time.timeScale = 0f;
     }
+   
+    public void flashPointer()
+    {
+        if (pointer.activeSelf)
+            pointer.SetActive(false);
+        else
+            pointer.SetActive(true);
+    }
+    public void displayPointer1()
+    {
+        InvokeRepeating("flashPointer", 0.0f, 0.75f);
+    }
+    public void deactivatepointer(GameObject pointer)
+    {
+        CancelInvoke();
+        pointer.SetActive(false);
+        pointer.transform.eulerAngles = new Vector3(0f, 180f, 0f);
+        pointer.transform.position =  new Vector3(1.88f, 1f, -29f);
 
-
+    }
+    public void hidePointer1()
+    {
+        deactivatepointer(pointer);
+    }
+    public void displaySpace()
+    {
+        spacebar.gameObject.SetActive(true);
+    }
+    public void hideSpace()
+    {
+        spacebar.gameObject.SetActive(false);
+    }
 
 }
