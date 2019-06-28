@@ -20,7 +20,7 @@ This macrophage in front of you is locked in place so don't worry about it chasi
 [title=THelperStart]
 <color=#ff00ffff><b>T-Helper</b></color> cells have been activated after the virus was engulfed by the macrophage!
 T-Helper cells stimulate all B-cells to differentiate into Plasma Cells!
-Infect the final cell to complete your training.
+Run past the harmless macrophage and infect the final cell to complete your training.
 [title=THelperEnd]
 
 [title=deathStart]
