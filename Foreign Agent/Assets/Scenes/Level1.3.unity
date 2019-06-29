@@ -9124,6 +9124,16 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5f183c4ce046154887fd3a7e5ac2e3f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5f183c4ce046154887fd3a7e5ac2e3f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c5f183c4ce046154887fd3a7e5ac2e3f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11373,7 +11383,7 @@ GameObject:
   - component: {fileID: 2000465130}
   m_Layer: 9
   m_Name: Walls
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
