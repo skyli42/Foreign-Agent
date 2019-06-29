@@ -1,13 +1,13 @@
 [title=IntroTalkStart]
 For our last basic training session, I will introduce you to <color=green><b>Killer T-cells</b></color>.
 These cells will not pose any danger to you as you roam the level...
-but as soon as you begin replication the killer T-cells will bind to the human cell to destroy it and any viruses replicating within it before the cell becomes infected. 
+but when you begin replication the killer T-cells will bind to the human cell to destroy it and any viruses replicating within it before the cell becomes infected. 
 Try to replicate within the cell now.
 [title=IntroTalkEnd]
 
 [title=deathStart]
 As you can see, the killer T-cell was successful in destroying the cell before you could infect it. 
-In a real mission, you and the cell would both be destroyed and the mission would be over, but since this is training you will now have another shot.
+In a real mission, you and the cell would both be destroyed and the mission would be over.
 The T-cell will now patrol further away from the cell. You will have to time your infection correctly to infect the cell before the killer T-cell arrives.
 [title=deathEnd]
 
