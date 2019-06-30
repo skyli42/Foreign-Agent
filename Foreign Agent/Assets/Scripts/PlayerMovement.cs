@@ -134,11 +134,12 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "companion")
+        if (other.gameObject.tag == "companion" || other.gameObject.tag == "Tcell")
         {
             Physics.IgnoreCollision(other.gameObject.GetComponent<Collider>(), GetComponent<Collider>());
         }
-    }
 
     }
+
+}
 

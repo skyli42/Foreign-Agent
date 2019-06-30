@@ -131,7 +131,7 @@ public class GameController : MonoBehaviour
                     foreach (Collider col in colliders)
                     {
                         // If this collider is tagged "Obstacle"
-                        if (col.tag == "Obstacle")
+                        if (col.tag == "Obstacle" || col.tag == "HumanCell")
                         {
                             // Then this position is not a valid spawn position
                             validSpawn = false;
@@ -205,7 +205,7 @@ public class GameController : MonoBehaviour
         m_Animator.SetBool("IsJumping", true);
         m_Rigidbody = player.GetComponent<Rigidbody>();
        
-        while (!Mathf.Approximately(player.transform.position.x, portal.transform.position.x) || !Mathf.Approximately(player.transform.position.z, portal.transform.position.z))
+        while ((player.transform.position.x - portal.transform.position.x) > 0.1f || (player.transform.position.z - portal.transform.position.z) > 0.1f) 
         {
             Vector3 targetDir = portal.transform.position - player.transform.position;
             targetDir.Normalize();
@@ -213,7 +213,6 @@ public class GameController : MonoBehaviour
             m_Rotation = Quaternion.LookRotation(desiredForward);
             m_Rigidbody.MoveRotation(m_Rotation);
             player.transform.position = Vector3.MoveTowards(player.transform.position, portal.transform.position, Time.deltaTime * 2);
-            //player.transform.position = new Vector3(player.transform.position.x, Mathf.PingPong(Time.time, 3) + 1, player.transform.position.z);
 
             yield return null;
         }
@@ -226,9 +225,9 @@ public class GameController : MonoBehaviour
     
             yield return null;
         }
-        player.GetComponent<PlayerMovement>().enabled = true;
-        player.GetComponent<companionSpawn>().enabled = true;
-        player.GetComponent<Collider>().enabled = true;
+       // player.GetComponent<PlayerMovement>().enabled = true;
+        //player.GetComponent<companionSpawn>().enabled = true;
+        //player.GetComponent<Collider>().enabled = true; 
         m_Animator.SetBool("IsJumping", false);
 
         if (!isTutorial)
