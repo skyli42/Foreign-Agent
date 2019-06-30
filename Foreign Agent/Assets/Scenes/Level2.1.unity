@@ -219,12 +219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0469060ac50970947a4c34cd67e0d41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &75829175 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1356995589154663562, guid: 5b89ad06d999c004fa3032d80448046a,
-    type: 3}
-  m_PrefabInstance: {fileID: 5998719074650404739}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &82022355
 GameObject:
   m_ObjectHideFlags: 0
@@ -2628,6 +2622,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2055344382}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1409149343 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7182455079318305685, guid: 5b89ad06d999c004fa3032d80448046a,
+    type: 3}
+  m_PrefabInstance: {fileID: 5998719074650404739}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1411388942 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5998719074173864473, guid: 5b89ad06d999c004fa3032d80448046a,
@@ -3809,7 +3809,7 @@ PrefabInstance:
         type: 3}
       propertyPath: activationAlert
       value: 
-      objectReference: {fileID: 75829175}
+      objectReference: {fileID: 1409149343}
     - target: {fileID: 168515627669818138, guid: 5f385b77bc3656647a00d6b710807964,
         type: 3}
       propertyPath: activated

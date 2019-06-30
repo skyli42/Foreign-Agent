@@ -17,6 +17,8 @@ public class plasmaSpawn : MonoBehaviour
     public Material activeMat;
     [HideInInspector]
     public bool Bcellcollision = false;
+    public GameObject Bletter;
+    public GameObject Pletter;
     // Update is called once per frame
     private void Start()
     {
@@ -32,7 +34,8 @@ public class plasmaSpawn : MonoBehaviour
         if (activated && !alreadySpawned)
         {
             gameObject.GetComponent<Renderer>().material = activeMat;
-            
+            Bletter.SetActive(false);
+            Pletter.SetActive(true);
             if (!Bcellcollision)
             {
                 for (int i = 0; i < numAntibodies; i++)
@@ -52,8 +55,8 @@ public class plasmaSpawn : MonoBehaviour
             alreadySpawned = true;
             if(plasmaSpawn.Instance.activated && !plasmaSpawn.Instance.alertPlayed)
             {
-                InvokeRepeating("activateAlert", 0.0f, 1f);
-                Invoke("deactivateAlert", 5f);
+                InvokeRepeating("activateAlert", 0.0f, 2f);
+                Invoke("deactivateAlert", 6f);
                 plasmaSpawn.Instance.alertPlayed = true;
             }
         }
@@ -77,6 +80,8 @@ public class plasmaSpawn : MonoBehaviour
     {
         if (!activated && other.gameObject.tag == "Player" && !Bcellcollision)
         {
+            Bletter.SetActive(false);
+            Pletter.SetActive(true);
             //plasmaSpawn.activated = true;//probably temp until T helper are implemented
             gameObject.GetComponent<Renderer>().material = activeMat;
             for (int i = 0; i < numAntibodies; i++)
