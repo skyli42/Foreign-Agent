@@ -192,6 +192,10 @@ PrefabInstance:
       propertyPath: companionUI
       value: 
       objectReference: {fileID: 327328644}
+    - target: {fileID: 825963085, guid: ad71dce37de84b5408bd65f4c0c3af74, type: 3}
+      propertyPath: numCompanions
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad71dce37de84b5408bd65f4c0c3af74, type: 3}
 --- !u!1 &18401033

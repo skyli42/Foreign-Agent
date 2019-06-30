@@ -119,14 +119,14 @@ public class GameController : MonoBehaviour
             while (!validSpawn && tries < 10000)
             {
 
-                spawn = Random.insideUnitSphere * 4 + player.transform.position;
+                spawn = Random.insideUnitSphere * 3.25f + player.transform.position;
                 if (spawn.y < 1.5f || spawn.y > 2f)
                 {
                     tries++;
                 }
                 else
                 {
-                    Collider[] colliders = Physics.OverlapSphere(spawn, 1.2f);
+                    Collider[] colliders = Physics.OverlapSphere(spawn, 0.75f);
                     bool collisionFound = false;
                     foreach (Collider col in colliders)
                     {

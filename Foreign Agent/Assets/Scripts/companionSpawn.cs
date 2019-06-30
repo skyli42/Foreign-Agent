@@ -24,10 +24,10 @@ public class companionSpawn : MonoBehaviour
         numCompanions = 0;
         prevFrameNumCompanions = numCompanions;
         companionToEnemy = new Dictionary<NavMeshAgent, GameObject>();
-		companionList = new List<NavMeshAgent>();
+        companionList = new List<NavMeshAgent>();
 
-}
-void OnDrawGizmosSelected()
+    }
+    void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, 2f);

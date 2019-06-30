@@ -61,4 +61,12 @@ public class TcellPatrol : MonoBehaviour
                 GotoNextPoint();
         }
     }
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "companion")
+        {
+            Physics.IgnoreCollision(other.gameObject.GetComponent<Collider>(), GetComponent<Collider>());
+        }
+
+    }
 }
