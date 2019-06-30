@@ -217,11 +217,11 @@ public class GameController : MonoBehaviour
             yield return null;
         }
         vcam.m_Follow = null;
-        player.GetComponent<Rigidbody>().useGravity = true;
+       // player.GetComponent<Rigidbody>().useGravity = true;
 
         while (player.transform.position.y > -2f)
         {
-            player.transform.position = Vector3.MoveTowards(player.transform.position, new Vector3(portal.transform.position.x, -2.5f, portal.transform.position.z), Time.deltaTime * 5);
+            player.transform.position = Vector3.MoveTowards(player.transform.position, new Vector3(portal.transform.position.x, -2.5f, portal.transform.position.z), Time.deltaTime * 7.5f);
     
             yield return null;
         }
