@@ -3832,11 +3832,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TCell
       objectReference: {fileID: 0}
-    - target: {fileID: 7846485451287338848, guid: 1e25ea8138c5d4a41bd2eff91a3be348,
-        type: 3}
-      propertyPath: m_TagString
-      value: Tcell
-      objectReference: {fileID: 0}
     - target: {fileID: 7846485451287338879, guid: 1e25ea8138c5d4a41bd2eff91a3be348,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3891,10 +3886,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350091796, guid: 1e25ea8138c5d4a41bd2eff91a3be348, type: 3}
-      propertyPath: points.Array.size
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1350091796, guid: 1e25ea8138c5d4a41bd2eff91a3be348, type: 3}
       propertyPath: points.Array.data[0]
