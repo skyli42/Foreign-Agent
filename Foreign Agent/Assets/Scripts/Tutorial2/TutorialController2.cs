@@ -52,7 +52,7 @@ public class TutorialController2 : MonoBehaviour
     {
         player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<companionSpawn>().enabled = true;
-        player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
     }
 
     public void DestroyWall()
@@ -93,7 +93,7 @@ public class TutorialController2 : MonoBehaviour
             CancelControls();
             player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             deathTalk.NewTalk("deathStart", "deathEnd", deathTalk.txtToParse);
-            player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
             GameController.Instance.death = false;
         }
         if (plasmaSpawn.Instance.activated && !ThelpPlayed)

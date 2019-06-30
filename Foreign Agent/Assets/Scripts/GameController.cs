@@ -187,7 +187,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
             player.gameObject.GetComponentInChildren<Renderer>().enabled = true;
         }
         

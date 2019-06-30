@@ -37,7 +37,7 @@ public class TutorialController3 : MonoBehaviour
     {
         player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<companionSpawn>().enabled = true;
-        player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
     }
 
 
@@ -49,7 +49,7 @@ public class TutorialController3 : MonoBehaviour
             CancelControls();
             player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             deathTalk.NewTalk("deathStart", "deathEnd", deathTalk.txtToParse);
-            player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
             GameController.Instance.death = false;
             Tcell.GetComponent<TcellPatrol>().points = largerPatrol;
         }
