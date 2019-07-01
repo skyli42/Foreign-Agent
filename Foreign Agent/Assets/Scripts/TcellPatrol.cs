@@ -54,6 +54,8 @@ public class TcellPatrol : MonoBehaviour
             }
             else if (!agent.pathPending && agent.remainingDistance < 0.5f)
                 GotoNextPoint();
+            else if(agent.destination.x == closestCell.transform.position.x && agent.destination.z == closestCell.transform.position.z)
+                GotoNextPoint();
         }
         else
         {
