@@ -10,6 +10,7 @@ public class macrophageCollision : MonoBehaviour
     private float normalSpeed;
     public GameObject stage;
     private SimpleSonarShader_Parent parent;
+    private bool isFrozen = false;
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -23,6 +24,10 @@ public class macrophageCollision : MonoBehaviour
         if (other.gameObject.tag == "companion")
         {
             other.collider.gameObject.SetActive(false);
+            if(agent.speed == 0)
+            {
+                isFrozen = true;
+            }
             agent.speed = 0;
             if (plasmaSpawn.Instance != null && !plasmaSpawn.Instance.activated)
             {
@@ -46,7 +51,9 @@ public class macrophageCollision : MonoBehaviour
     IEnumerator unfreezePosition()
     {
         yield return new WaitForSeconds(3f);
-        agent.speed = normalSpeed;
+        if(!isFrozen)
+            agent.speed = normalSpeed;
+        isFrozen = false;
     }
 
 
