@@ -334,7 +334,6 @@ GameObject:
   - component: {fileID: 6727574986036410959}
   - component: {fileID: 1357422164912036492}
   - component: {fileID: 7572230674459540034}
-  - component: {fileID: 8270891644682092110}
   m_Layer: 12
   m_Name: MinimapMarker
   m_TagString: Untagged
@@ -403,16 +402,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &8270891644682092110
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2927352747211834137}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.5000002
-  m_Center: {x: 0.0000019073482, y: -0.00000023841852, z: -0.0000028610227}

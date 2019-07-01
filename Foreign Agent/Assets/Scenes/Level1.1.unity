@@ -787,6 +787,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 356733485}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7357746626962212072, guid: 853533ce91ac24e44975e5d112cdd36a,
         type: 3}
       propertyPath: m_Name
@@ -1998,6 +2002,12 @@ Transform:
   m_Father: {fileID: 249153985}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &978949741 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3820159537366589862, guid: ad71dce37de84b5408bd65f4c0c3af74,
+    type: 3}
+  m_PrefabInstance: {fileID: 737514636}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &988078323
 GameObject:
   m_ObjectHideFlags: 0
@@ -2130,6 +2140,11 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5625994461863576791, guid: 853533ce91ac24e44975e5d112cdd36a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7613865219839258736, guid: 853533ce91ac24e44975e5d112cdd36a,
         type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -3449,6 +3464,7 @@ MonoBehaviour:
   deathMenu: {fileID: 822757726}
   deathAnim: {fileID: 8078104501941085803, guid: 5cc07f7b74b2f3940825ed3297f38cbf,
     type: 3}
+  deathAudio: {fileID: 978949741}
   TargetDestroyed: {fileID: 882643098}
   TimeSpent: {fileID: 1399129650}
   endMenu: {fileID: 572157211}
@@ -3644,6 +3660,11 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5625994461863576791, guid: 853533ce91ac24e44975e5d112cdd36a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7613865219839258736, guid: 853533ce91ac24e44975e5d112cdd36a,
         type: 3}
       propertyPath: m_RootOrder
       value: 5

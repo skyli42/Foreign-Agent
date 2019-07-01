@@ -1885,6 +1885,7 @@ MonoBehaviour:
   deathMenu: {fileID: 61774360}
   deathAnim: {fileID: 8078104501941085803, guid: 5cc07f7b74b2f3940825ed3297f38cbf,
     type: 3}
+  deathAudio: {fileID: 1009097181}
   TargetDestroyed: {fileID: 1177397060}
   TimeSpent: {fileID: 1534778353}
   endMenu: {fileID: 189674634}
@@ -4429,6 +4430,12 @@ PrefabInstance:
       objectReference: {fileID: 1376700962}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad71dce37de84b5408bd65f4c0c3af74, type: 3}
+--- !u!82 &1009097181 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3820159537366589862, guid: ad71dce37de84b5408bd65f4c0c3af74,
+    type: 3}
+  m_PrefabInstance: {fileID: 1009097180}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1026281221
 GameObject:
   m_ObjectHideFlags: 0

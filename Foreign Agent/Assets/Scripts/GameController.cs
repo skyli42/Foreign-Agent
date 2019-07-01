@@ -31,7 +31,7 @@ public class GameController : MonoBehaviour
     public GameObject deathMenu;
     public GameObject deathAnim;
     private bool alreadyDead = false;
-
+    public AudioSource deathAudio;
     public Text TargetDestroyed;
     public Text TimeSpent;
     private bool atEnd = false;
@@ -89,6 +89,7 @@ public class GameController : MonoBehaviour
             myEventSystem.SetSelectedGameObject(restartLevelDeathButton);
             restartLevelDeathButton.GetComponent<Button>().OnSelect(null);
             alreadyDead = true;
+            deathAudio.Play();
             StartCoroutine(waitTillDeathDone());
             
         }

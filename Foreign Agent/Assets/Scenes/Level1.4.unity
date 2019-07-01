@@ -2654,6 +2654,12 @@ PrefabInstance:
       objectReference: {fileID: 5998719074650404740}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad71dce37de84b5408bd65f4c0c3af74, type: 3}
+--- !u!82 &737514637 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3820159537366589862, guid: ad71dce37de84b5408bd65f4c0c3af74,
+    type: 3}
+  m_PrefabInstance: {fileID: 737514636}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &760543983
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7373,6 +7379,7 @@ MonoBehaviour:
   deathMenu: {fileID: 822757726}
   deathAnim: {fileID: 8078104501941085803, guid: 5cc07f7b74b2f3940825ed3297f38cbf,
     type: 3}
+  deathAudio: {fileID: 737514637}
   TargetDestroyed: {fileID: 882643098}
   TimeSpent: {fileID: 1399129650}
   endMenu: {fileID: 572157211}
