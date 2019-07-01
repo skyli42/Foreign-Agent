@@ -351,15 +351,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 815908053, guid: dddeda6d0629a09438dbf97ce84d81fd, type: 3}
       propertyPath: MaxDistance
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 815908053, guid: dddeda6d0629a09438dbf97ce84d81fd, type: 3}
       propertyPath: rolloffMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 815908053, guid: dddeda6d0629a09438dbf97ce84d81fd, type: 3}
       propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 815908053, guid: dddeda6d0629a09438dbf97ce84d81fd, type: 3}
+      propertyPath: Priority
+      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dddeda6d0629a09438dbf97ce84d81fd, type: 3}

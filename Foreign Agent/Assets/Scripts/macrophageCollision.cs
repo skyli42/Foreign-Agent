@@ -11,11 +11,13 @@ public class macrophageCollision : MonoBehaviour
     public GameObject stage;
     private SimpleSonarShader_Parent parent;
     private bool isFrozen = false;
+    private AudioSource sonar;
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         normalSpeed = agent.speed;
         parent = stage.GetComponent<SimpleSonarShader_Parent>();
+        sonar = transform.Find("Sonar").gameObject.GetComponent<AudioSource>();
 
     }
 
@@ -37,6 +39,7 @@ public class macrophageCollision : MonoBehaviour
                 if (parent)
                 {
                     Debug.Log("sonar");
+                    sonar.Play();
                     parent.StartSonarRing(transform.position, 5);
                 }
             }
