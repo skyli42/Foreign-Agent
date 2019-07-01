@@ -27,6 +27,7 @@ public class TutorialControllerScript : MonoBehaviour
     private Animator m_Animator;
 	private companionSpawn companionScript;
 
+    public AudioSource victorySound;
     void Start()
     {
         m_Animator = player.GetComponent<Animator>();
@@ -158,6 +159,7 @@ public class TutorialControllerScript : MonoBehaviour
     }
     public void activateEndMenu()
     {
+        victorySound.Play();
         endMenu.SetActive(true);
         Time.timeScale = 0f;
     }

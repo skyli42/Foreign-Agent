@@ -46,6 +46,8 @@ public class GameController : MonoBehaviour
     Animator m_Animator;
     public bool isTutorial = false;
 
+    public AudioSource victorySound;
+
     private CinemachineVirtualCamera vcam;
 
     void Start()
@@ -233,6 +235,7 @@ public class GameController : MonoBehaviour
 
         if (!isTutorial)
         {
+            victorySound.Play();
             endMenu.SetActive(true);
             Time.timeScale = 0;
         }
