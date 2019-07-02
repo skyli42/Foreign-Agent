@@ -200,15 +200,17 @@ public class GameController : MonoBehaviour
     {
         player.GetComponent<PlayerMovement>().enabled = false;
         player.GetComponent<companionSpawn>().enabled = false;
+        m_Rigidbody = player.GetComponent<Rigidbody>();
+        m_Rigidbody.useGravity = false;
+        m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
         player.GetComponent<Collider>().enabled = false;
-        player.GetComponent<Rigidbody>().useGravity = false;
-      
+        
         m_Animator.SetBool("IsWalking", false);
         m_Animator.SetBool("IsRunning", false);
         m_Animator.SetBool("IsJumping", true);
-        m_Rigidbody = player.GetComponent<Rigidbody>();
+      
        
-        while ((player.transform.position.x - portal.transform.position.x) > 0.05f || (player.transform.position.z - portal.transform.position.z) > 0.05f) 
+        while ((player.transform.position.x - portal.transform.position.x) > 0.02f || (player.transform.position.z - portal.transform.position.z) > 0.02f) 
         {
             Vector3 targetDir = portal.transform.position - player.transform.position;
             targetDir.Normalize();
