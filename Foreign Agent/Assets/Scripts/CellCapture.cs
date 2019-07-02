@@ -17,10 +17,13 @@ public class CellCapture : MonoBehaviour
     public GameObject disruptionAnim;
     private GameObject captureAnim;
     private Material mat;
-
+    private AudioSource capturingSound;
+    private AudioSource cellPop;
     void Start()
     {
         mat = transform.parent.GetComponent<Renderer>().material;
+        capturingSound = transform.Find("capturingSound").gameObject.GetComponent<AudioSource>();
+        cellPop = transform.Find("cellPop").gameObject.GetComponent<AudioSource>();
     }
     void OnTriggerEnter(Collider other)
     {
@@ -28,12 +31,15 @@ public class CellCapture : MonoBehaviour
         {
             captureAnim = Instantiate(disruptionAnim, gameObject.GetComponent<Collider>().bounds.center, Quaternion.identity);
             startCap = true;
+            capturingSound.Play();
             currTime = capTime;
 			Debug.Log("starting cap");
         }
         else if (startCap && other.gameObject.CompareTag("Tcell"))
         {
             Debug.Log("death");
+            if (capturingSound.isPlaying)
+                capturingSound.Stop();
             startCap = false;
             GameController.Instance.death = true;
         }
@@ -52,6 +58,9 @@ public class CellCapture : MonoBehaviour
             if (currTime <= 0)
             {
                 Debug.Log("Capped");
+                if (capturingSound.isPlaying)
+                    capturingSound.Stop();
+                cellPop.Play();
                 companionSpawn.Instance.numCompanions += 1;
                 GameController.Instance.numCaptures += 1; //temporary
                 capped = true;
@@ -67,6 +76,8 @@ public class CellCapture : MonoBehaviour
         if (other.gameObject == player)
         {
             Destroy(captureAnim);
+            if(capturingSound.isPlaying)
+                capturingSound.Stop();
             if (currTime > 0 && !capped)
             {
                 slider.value = 0;

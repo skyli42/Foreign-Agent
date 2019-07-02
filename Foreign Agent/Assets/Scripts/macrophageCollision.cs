@@ -12,12 +12,15 @@ public class macrophageCollision : MonoBehaviour
     private SimpleSonarShader_Parent parent;
     private bool isFrozen = false;
     private AudioSource sonar;
+    private AudioSource companionDeath;
+    public GameObject companionAnim;
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         normalSpeed = agent.speed;
         parent = stage.GetComponent<SimpleSonarShader_Parent>();
         sonar = transform.Find("Sonar").gameObject.GetComponent<AudioSource>();
+        companionDeath = transform.Find("companionDeath").gameObject.GetComponent<AudioSource>();
 
     }
 
@@ -25,6 +28,8 @@ public class macrophageCollision : MonoBehaviour
     {
         if (other.gameObject.tag == "companion")
         {
+            companionDeath.Play();
+            Instantiate(companionAnim, other.collider.bounds.center, Quaternion.identity);
             other.collider.gameObject.SetActive(false);
             if(agent.speed == 0)
             {

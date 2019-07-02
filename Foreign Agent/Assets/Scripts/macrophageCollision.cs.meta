@@ -3,7 +3,9 @@ guid: c7e2f4b60299bd74d81b2e7a0fa2a9b7
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - stage: {instanceID: 0}
+  - companionAnim: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
