@@ -19,10 +19,12 @@ public class plasmaSpawn : MonoBehaviour
     public bool Bcellcollision = false;
     public GameObject Bletter;
     public GameObject Pletter;
+    private AudioSource activationSound;
     // Update is called once per frame
     private void Start()
     {
         Instance = this;
+        activationSound = transform.Find("ActivationSound").gameObject.GetComponent<AudioSource>();
     }
     void LateUpdate()
     {
@@ -82,6 +84,7 @@ public class plasmaSpawn : MonoBehaviour
         {
             Bletter.SetActive(false);
             Pletter.SetActive(true);
+            activationSound.Play();
             //plasmaSpawn.activated = true;//probably temp until T helper are implemented
             gameObject.GetComponent<Renderer>().material = activeMat;
             for (int i = 0; i < numAntibodies; i++)

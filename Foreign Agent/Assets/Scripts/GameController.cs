@@ -208,7 +208,7 @@ public class GameController : MonoBehaviour
         m_Animator.SetBool("IsJumping", true);
         m_Rigidbody = player.GetComponent<Rigidbody>();
        
-        while ((player.transform.position.x - portal.transform.position.x) > 0.1f || (player.transform.position.z - portal.transform.position.z) > 0.1f) 
+        while ((player.transform.position.x - portal.transform.position.x) > 0.05f || (player.transform.position.z - portal.transform.position.z) > 0.05f) 
         {
             Vector3 targetDir = portal.transform.position - player.transform.position;
             targetDir.Normalize();

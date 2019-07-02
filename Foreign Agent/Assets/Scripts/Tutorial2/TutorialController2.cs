@@ -30,6 +30,8 @@ public class TutorialController2 : MonoBehaviour
     private Animator m_Animator;
     public Image spacebar;
 
+    public AudioSource victorySound;
+
     void Start()
     {
         m_Animator = player.GetComponent<Animator>();
@@ -115,6 +117,7 @@ public class TutorialController2 : MonoBehaviour
     }
     public void activateEndMenu()
     {
+        victorySound.Play();
         endMenu.SetActive(true);
         Time.timeScale = 0f;
     }
