@@ -217,12 +217,11 @@ public class GameController : MonoBehaviour
             Vector3 desiredForward = Vector3.RotateTowards(player.transform.forward, new Vector3(targetDir.x, 0f, targetDir.z), 20f * Time.deltaTime, 0f);
             m_Rotation = Quaternion.LookRotation(desiredForward);
             m_Rigidbody.MoveRotation(m_Rotation);
-            player.transform.position = Vector3.MoveTowards(player.transform.position, portal.transform.position, Time.deltaTime * 2);
+            player.transform.position = Vector3.MoveTowards(player.transform.position, new Vector3(portal.transform.position.x, 1f, portal.transform.position.z), Time.deltaTime * 2);
 
             yield return null;
         }
         vcam.m_Follow = null;
-       // player.GetComponent<Rigidbody>().useGravity = true;
 
         while (player.transform.position.y > -2f)
         {
@@ -230,9 +229,6 @@ public class GameController : MonoBehaviour
     
             yield return null;
         }
-       // player.GetComponent<PlayerMovement>().enabled = true;
-        //player.GetComponent<companionSpawn>().enabled = true;
-        //player.GetComponent<Collider>().enabled = true; 
         m_Animator.SetBool("IsJumping", false);
 
         if (!isTutorial)
