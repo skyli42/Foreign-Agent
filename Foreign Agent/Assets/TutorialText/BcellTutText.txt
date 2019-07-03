@@ -13,8 +13,9 @@ Infect the cell in front of you to move onto the next stage of training.
 [title=plasmaSpawnEnd]
 
 [title=companionStart]
-Now that you have a companion virus from replicating, I can demonstrate the chain of events that occurs when a macrophage engulfs a virus.
-This macrophage in front of you is locked in place so don't worry about it chasing you. Press space to send out your companion to see what happens.
+When a macrophage engulfs a virus, a chain of events is triggered.
+The macrophage in front of you is locked in place so don't worry about it chasing you. 
+Press space to send out your companion virus to see what happens.
 [title=companionEnd]
 
 [title=THelperStart]
