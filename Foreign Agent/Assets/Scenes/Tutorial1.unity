@@ -4262,21 +4262,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8210097606741520979, guid: 77934b29a0964e14abb658531c6f0f30,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8210097606741520979, guid: 77934b29a0964e14abb658531c6f0f30,
-        type: 3}
-      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8210097606741520979, guid: 77934b29a0964e14abb658531c6f0f30,
-        type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8663401811153991051, guid: 77934b29a0964e14abb658531c6f0f30,
         type: 3}
       propertyPath: m_Name
@@ -4346,6 +4331,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210097606741520979, guid: 77934b29a0964e14abb658531c6f0f30,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210097606741520979, guid: 77934b29a0964e14abb658531c6f0f30,
+        type: 3}
+      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210097606741520979, guid: 77934b29a0964e14abb658531c6f0f30,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77934b29a0964e14abb658531c6f0f30, type: 3}
@@ -4692,6 +4692,11 @@ PrefabInstance:
       propertyPath: companionUI
       value: 
       objectReference: {fileID: 1376700962}
+    - target: {fileID: 4617091418556997901, guid: ad71dce37de84b5408bd65f4c0c3af74,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad71dce37de84b5408bd65f4c0c3af74, type: 3}
 --- !u!82 &1009097181 stripped
