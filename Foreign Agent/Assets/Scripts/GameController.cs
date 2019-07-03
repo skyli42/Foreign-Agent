@@ -45,6 +45,7 @@ public class GameController : MonoBehaviour
     public GameObject portalAnim;
     Animator m_Animator;
     public bool isTutorial = false;
+    public bool isIntro = false;
 
     public AudioSource victorySound;
 
@@ -178,7 +179,7 @@ public class GameController : MonoBehaviour
         Instantiate(deathAnim, player.GetComponent<Collider>().bounds.center, Quaternion.identity);
         player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         player.gameObject.GetComponentInChildren<Renderer>().enabled = false;
-        if (!isTutorial)
+        if (!isTutorial || isIntro)
         {
             yield return new WaitForSeconds(1.2f);
             TargetDestroyedDeath.text = numCaptures.ToString() + " / " + numCellsInLevel.ToString();
