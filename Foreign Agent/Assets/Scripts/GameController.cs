@@ -18,10 +18,10 @@ public class GameController : MonoBehaviour
     Quaternion m_Rotation = Quaternion.identity;
 
     public bool secondInfection;
-	public GameObject stage;
-	private SimpleSonarShader_Parent parent;
+    public GameObject stage;
+    private SimpleSonarShader_Parent parent;
 
-	public GameObject pauseMenu;
+    public GameObject pauseMenu;
     private bool paused;
     public GameObject player;
 
@@ -52,29 +52,29 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        vcam = GameObject.Find("VirtualCamera").GetComponent< CinemachineVirtualCamera>();
+        vcam = GameObject.Find("VirtualCamera").GetComponent<CinemachineVirtualCamera>();
         m_Animator = player.GetComponent<Animator>();
         parent = stage.GetComponent<SimpleSonarShader_Parent>();
-		Instance = this;
+        Instance = this;
         death = false;
         numCaptures = 0;
         prevFramenumCaptures = numCaptures;
         cellsLeftUI.GetComponent<TextMeshProUGUI>().text = "Cells Left: " + (numCellsInLevel - numCaptures).ToString();
         myEventSystem = GameObject.Find("EventSystem").GetComponent<UnityEngine.EventSystems.EventSystem>();
-		if (secondInfection)
-		{
-			plasmaSpawn.Instance.activated = true;//probably temp until T helper are implemented
-			if (parent)
-			{
-				Debug.Log("sonar");
-				parent.StartSonarRing(transform.position, 5);
-			}
-		}
+        if (secondInfection)
+        {
+            plasmaSpawn.Instance.activated = true;//probably temp until T helper are implemented
+            if (parent)
+            {
+                Debug.Log("sonar");
+                parent.StartSonarRing(transform.position, 5);
+            }
+        }
     }
     // Update is called once per frame
     void Update()
-    {   
-        if(Input.GetKeyDown(KeyCode.Escape) && !death)
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && !death)
         {
             paused = togglePause();
             if (paused)
@@ -93,7 +93,7 @@ public class GameController : MonoBehaviour
             alreadyDead = true;
             deathAudio.Play();
             StartCoroutine(waitTillDeathDone());
-            
+
         }
         else if (!death && alreadyDead)
             alreadyDead = false;
@@ -159,7 +159,7 @@ public class GameController : MonoBehaviour
         }
         prevFramenumCaptures = numCaptures;
     }
-    
+
     public bool togglePause()
     {
         if (Time.timeScale == 0f)
@@ -174,7 +174,7 @@ public class GameController : MonoBehaviour
         }
     }
     public IEnumerator waitTillDeathDone()
-    {  
+    {
         Instantiate(deathAnim, player.GetComponent<Collider>().bounds.center, Quaternion.identity);
         player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         player.gameObject.GetComponentInChildren<Renderer>().enabled = false;
@@ -193,42 +193,43 @@ public class GameController : MonoBehaviour
             player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
             player.gameObject.GetComponentInChildren<Renderer>().enabled = true;
         }
-        
+
     }
-   
+
     public IEnumerator movePlayerToPortal(GameObject portal)
     {
         player.GetComponent<PlayerMovement>().enabled = false;
         player.GetComponent<companionSpawn>().enabled = false;
-        m_Rigidbody = player.GetComponent<Rigidbody>();
-        m_Rigidbody.useGravity = false;
-        m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
         player.GetComponent<Collider>().enabled = false;
-        
+        m_Rigidbody = player.GetComponent<Rigidbody>();
+        m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+        m_Rigidbody.useGravity = false;
+
         m_Animator.SetBool("IsWalking", false);
         m_Animator.SetBool("IsRunning", false);
         m_Animator.SetBool("IsJumping", true);
-      
-       
-        while ((player.transform.position.x - portal.transform.position.x) > 0.02f || (player.transform.position.z - portal.transform.position.z) > 0.02f) 
+        m_Rigidbody = player.GetComponent<Rigidbody>();
+
+        while (Mathf.Abs(player.transform.position.x - portal.transform.position.x) > 0.02f || Mathf.Abs(player.transform.position.z - portal.transform.position.z) > 0.02f)
         {
             Vector3 targetDir = portal.transform.position - player.transform.position;
             targetDir.Normalize();
             Vector3 desiredForward = Vector3.RotateTowards(player.transform.forward, new Vector3(targetDir.x, 0f, targetDir.z), 20f * Time.deltaTime, 0f);
             m_Rotation = Quaternion.LookRotation(desiredForward);
             m_Rigidbody.MoveRotation(m_Rotation);
-            player.transform.position = Vector3.MoveTowards(player.transform.position, new Vector3(portal.transform.position.x, 1f, portal.transform.position.z), Time.deltaTime * 2);
-
+            player.transform.position = Vector3.MoveTowards(player.transform.position, portal.transform.position, Time.deltaTime * 2f);
             yield return null;
         }
         vcam.m_Follow = null;
 
         while (player.transform.position.y > -2f)
         {
-            player.transform.position = Vector3.MoveTowards(player.transform.position, new Vector3(portal.transform.position.x, -2.5f, portal.transform.position.z), Time.deltaTime * 7.5f);
-    
+            player.transform.Translate(Vector3.down * Time.deltaTime * 7.5f, Space.World);
             yield return null;
         }
+        // player.GetComponent<PlayerMovement>().enabled = true;
+        //player.GetComponent<companionSpawn>().enabled = true;
+        //player.GetComponent<Collider>().enabled = true; 
         m_Animator.SetBool("IsJumping", false);
 
         if (!isTutorial)
@@ -237,8 +238,8 @@ public class GameController : MonoBehaviour
             endMenu.SetActive(true);
             Time.timeScale = 0;
         }
-        
+
 
     }
-   
+
 }
