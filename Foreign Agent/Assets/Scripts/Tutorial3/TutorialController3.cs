@@ -29,7 +29,7 @@ public class TutorialController3 : MonoBehaviour
         player.GetComponent<companionSpawn>().enabled = false;
         m_Animator.SetBool("IsWalking", false);
         m_Animator.SetBool("IsRunning", false);
-        player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+      //  player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
 
     //give back the controls to player

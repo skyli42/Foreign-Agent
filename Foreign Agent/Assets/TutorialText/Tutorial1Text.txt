@@ -1,6 +1,6 @@
 [title=IntroTalkStart]
-Hello! Welcome to the agency.
-Since you're new here I'll walk you through our basic protocol.
+Hello! Welcome to the VIA - the Viral Infection Agency.
+Since you're a new virus here I'll walk you through our basic protocol.
 Move around using the WASD keys.
 [title=IntroTalkEnd]
 
@@ -10,7 +10,7 @@ Press and hold <b>SHIFT</b> while moving to sprint! The meter displays your rema
 
 [title=cellInfectionStart]
 This is a human cell. Your goal is to infect and replicate within all cells in the area. 
-To start an infection, simply walk inside the cell.
+To infect, walk inside the cell and wait until the infection is complete.
 [title=cellInfectionEnd]
 
 [title=infectionSuccessStart]
