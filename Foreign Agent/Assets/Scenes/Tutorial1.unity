@@ -4758,15 +4758,15 @@ PrefabInstance:
       propertyPath: companionUI
       value: 
       objectReference: {fileID: 1376700962}
-    - target: {fileID: 4617091418556997901, guid: ad71dce37de84b5408bd65f4c0c3af74,
+    - target: {fileID: 8599541856543717270, guid: ad71dce37de84b5408bd65f4c0c3af74,
         type: 3}
-      propertyPath: moveSpeed
-      value: 2
+      propertyPath: m_AnchorMax.x
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4617091418556997901, guid: ad71dce37de84b5408bd65f4c0c3af74,
+    - target: {fileID: 8599541856543717270, guid: ad71dce37de84b5408bd65f4c0c3af74,
         type: 3}
-      propertyPath: maxDash
-      value: 2.5
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad71dce37de84b5408bd65f4c0c3af74, type: 3}
