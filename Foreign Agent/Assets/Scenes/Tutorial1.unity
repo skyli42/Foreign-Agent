@@ -4697,6 +4697,11 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4617091418556997901, guid: ad71dce37de84b5408bd65f4c0c3af74,
+        type: 3}
+      propertyPath: maxDash
+      value: 2.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad71dce37de84b5408bd65f4c0c3af74, type: 3}
 --- !u!82 &1009097181 stripped
