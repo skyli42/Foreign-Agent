@@ -24,6 +24,7 @@ You can see the number of companions you have as well as the number of cells lef
 
 [title=macrophageInstructionStart]
 This is a <color=green><b>MACROPHAGE</b></color>. Macrophages will engulf any virus that they come close to, so be careful!
+However, you'll be glad to know that they <b>cannot</b> see you while you are infecting a cell.
 [title=macrophageInstructionEnd]
 
 [title=deathStart]

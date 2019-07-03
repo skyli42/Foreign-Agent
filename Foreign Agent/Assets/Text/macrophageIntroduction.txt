@@ -1,0 +1,10 @@
+[title=IntroTalkStart]
+We've found a few macrophages for you to practice your skills with. 
+All you have to do is capture the cell at the end of the room.
+Good luck agent!
+[title=IntroTalkEnd]
+
+[title=endLevelStart]
+Congratulations! You've successfully completed your training with macrophages!
+You will now move onto your second round of training.
+[title=endLevelEnd]
