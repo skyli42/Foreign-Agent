@@ -18,9 +18,11 @@ public class TutorialController3 : MonoBehaviour
     private Animator m_Animator;
     private bool endPlayed = false;
     public AudioSource victorySound;
+	public Image grayScreen;
     void Start()
     {
-        m_Animator = player.GetComponent<Animator>();
+		grayScreen.enabled = true;
+		m_Animator = player.GetComponent<Animator>();
     }
     public void CancelControls()
     {
@@ -29,19 +31,23 @@ public class TutorialController3 : MonoBehaviour
         player.GetComponent<companionSpawn>().enabled = false;
         m_Animator.SetBool("IsWalking", false);
         m_Animator.SetBool("IsRunning", false);
-      //  player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-    }
+		//  player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+		grayScreen.enabled = true;
 
-    //give back the controls to player
-    public void GiveBackControls()
+	}
+
+	//give back the controls to player
+	public void GiveBackControls()
     {
         player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<companionSpawn>().enabled = true;
         player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-    }
+		grayScreen.enabled = false;
+
+	}
 
 
-    void LateUpdate()
+	void LateUpdate()
     {
         if (GameController.Instance.death)
         {

@@ -29,32 +29,37 @@ public class TutorialController2 : MonoBehaviour
     public GameObject wallThird;
     private Animator m_Animator;
     public Image spacebar;
-
+	public Image grayScreen;
     public AudioSource victorySound;
 
     void Start()
     {
         m_Animator = player.GetComponent<Animator>();
+		grayScreen.enabled = true;
 
-    }
-    public void CancelControls()
+	}
+	public void CancelControls()
     {
         player.GetComponent<PlayerMovement>().dashStart = false;
         player.GetComponent<PlayerMovement>().enabled = false;
         player.GetComponent<companionSpawn>().enabled = false;
         m_Animator.SetBool("IsWalking", false);
         m_Animator.SetBool("IsRunning", false);
-    }
+		grayScreen.enabled = true;
 
-    //give back the controls to player
-    public void GiveBackControls()
+	}
+
+	//give back the controls to player
+	public void GiveBackControls()
     {
         player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<companionSpawn>().enabled = true;
         player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-    }
+		grayScreen.enabled = false;
 
-    public void DestroyWall()
+	}
+
+	public void DestroyWall()
     {
         wall.SetActive(false);
     }

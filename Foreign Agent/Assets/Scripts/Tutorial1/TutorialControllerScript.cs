@@ -28,10 +28,13 @@ public class TutorialControllerScript : MonoBehaviour
 	private companionSpawn companionScript;
 
     public AudioSource victorySound;
+	public Image grayScreen;
+
     void Start()
     {
         m_Animator = player.GetComponent<Animator>();
 		companionScript = player.GetComponent<companionSpawn>();
+		grayScreen.enabled = true;
     }
     public void CancelControls()
     {
@@ -41,7 +44,7 @@ public class TutorialControllerScript : MonoBehaviour
       
         m_Animator.SetBool("IsWalking", false);
         m_Animator.SetBool("IsRunning", false);
-
+		grayScreen.enabled = true;
     }
 
     //give back the controls to player
@@ -49,7 +52,8 @@ public class TutorialControllerScript : MonoBehaviour
     {
         player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<companionSpawn>().enabled = true;
-    }
+		grayScreen.enabled = false;
+	}
 
     public void DestroyWall()
     {
