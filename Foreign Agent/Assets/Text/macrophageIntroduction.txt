@@ -1,6 +1,6 @@
 [title=IntroTalkStart]
 We've found a few macrophages for you to practice your skills with. 
-All you have to do is capture the cell at the end of the room.
+All you have to do is infect the cell at the end of the room.
 Good luck agent!
 [title=IntroTalkEnd]
 

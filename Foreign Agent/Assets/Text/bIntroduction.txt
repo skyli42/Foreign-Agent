@@ -1,6 +1,6 @@
 [title=IntroTalkStart]
 Welcome to the B Cell room.
-Remember that using a companion virus will trigger T-helper cells, activating B cells.
+Remember that using a companion virus will trigger T-helper cells who stimulate B cells to turn into active plasma cells.
 Good luck agent!
 [title=IntroTalkEnd]
 
