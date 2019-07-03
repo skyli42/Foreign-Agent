@@ -23,8 +23,9 @@ You can see the number of companions you have as well as the number of cells lef
 [title=UIemphasisEnd]
 
 [title=macrophageInstructionStart]
-This is a <color=green><b>MACROPHAGE</b></color>. Macrophages will engulf any virus that they come close to, so be careful!
-However, you'll be glad to know that they <b>cannot</b> see you while you are infecting a cell.
+This is a <color=green><b>MACROPHAGE</b></color>. 
+Macrophages protect the body from foreign invaders like ourselves, and will engulf any virus that they come close to, so be careful!
+However, you'll be glad to know that they <b>cannot</b> see you while you are infecting a cell!
 [title=macrophageInstructionEnd]
 
 [title=deathStart]
@@ -32,5 +33,5 @@ You were engulfed by the macrophage! Since this is a training simulation, I've r
 [title=deathEnd]
 
 [title=endLevelStart]
-Congratulations! You've successfully completed your first infection. In the next round of training you'll learn about more defenses you'll have to overcome.
+Congratulations! You've successfully completed your first infection.
 [title=endLevelEnd]

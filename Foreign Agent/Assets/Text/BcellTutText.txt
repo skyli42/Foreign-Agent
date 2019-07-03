@@ -29,6 +29,5 @@ I don't know how, but you managed to die from the completely stationary macropha
 [title=deathEnd]
 
 [title=endLevelStart]
-Congratulations! You've successfully completed your second round of training.
-You will now be sent off to your final round of training.
+Congratulations! You've successfully completed your second round of training!
 [title=endLevelEnd]

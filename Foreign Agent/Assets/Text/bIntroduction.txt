@@ -1,0 +1,10 @@
+[title=IntroTalkStart]
+Welcome to the B Cell room.
+Remember that using a companion virus will trigger T-helper cells, activating B cells.
+Good luck agent!
+[title=IntroTalkEnd]
+
+[title=endLevelStart]
+Congratulations! You've successfully completed your training with B cells!
+You will now move onto your final round of training.
+[title=endLevelEnd]
