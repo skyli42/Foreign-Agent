@@ -11,7 +11,8 @@ public class playGame : MonoBehaviour
 
     public void NextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        int sceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        LoadingScreen.Instance.Show(SceneManager.LoadSceneAsync(sceneIndex));
         Time.timeScale = 1.0f;
     }
 }

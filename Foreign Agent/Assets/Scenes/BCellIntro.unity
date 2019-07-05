@@ -3153,6 +3153,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 149230226, guid: 853533ce91ac24e44975e5d112cdd36a, type: 3}
+      propertyPath: m_Speed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 149230227, guid: 853533ce91ac24e44975e5d112cdd36a, type: 3}
       propertyPath: viewRadius
       value: 3.5
