@@ -120,7 +120,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: b612ae05791cd8443922e9ffb15ee31c, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 91f65156289f6904fbe0c89428f51f36, type: 2}
 --- !u!1 &10633703 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7874236450581153342, guid: 5b89ad06d999c004fa3032d80448046a,
@@ -296,7 +296,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &132389113
 BoxCollider:
@@ -453,7 +453,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &209471774
 BoxCollider:
@@ -1080,7 +1080,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &530480542
 BoxCollider:
@@ -1363,7 +1363,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &605674374
 BoxCollider:
@@ -2512,6 +2512,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6970538177829851670, guid: 77934b29a0964e14abb658531c6f0f30,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6652969532089853836, guid: 77934b29a0964e14abb658531c6f0f30,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 8663401811153991051, guid: 77934b29a0964e14abb658531c6f0f30,
         type: 3}
       propertyPath: m_Name
@@ -2582,7 +2592,8 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7100829680454186227, guid: 77934b29a0964e14abb658531c6f0f30, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 77934b29a0964e14abb658531c6f0f30, type: 3}
 --- !u!1 &1312559876
 GameObject:
@@ -2701,7 +2712,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1532711101
 BoxCollider:
@@ -3600,6 +3611,7 @@ MonoBehaviour:
   returnToGameButton: {fileID: 429194371}
   portalAnim: {fileID: 100000, guid: 3d4907e6bd39f474b8fd8220920e65c4, type: 3}
   isTutorial: 0
+  isIntro: 0
   victorySound: {fileID: 2041808979}
 --- !u!4 &2073553380 stripped
 Transform:
@@ -4269,6 +4281,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6970538177829851670, guid: 77934b29a0964e14abb658531c6f0f30,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6652969532089853836, guid: 77934b29a0964e14abb658531c6f0f30,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 8663401811153991051, guid: 77934b29a0964e14abb658531c6f0f30,
         type: 3}
       propertyPath: m_Name
@@ -4339,7 +4361,8 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7100829680454186227, guid: 77934b29a0964e14abb658531c6f0f30, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 77934b29a0964e14abb658531c6f0f30, type: 3}
 --- !u!1001 &8871309688516088226
 PrefabInstance:
