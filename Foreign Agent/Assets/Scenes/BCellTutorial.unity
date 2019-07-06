@@ -2507,13 +2507,8 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6325445122840448689, guid: 77934b29a0964e14abb658531c6f0f30,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 7100829680454186227, guid: 77934b29a0964e14abb658531c6f0f30, type: 3}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 77934b29a0964e14abb658531c6f0f30, type: 3}
 --- !u!1 &579574100
 GameObject:
@@ -4543,6 +4538,81 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7137304097803203561, guid: 77934b29a0964e14abb658531c6f0f30,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137304097803203561, guid: 77934b29a0964e14abb658531c6f0f30,
+        type: 3}
+      propertyPath: InitialModule.size3D
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137304097803203561, guid: 77934b29a0964e14abb658531c6f0f30,
+        type: 3}
+      propertyPath: InitialModule.startSizeY.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137304097803203561, guid: 77934b29a0964e14abb658531c6f0f30,
+        type: 3}
+      propertyPath: InitialModule.startSizeZ.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137304097803203561, guid: 77934b29a0964e14abb658531c6f0f30,
+        type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 31666724567092523, guid: 77934b29a0964e14abb658531c6f0f30,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2946180380963195285, guid: 77934b29a0964e14abb658531c6f0f30,
+        type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2946180380963195285, guid: 77934b29a0964e14abb658531c6f0f30,
+        type: 3}
+      propertyPath: InitialModule.gravityModifier.maxCurve.m_Curve.Array.data[0].value
+      value: 0.24072266
+      objectReference: {fileID: 0}
+    - target: {fileID: 2946180380963195285, guid: 77934b29a0964e14abb658531c6f0f30,
+        type: 3}
+      propertyPath: InitialModule.gravityModifier.maxCurve.m_Curve.Array.data[1].value
+      value: 0.24072266
+      objectReference: {fileID: 0}
+    - target: {fileID: 2946180380963195285, guid: 77934b29a0964e14abb658531c6f0f30,
+        type: 3}
+      propertyPath: ShapeModule.angle
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2946180380963195285, guid: 77934b29a0964e14abb658531c6f0f30,
+        type: 3}
+      propertyPath: scalingMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2946180380963195285, guid: 77934b29a0964e14abb658531c6f0f30,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2946180380963195285, guid: 77934b29a0964e14abb658531c6f0f30,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2946180380963195285, guid: 77934b29a0964e14abb658531c6f0f30,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2946180380963195285, guid: 77934b29a0964e14abb658531c6f0f30,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6970538177829851670, guid: 77934b29a0964e14abb658531c6f0f30,
         type: 3}
       propertyPath: m_Enabled
@@ -4557,6 +4627,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HumanBlobCell (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8663401811153991051, guid: 77934b29a0964e14abb658531c6f0f30,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8663401811153991047, guid: 77934b29a0964e14abb658531c6f0f30,
         type: 3}
@@ -4623,13 +4698,7 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6325445122840448689, guid: 77934b29a0964e14abb658531c6f0f30,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7100829680454186227, guid: 77934b29a0964e14abb658531c6f0f30, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77934b29a0964e14abb658531c6f0f30, type: 3}
 --- !u!1 &963194225
 GameObject:

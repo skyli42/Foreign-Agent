@@ -19,9 +19,15 @@ public class CellCapture : MonoBehaviour
     private Material mat;
     private AudioSource capturingSound;
     private AudioSource cellPop;
+    private GameObject parentCell;
+    private GameObject particleSystem;
+  
     void Start()
     {
-        mat = transform.parent.GetComponent<Renderer>().material;
+       
+        parentCell = transform.parent.gameObject;   
+        particleSystem = parentCell.transform.Find("ReplicationEffect").gameObject;     
+        mat = parentCell.transform.GetComponent<Renderer>().material;
         capturingSound = transform.Find("capturingSound").gameObject.GetComponent<AudioSource>();
         cellPop = transform.Find("cellPop").gameObject.GetComponent<AudioSource>();
     }
@@ -65,8 +71,13 @@ public class CellCapture : MonoBehaviour
                 GameController.Instance.numCaptures += 1; //temporary
                 capped = true;
                 startCap = false;
+                ParticleSystem parts = particleSystem.GetComponent<ParticleSystem>();
+                parts.Play();
                 StartCoroutine(DissolveOverTime(2.0f));
+                float totalDuration = parts.duration + parts.startLifetime;
+                StartCoroutine(DestroyReplicationEffect(totalDuration));
                 Destroy(captureAnim);
+                
             }
         }
     }
@@ -89,6 +100,7 @@ public class CellCapture : MonoBehaviour
     }
     IEnumerator DissolveOverTime(float duration)
     {
+        slider.gameObject.SetActive(false);
         for (float t = 0; t <= duration - 0.2f; t += Time.deltaTime)
         {
 
@@ -99,6 +111,14 @@ public class CellCapture : MonoBehaviour
         }
         //mat.SetInt("_DissolveAmount", 1);//getridofifwekeeptest
         mat.SetInt("_Cutoff", 1);
-        Destroy(transform.parent.gameObject);
+    }
+    IEnumerator DestroyReplicationEffect(float duration)
+    {
+        for (float t = 0; t <= duration; t += Time.deltaTime)
+        {
+            yield return null;
+        }
+        Destroy(particleSystem);
+        Destroy(parentCell);
     }
 }
