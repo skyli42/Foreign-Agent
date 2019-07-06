@@ -58,6 +58,7 @@ public class TutorialController3 : MonoBehaviour
             player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
             GameController.Instance.death = false;
             Tcell.GetComponent<TcellPatrol>().points = largerPatrol;
+            Tcell.GetComponent<TcellPatrol>().destPoint = 0;
         }
 
         if (!endPlayed && tutCell.GetComponentInChildren<CellCapture>().capped)

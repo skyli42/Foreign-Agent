@@ -6,10 +6,12 @@ using UnityEngine.AI;
 public class TcellPatrol : MonoBehaviour
 {
     public Transform[] points;
-    private int destPoint = 0;
+    [HideInInspector]
+    public int destPoint = 0;
     private NavMeshAgent agent;
     public LayerMask cellMask;
-
+    private Vector3 previousPoint;
+    private bool firstCall = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,12 +52,24 @@ public class TcellPatrol : MonoBehaviour
         {
             if (closestCell.gameObject.GetComponent<CellCapture>().startCap)
             {
+                if (firstCall)
+                {
+                    previousPoint = agent.destination;
+                    firstCall = false;
+                }
                 agent.destination = closestCell.transform.position;
+                
             }
             else if (!agent.pathPending && agent.remainingDistance < 0.5f)
+            {
                 GotoNextPoint();
-            else if(agent.destination.x == closestCell.transform.position.x && agent.destination.z == closestCell.transform.position.z)
-                GotoNextPoint();
+                firstCall = true;
+            }
+            else if (agent.destination.x == closestCell.transform.position.x && agent.destination.z == closestCell.transform.position.z)
+            {
+                agent.destination = previousPoint;
+                firstCall = true;
+            }
         }
         else
         {
