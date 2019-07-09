@@ -37,7 +37,9 @@ public class plasmaSpawn : MonoBehaviour
         
         if (activated && !alreadySpawned)
         {
-            gameObject.GetComponent<Renderer>().material = activeMat;
+			nametag.text = "Plasma B Cell";
+
+			gameObject.GetComponent<Renderer>().material = activeMat;
             Bletter.SetActive(false);
             Pletter.SetActive(true);
             if (!Bcellcollision)
@@ -102,7 +104,6 @@ public class plasmaSpawn : MonoBehaviour
                 antibodySpawn.GetComponent<antibodyPatrol>().macrophages = macrophages;
             }
             Bcellcollision = true;
-			nametag.text = "Plasma B Cell";
         }
 
     }
