@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class plasmaSpawn : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class plasmaSpawn : MonoBehaviour
     public GameObject Bletter;
     public GameObject Pletter;
     private AudioSource activationSound;
+	public Text nametag;
     // Update is called once per frame
     private void Start()
     {
@@ -100,6 +102,7 @@ public class plasmaSpawn : MonoBehaviour
                 antibodySpawn.GetComponent<antibodyPatrol>().macrophages = macrophages;
             }
             Bcellcollision = true;
+			nametag.text = "Plasma B Cell";
         }
 
     }
