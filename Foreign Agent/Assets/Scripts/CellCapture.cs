@@ -31,8 +31,9 @@ public class CellCapture : MonoBehaviour
         colourTimer = 0f;
         parentCell = transform.parent.gameObject;
         cellRenderer = parentCell.GetComponent<Renderer>();
-        origColour = new Color32(14, 248, 248, 71);
-        emisColour = new Color32(0, 167, 191, 255);
+        origColour = cellRenderer.material.color;
+        emisColour = cellRenderer.material.GetColor("_EmissionColor");
+
         particleSystem = parentCell.transform.Find("ReplicationEffect").gameObject;     
         mat = parentCell.transform.GetComponent<Renderer>().material;
         capturingSound = transform.Find("capturingSound").gameObject.GetComponent<AudioSource>();
@@ -99,8 +100,7 @@ public class CellCapture : MonoBehaviour
 
         if (other.gameObject == player)
         {
-            cellRenderer.material.color = origColour;
-            cellRenderer.material.SetColor("_EmissionColor", emisColour);
+          
 
             Destroy(captureAnim);
             if(capturingSound.isPlaying)
@@ -108,6 +108,8 @@ public class CellCapture : MonoBehaviour
             if (currTime > 0 && !capped)
             {
                 slider.value = 0;
+                startCap = false;
+                StartCoroutine(ColourReset(1f));
             }
             colourTimer = 0f;
             currTime = capTime;
@@ -136,5 +138,21 @@ public class CellCapture : MonoBehaviour
         }
         Destroy(particleSystem);
         Destroy(parentCell);
+    }
+    IEnumerator ColourReset(float duration)
+    {
+       
+        Color currColour = cellRenderer.material.color;
+        Color currEmisColour = cellRenderer.material.GetColor("_EmissionColor");
+
+        float t = 0;
+        while (t < duration && !startCap)
+        {
+            cellRenderer.material.color = Color.Lerp(currColour, origColour, t / duration);
+            cellRenderer.material.SetColor("_EmissionColor", Color.Lerp(currEmisColour, emisColour, t / duration));
+            t += Time.deltaTime;
+            yield return null;
+        }
+        
     }
 }
