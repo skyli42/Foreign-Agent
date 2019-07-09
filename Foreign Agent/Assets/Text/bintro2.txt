@@ -1,0 +1,4 @@
+[title=IntroTalkStart]
+Remember that you can use a companion virus to distract macrophages!
+Good luck agent!
+[title=IntroTalkEnd]

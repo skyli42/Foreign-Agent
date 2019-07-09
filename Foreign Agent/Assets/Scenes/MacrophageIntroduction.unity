@@ -424,6 +424,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 149230224, guid: 853533ce91ac24e44975e5d112cdd36a, type: 3}
+      propertyPath: stage
+      value: 
+      objectReference: {fileID: 1546779888}
     - target: {fileID: 149230225, guid: 853533ce91ac24e44975e5d112cdd36a, type: 3}
       propertyPath: points.Array.size
       value: 2
@@ -440,10 +444,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 825963083}
-    - target: {fileID: 149230224, guid: 853533ce91ac24e44975e5d112cdd36a, type: 3}
-      propertyPath: stage
-      value: 
-      objectReference: {fileID: 1546779888}
     - target: {fileID: 284958003, guid: 853533ce91ac24e44975e5d112cdd36a, type: 3}
       propertyPath: m_Layer
       value: 14
@@ -4974,6 +4974,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 149230224, guid: 853533ce91ac24e44975e5d112cdd36a, type: 3}
+      propertyPath: stage
+      value: 
+      objectReference: {fileID: 1546779888}
+    - target: {fileID: 149230225, guid: 853533ce91ac24e44975e5d112cdd36a, type: 3}
+      propertyPath: points.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 149230225, guid: 853533ce91ac24e44975e5d112cdd36a, type: 3}
       propertyPath: points.Array.size
       value: 2
@@ -4990,10 +4998,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 825963083}
-    - target: {fileID: 149230224, guid: 853533ce91ac24e44975e5d112cdd36a, type: 3}
-      propertyPath: stage
-      value: 
-      objectReference: {fileID: 1546779888}
     - target: {fileID: 284958003, guid: 853533ce91ac24e44975e5d112cdd36a, type: 3}
       propertyPath: m_Layer
       value: 14
