@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class plasmaSpawn : MonoBehaviour
 {
     public static plasmaSpawn Instance;
@@ -21,7 +21,7 @@ public class plasmaSpawn : MonoBehaviour
     public GameObject Bletter;
     public GameObject Pletter;
     private AudioSource activationSound;
-	public Text nametag;
+	public TextMeshProUGUI nametag;
     // Update is called once per frame
     private void Start()
     {
@@ -89,6 +89,7 @@ public class plasmaSpawn : MonoBehaviour
             Bletter.SetActive(false);
             Pletter.SetActive(true);
             activationSound.Play();
+            nametag.text = "Plasma B Cell";
             //plasmaSpawn.activated = true;//probably temp until T helper are implemented
             gameObject.GetComponent<Renderer>().material = activeMat;
             for (int i = 0; i < numAntibodies; i++)
