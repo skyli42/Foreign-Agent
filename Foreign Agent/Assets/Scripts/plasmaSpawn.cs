@@ -104,7 +104,9 @@ public class plasmaSpawn : MonoBehaviour
                 antibodySpawn.GetComponent<antibodyPatrol>().macrophages = macrophages;
             }
             Bcellcollision = true;
-        }
+			nametag.text = "Plasma B Cell";
 
-    }
+		}
+
+	}
 }

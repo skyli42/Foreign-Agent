@@ -110,6 +110,8 @@ public class LoadingScreen : MonoBehaviour
         // Reset the fade out animation flag:
         didTriggerFadeOutAnimation = false;
         isLoading = true;
+
+		//TODO: Reset information / display stuff
     }
     // Call this to hide it:
     public void Hide()
