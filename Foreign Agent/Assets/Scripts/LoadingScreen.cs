@@ -2,7 +2,6 @@
 using UnityEngine.UI;
 public class LoadingScreen : MonoBehaviour
 {
-    public static LoadingScreen Instance;
     // Make sure the loading screen shows for at least 1 second:
     private const float MIN_TIME_TO_SHOW = 1f;
     // The reference to the current loading operation running in the background:
@@ -32,17 +31,8 @@ public class LoadingScreen : MonoBehaviour
     private void Awake()
     {
         // Singleton logic:
-        if (Instance == null)
-        {
-            Instance = this;
-            // Don't destroy the loading screen while switching scenes:
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
+
+        DontDestroyOnLoad(gameObject);
         Configure();
         Hide();
     }
@@ -68,6 +58,7 @@ public class LoadingScreen : MonoBehaviour
             {
                 animator.SetTrigger("Hide");
                 didTriggerFadeOutAnimation = true;
+                Destroy(gameObject, 5f);
             }
             else
             {
