@@ -3,7 +3,7 @@ Since your last mission was such a success, we've decided to train you to deal w
 [title=IntroTalkEnd]
 
 [title=BcellTalkStart]
-This is a <color=yellow><b>B-cell</b></color>! B-cells are harmless as is, but touch the B-cell now and see what happens. 
+This is a <color=yellow><b>B-cell!</b></color> B-cells are harmless as is, but touch the B-cell now and see what happens. 
 [title=BcellTalkEnd]
 
 [title=plasmaSpawnStart]
