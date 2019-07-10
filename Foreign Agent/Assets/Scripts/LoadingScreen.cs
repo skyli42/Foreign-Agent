@@ -3,7 +3,7 @@ using UnityEngine.UI;
 public class LoadingScreen : MonoBehaviour
 {
     // Make sure the loading screen shows for at least 1 second:
-    private const float MIN_TIME_TO_SHOW = 1f;
+    private const float MIN_TIME_TO_SHOW = 5f;
     // The reference to the current loading operation running in the background:
     private AsyncOperation currentLoadingOperation;
     // A flag to tell whether a scene is being loaded or not:

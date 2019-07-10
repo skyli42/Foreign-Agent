@@ -7,7 +7,7 @@ public class fadeWithBackground : MonoBehaviour
 {
     private Color newColour;
     private Color backColour;
-    
+
     // Update is called once per frame
     void Update()
     {

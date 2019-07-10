@@ -4838,6 +4838,73 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8146075282620869362, guid: 713007cb622aeab45b2dbb645cae3c5a,
+        type: 3}
+      propertyPath: m_text
+      value: 'Macrophages are white blood cells and are part of a larger group called
+        phagocytes. Phagocytes engulf foreign particles such as viruses. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146075282620869362, guid: 713007cb622aeab45b2dbb645cae3c5a,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 49.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146075282620869362, guid: 713007cb622aeab45b2dbb645cae3c5a,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 137
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146075282620869362, guid: 713007cb622aeab45b2dbb645cae3c5a,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146075282620869362, guid: 713007cb622aeab45b2dbb645cae3c5a,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146075282620869362, guid: 713007cb622aeab45b2dbb645cae3c5a,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146075282620869362, guid: 713007cb622aeab45b2dbb645cae3c5a,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146075282620869362, guid: 713007cb622aeab45b2dbb645cae3c5a,
+        type: 3}
+      propertyPath: m_fontColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146075282620869362, guid: 713007cb622aeab45b2dbb645cae3c5a,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 16777215
+      objectReference: {fileID: 0}
+    - target: {fileID: 2832845648052566318, guid: 713007cb622aeab45b2dbb645cae3c5a,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c50c698146a8630479a8ccf29dc06c9f,
+        type: 3}
+    - target: {fileID: 2832845648052566318, guid: 713007cb622aeab45b2dbb645cae3c5a,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016994509820292331, guid: 713007cb622aeab45b2dbb645cae3c5a,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016994509820292331, guid: 713007cb622aeab45b2dbb645cae3c5a,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 450
+      objectReference: {fileID: 0}
     - target: {fileID: 4919605822093002603, guid: 713007cb622aeab45b2dbb645cae3c5a,
         type: 3}
       propertyPath: m_Name
@@ -4953,6 +5020,21 @@ PrefabInstance:
       propertyPath: prevMenu
       value: 
       objectReference: {fileID: 327328644}
+    - target: {fileID: 4919605823638931450, guid: 713007cb622aeab45b2dbb645cae3c5a,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919605823638931450, guid: 713007cb622aeab45b2dbb645cae3c5a,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919605823638931450, guid: 713007cb622aeab45b2dbb645cae3c5a,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 713007cb622aeab45b2dbb645cae3c5a, type: 3}
 --- !u!1 &1050786961 stripped

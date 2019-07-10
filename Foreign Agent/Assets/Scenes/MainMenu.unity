@@ -1610,15 +1610,5 @@ PrefabInstance:
       propertyPath: prevMenu
       value: 
       objectReference: {fileID: 1343898971}
-    - target: {fileID: 4919605823638931450, guid: 713007cb622aeab45b2dbb645cae3c5a,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4919605823638931450, guid: 713007cb622aeab45b2dbb645cae3c5a,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 713007cb622aeab45b2dbb645cae3c5a, type: 3}
