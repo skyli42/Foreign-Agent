@@ -1062,11 +1062,6 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5998719074933555735, guid: 5b89ad06d999c004fa3032d80448046a,
-        type: 3}
-      propertyPath: m_PixelPerfect
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5998719074173864478, guid: 5b89ad06d999c004fa3032d80448046a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -1082,6 +1077,11 @@ PrefabInstance:
       propertyPath: eventSystem
       value: 
       objectReference: {fileID: 668317297}
+    - target: {fileID: 5998719074933555735, guid: 5b89ad06d999c004fa3032d80448046a,
+        type: 3}
+      propertyPath: m_PixelPerfect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5716083395578004331, guid: 5b89ad06d999c004fa3032d80448046a,
         type: 3}
       propertyPath: m_RootOrder
@@ -1089,6 +1089,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b89ad06d999c004fa3032d80448046a, type: 3}
+--- !u!1 &327328644 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5998719074933555730, guid: 5b89ad06d999c004fa3032d80448046a,
+    type: 3}
+  m_PrefabInstance: {fileID: 327328643}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &333471587
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1206,6 +1212,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4919605822093002606, guid: 713007cb622aeab45b2dbb645cae3c5a,
+        type: 3}
+      propertyPath: prevMenu
+      value: 
+      objectReference: {fileID: 327328644}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 713007cb622aeab45b2dbb645cae3c5a, type: 3}
 --- !u!1 &333471588 stripped
@@ -5128,13 +5139,13 @@ PrefabInstance:
       propertyPath: stage
       value: 
       objectReference: {fileID: 1546779888}
-    - target: {fileID: 284958003, guid: 853533ce91ac24e44975e5d112cdd36a, type: 3}
-      propertyPath: m_Layer
-      value: 14
-      objectReference: {fileID: 0}
     - target: {fileID: 149230227, guid: 853533ce91ac24e44975e5d112cdd36a, type: 3}
       propertyPath: obstacleMask.m_Bits
       value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 284958003, guid: 853533ce91ac24e44975e5d112cdd36a, type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 853533ce91ac24e44975e5d112cdd36a, type: 3}

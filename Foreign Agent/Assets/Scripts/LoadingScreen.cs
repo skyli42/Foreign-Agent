@@ -28,6 +28,8 @@ public class LoadingScreen : MonoBehaviour
     private Animator animator;
     // Flag whether the fade out animation was triggered.
     private bool didTriggerFadeOutAnimation;
+    public GameObject prevMenu;
+
     private void Awake()
     {
         // Singleton logic:
@@ -86,8 +88,10 @@ public class LoadingScreen : MonoBehaviour
     // We can determine the loading's progress when needed from the AsyncOperation param:
     public void Show(AsyncOperation loadingOperation)
     {
+
         // Enable the loading screen:
         gameObject.SetActive(true);
+        prevMenu.SetActive(false);
         // Store the reference:
         currentLoadingOperation = loadingOperation;
         // Stop the loading operation from finishing, even if it technically did:
