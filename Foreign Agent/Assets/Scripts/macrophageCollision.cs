@@ -16,6 +16,7 @@ public class macrophageCollision : MonoBehaviour
     public GameObject companionAnim;
 	private Vector3 frozenPos;
 	private float shakeSpeed = 0.05f;
+    public GameObject stunEffect;
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -31,12 +32,16 @@ public class macrophageCollision : MonoBehaviour
         if (other.gameObject.tag == "companion")
         {
 			frozenPos = transform.position;
+            stunEffect.SetActive(true);
             companionDeath.Play();
             Instantiate(companionAnim, other.collider.bounds.center, Quaternion.identity);
             other.collider.gameObject.SetActive(false);
+            if(agent.speed == 0)
+            {
+                isFrozen = true;
+                stunEffect.SetActive(true);
+            }
 			agent.speed = 0;
-
-            isFrozen = true;
 			shakeSpeed = 0.05f;
             if (plasmaSpawn.Instance != null && !plasmaSpawn.Instance.activated)
             {
@@ -60,12 +65,19 @@ public class macrophageCollision : MonoBehaviour
     }
 	private void Update()
 	{
-		if (isFrozen)
+		if (agent.speed == 0)
 		{
 			Debug.Log("frozen");
 			shakeSpeed -= 0.05f*(Time.deltaTime/3);
 			transform.position = frozenPos + UnityEngine.Random.insideUnitSphere * shakeSpeed;
 		}
+        else
+        {
+            if(agent.speed == 0)
+            {
+                isFrozen = true;
+            }
+        }
 		//else
 		//{
 		//	Debug.Log("not frozen");
@@ -74,8 +86,12 @@ public class macrophageCollision : MonoBehaviour
 	IEnumerator unfreezePosition()
     {
         yield return new WaitForSeconds(3f);
+        if (!isFrozen)
+        {
+            agent.speed = normalSpeed;
+            stunEffect.SetActive(false);
+        }
 		isFrozen = false;
-		agent.speed = normalSpeed;
 	}
 
 
