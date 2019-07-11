@@ -65,19 +65,12 @@ public class macrophageCollision : MonoBehaviour
     }
 	private void Update()
 	{
-		if (agent.speed == 0)
+		if (agent.speed == 0 && agent.hasPath)
 		{
 			Debug.Log("frozen");
 			shakeSpeed -= 0.05f*(Time.deltaTime/3);
 			transform.position = frozenPos + UnityEngine.Random.insideUnitSphere * shakeSpeed;
 		}
-        else
-        {
-            if(agent.speed == 0)
-            {
-                isFrozen = true;
-            }
-        }
 		//else
 		//{
 		//	Debug.Log("not frozen");
@@ -88,10 +81,12 @@ public class macrophageCollision : MonoBehaviour
         yield return new WaitForSeconds(3f);
         if (!isFrozen)
         {
+            Debug.Log("No longer frozen");
             agent.speed = normalSpeed;
             stunEffect.SetActive(false);
         }
 		isFrozen = false;
+        
 	}
 
 
