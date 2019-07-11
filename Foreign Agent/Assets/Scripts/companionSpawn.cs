@@ -50,7 +50,7 @@ public class companionSpawn : MonoBehaviour
                 }
                 else
                 {
-                    Collider[] colliders = Physics.OverlapSphere(spawn, 0.5f);
+                    Collider[] colliders = Physics.OverlapSphere(spawn, 1f);
                     bool collisionFound = false;
                     foreach (Collider col in colliders)
                     {
@@ -77,7 +77,7 @@ public class companionSpawn : MonoBehaviour
                
                 companionToEnemy.Add(agent, gameObject);
                 agent.avoidancePriority = Random.Range(0, 101);
-                agent.autoBraking = false;
+                agent.autoBraking = true;
                 companionList.Add(agent);
                 agent.stoppingDistance = 2;
             }
@@ -102,6 +102,7 @@ public class companionSpawn : MonoBehaviour
             companionList.Remove(removedAgent);
         }
 
+        numCompanions = Mathf.Min(companionList.Count, numCompanions);
         if (Input.GetKeyDown("space") && numCompanions > 0)
         {
             Collider[] enemies = Physics.OverlapSphere(transform.position, 25, enemyMask);
