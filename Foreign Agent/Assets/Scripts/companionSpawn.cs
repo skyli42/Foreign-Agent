@@ -11,7 +11,7 @@ public class companionSpawn : MonoBehaviour
     private NavMeshAgent agent;
     private float distance;
     public LayerMask enemyMask;
-    public  int numCompanions;
+    public int numCompanions;
     private List<Collider> enemiesList = new List<Collider>();
     public List<NavMeshAgent> companionList = new List<NavMeshAgent>();
     public int prevFrameNumCompanions;
@@ -36,7 +36,7 @@ public class companionSpawn : MonoBehaviour
     {
         if (prevFrameNumCompanions == numCompanions - 1) // Aidan why would you do this to me
         {
-			Debug.Log("Spawning new Companion (from companionSpawn)");
+            Debug.Log("Spawning new Companion (from companionSpawn)");
             bool validSpawn = false;
             int tries = 0;
             Vector3 spawn = new Vector3(0, 0, 0);
@@ -74,14 +74,14 @@ public class companionSpawn : MonoBehaviour
             {
                 Debug.Log(spawn);
                 agent = Instantiate(companionVirus, spawn, Quaternion.identity).GetComponent<NavMeshAgent>();
-               
+
                 companionToEnemy.Add(agent, gameObject);
                 agent.avoidancePriority = Random.Range(0, 101);
                 agent.autoBraking = true;
                 companionList.Add(agent);
                 agent.stoppingDistance = 2;
             }
-            
+
         }
         prevFrameNumCompanions = numCompanions;
         companionUI.GetComponent<TextMeshProUGUI>().text = "Companions: " + numCompanions.ToString();
@@ -93,7 +93,7 @@ public class companionSpawn : MonoBehaviour
             {
                 markedForRemoval.Add(entry.Key);
             }
-            else 
+            else
                 entry.Key.destination = entry.Value.transform.position;
         }
         foreach (NavMeshAgent removedAgent in markedForRemoval)
@@ -105,48 +105,57 @@ public class companionSpawn : MonoBehaviour
         numCompanions = Mathf.Min(companionList.Count, numCompanions);
         if (Input.GetKeyDown("space") && numCompanions > 0)
         {
-            Collider[] enemies = Physics.OverlapSphere(transform.position, 25, enemyMask);
-            float minDist = float.MaxValue;
-            Collider closestEnemy = null;
-            for (int i = 0; i < enemies.Length; i++)
+           
+            NavMeshAgent agent2 = null;
+            foreach (KeyValuePair<NavMeshAgent, GameObject> entry in companionToEnemy)
             {
-                float dist = Vector3.Distance(enemies[i].transform.position, gameObject.transform.position);
-                if (dist < minDist)
+                if (entry.Value == gameObject)
                 {
-                    minDist = dist;
-                    closestEnemy = enemies[i];
+                    agent2 = entry.Key;
+                    break;
                 }
             }
-            if (closestEnemy != null)
+            if (agent2 != null)
             {
-                //Vector3 spawn = (gameObject.transform.position - Vector3.Normalize(gameObject.transform.position - closestEnemy.transform.position)*2);
-                numCompanions -= 1;
-                // agent = Instantiate(companionVirus, spawn, Quaternion.identity).GetComponent<NavMeshAgent>();
-
-                // companionList.Add(agent);
-
-                // enemiesList.Add(closestEnemy);
-                NavMeshAgent agent2 = null;
-                foreach (KeyValuePair<NavMeshAgent, GameObject> entry in companionToEnemy)
-				{
-					if (entry.Value == gameObject)
-                    {
-                        agent2 = entry.Key;
-                        break;
-                    }
-                }
-                if (agent2 != null)
-                {
-                    companionToEnemy[agent2] = closestEnemy.gameObject;
-                    agent2.autoBraking = false;
-                    agent2.stoppingDistance = 0;
-                    agent2.speed = 10;
-                    agent2.acceleration = 20;
-                    agent2.radius = 0.5f;
-                    agent2.destination = closestEnemy.transform.position;
-                }
+                StartCoroutine(findClosestEnemy(agent2));
             }
         }
-       
     }
+    IEnumerator findClosestEnemy(NavMeshAgent agent2)
+    {
+        agent.isStopped = true;
+        Collider[] enemies = Physics.OverlapSphere(transform.position, 25, enemyMask);
+        float minDist = float.MaxValue;
+        Collider closestEnemy = null;
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            agent2.destination = enemies[i].transform.position;
+            yield return null;
+            while(agent2.pathPending)
+            {
+                yield return null;
+            }
+            float dist = agent2.remainingDistance;
+            Debug.Log(dist);
+            if (dist < minDist)
+            {
+                minDist = dist;
+                closestEnemy = enemies[i];
+            }
+        }
+        if (closestEnemy != null)
+        {
+            companionToEnemy[agent2] = closestEnemy.gameObject;
+            numCompanions -= 1;
+            agent2.autoBraking = false;
+            agent2.stoppingDistance = 0;
+            agent2.speed = 10;
+            agent2.acceleration = 20;
+            agent2.radius = 0.5f;
+            agent2.isStopped = false;
+            agent2.destination = closestEnemy.transform.position;
+        }
+    }
+
 }
+
