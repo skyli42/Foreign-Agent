@@ -36,7 +36,7 @@ public class macrophageCollision : MonoBehaviour
             companionDeath.Play();
             Instantiate(companionAnim, other.collider.bounds.center, Quaternion.identity);
             other.collider.gameObject.SetActive(false);
-            if(agent.speed == 0)
+            if(agent.speed == 0 && agent.hasPath)
             {
                 isFrozen = true;
                 stunEffect.SetActive(true);
