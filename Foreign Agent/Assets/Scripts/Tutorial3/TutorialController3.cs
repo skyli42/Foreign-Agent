@@ -19,6 +19,7 @@ public class TutorialController3 : MonoBehaviour
     private bool endPlayed = false;
     public AudioSource victorySound;
 	public Image grayScreen;
+    private bool diedAlready = false;
     void Start()
     {
 		grayScreen.enabled = true;
@@ -57,8 +58,12 @@ public class TutorialController3 : MonoBehaviour
             deathTalk.NewTalk("deathStart", "deathEnd", deathTalk.txtToParse);
             player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
             GameController.Instance.death = false;
-            Tcell.GetComponent<TcellPatrol>().points = largerPatrol;
-            Tcell.GetComponent<TcellPatrol>().destPoint = 0;
+            if (!diedAlready)
+            {
+                Tcell.GetComponent<TcellPatrol>().points = largerPatrol;
+                Tcell.GetComponent<TcellPatrol>().destPoint = 0;
+            }
+            diedAlready = true;
         }
 
         if (!endPlayed && tutCell.GetComponentInChildren<CellCapture>().capped)
