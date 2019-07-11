@@ -123,13 +123,14 @@ public class companionSpawn : MonoBehaviour
     }
     IEnumerator findClosestEnemy(NavMeshAgent agent2)
     {
-        agent.isStopped = true;
+        agent2.isStopped = true;
         Collider[] enemies = Physics.OverlapSphere(transform.position, 25, enemyMask);
         float minDist = float.MaxValue;
         Collider closestEnemy = null;
         for (int i = 0; i < enemies.Length; i++)
         {
             agent2.destination = enemies[i].transform.position;
+            companionToEnemy[agent2] = enemies[i].gameObject;
             yield return null;
             while(agent2.pathPending)
             {
