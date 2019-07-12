@@ -46,6 +46,7 @@ public class GameController : MonoBehaviour
     Animator m_Animator;
     public bool isTutorial = false;
     public bool isIntro = false;
+    private bool memoryActivated = false;
 
     public AudioSource victorySound;
 
@@ -62,19 +63,21 @@ public class GameController : MonoBehaviour
         prevFramenumCaptures = numCaptures;
         cellsLeftUI.GetComponent<TextMeshProUGUI>().text = "Cells Left: " + (numCellsInLevel - numCaptures).ToString();
         myEventSystem = GameObject.Find("EventSystem").GetComponent<UnityEngine.EventSystems.EventSystem>();
-        if (secondInfection)
+      
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        if (secondInfection && !memoryActivated)
         {
             plasmaSpawn.Instance.activated = true;//probably temp until T helper are implemented
             if (parent)
             {
                 Debug.Log("sonar");
-                parent.StartSonarRing(transform.position, 5);
+                parent.StartSonarRing(stage.transform.position, 5);
+                memoryActivated = true;
             }
         }
-    }
-    // Update is called once per frame
-    void Update()
-    {
         if (Input.GetKeyDown(KeyCode.Escape) && !death)
         {
             paused = togglePause();
