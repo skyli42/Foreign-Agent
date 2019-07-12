@@ -130,16 +130,16 @@ public class companionSpawn : MonoBehaviour
         for (int i = 0; i < enemies.Length; i++)
         {
             agent2.destination = enemies[i].transform.position;
-            companionToEnemy[agent2] = enemies[i].gameObject;
             yield return null;
             while(agent2.pathPending)
             {
                 yield return null;
             }
             float dist = agent2.remainingDistance;
-            Debug.Log(dist);
+            yield return null;
             if (dist < minDist)
             {
+                Debug.Log(dist);
                 minDist = dist;
                 closestEnemy = enemies[i];
             }
