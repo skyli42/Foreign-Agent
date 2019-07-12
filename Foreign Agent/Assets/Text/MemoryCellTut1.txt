@@ -1,0 +1,6 @@
+[title=IntroTalkStart]
+As you might remember, you've already infected this area once before.
+While you've been gone, the immune system remembered you and has been fortifying their defenses.
+ <color=#ff00ffff><b>Memory T-Helper cells </b></color> have stimulated <color=yellow><b> Memory B-cells</b></color> to differentiate into <color=#00ffffff><b>plasma cells</b></color>...
+ and <color=#ff00ffff><b>Memory T-Helper cells </b></color> have also stimulated  <color=green><b>Memory Killer T-cells</b></color> to become activated and alert.
+[title=IntroTalkEnd]

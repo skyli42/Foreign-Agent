@@ -68,7 +68,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (secondInfection && !memoryActivated)
+        if (Instance.secondInfection && !memoryActivated)
         {
             plasmaSpawn.Instance.activated = true;//probably temp until T helper are implemented
             if (parent)
