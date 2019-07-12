@@ -1248,7 +1248,7 @@ PrefabInstance:
     - target: {fileID: 168515627669818138, guid: 5f385b77bc3656647a00d6b710807964,
         type: 3}
       propertyPath: macrophages.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 168515627669818138, guid: 5f385b77bc3656647a00d6b710807964,
         type: 3}
@@ -1289,7 +1289,7 @@ PrefabInstance:
         type: 3}
       propertyPath: macrophages.Array.data[0]
       value: 
-      objectReference: {fileID: 356733484}
+      objectReference: {fileID: 7357746626388359266}
     - target: {fileID: 168515627669818138, guid: 5f385b77bc3656647a00d6b710807964,
         type: 3}
       propertyPath: activationAlert
@@ -1315,6 +1315,11 @@ PrefabInstance:
       propertyPath: spawnPoints.Array.data[9]
       value: 
       objectReference: {fileID: 748927306}
+    - target: {fileID: 168515627669818138, guid: 5f385b77bc3656647a00d6b710807964,
+        type: 3}
+      propertyPath: macrophages.Array.data[2]
+      value: 
+      objectReference: {fileID: 1658894615}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f385b77bc3656647a00d6b710807964, type: 3}
 --- !u!4 &478452447 stripped

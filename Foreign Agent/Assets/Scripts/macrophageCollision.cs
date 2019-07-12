@@ -65,7 +65,6 @@ public class macrophageCollision : MonoBehaviour
 	{
 		if (agent.isStopped && agent.hasPath)
 		{
-			Debug.Log("frozen");
 			shakeSpeed -= 0.05f*(Time.deltaTime/3);
 			transform.position = frozenPos + UnityEngine.Random.insideUnitSphere * shakeSpeed;
 		}
