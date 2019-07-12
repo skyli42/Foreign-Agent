@@ -51,7 +51,7 @@ public class GameController : MonoBehaviour
     public AudioSource victorySound;
 
     private CinemachineVirtualCamera vcam;
-
+    
     void Start()
     {
         vcam = GameObject.Find("VirtualCamera").GetComponent<CinemachineVirtualCamera>();
@@ -123,7 +123,7 @@ public class GameController : MonoBehaviour
             int tries = 0;
 
             Vector3 spawn = new Vector3(0, 0, 0);
-            while (!validSpawn && tries < 10000)
+            while (!validSpawn && tries < 15000)
             {
 
                 spawn = Random.insideUnitSphere * 3.25f + player.transform.position;
@@ -202,7 +202,7 @@ public class GameController : MonoBehaviour
 
     public IEnumerator movePlayerToPortal(GameObject portal)
     {
-        player.GetComponent<PlayerMovement>().enabled = false;
+        //player.GetComponent<PlayerMovement>().enabled = false;
         player.GetComponent<companionSpawn>().enabled = false;
         player.GetComponent<Collider>().enabled = false;
         m_Rigidbody = player.GetComponent<Rigidbody>();

@@ -130,7 +130,12 @@ public class PlayerMovement : MonoBehaviour
         slider.value = complete;
 
 
-
+        if(GameController.Instance.numCaptures == GameController.Instance.numCellsInLevel)
+        {
+            slider.gameObject.SetActive(false);
+            this.enabled = false;
+            Debug.Log("slider");
+        }
     }
     private void OnCollisionEnter(Collision other)
     {
