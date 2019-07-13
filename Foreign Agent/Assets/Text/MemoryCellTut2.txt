@@ -1,0 +1,4 @@
+[title=IntroTalkStart]
+This is the second time infecting this area.
+Remember that  <color=#ff00ffff><b>Memory cells </b></color> have been created!
+[title=IntroTalkEnd]

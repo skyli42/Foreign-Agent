@@ -190,7 +190,7 @@ MonoBehaviour:
   numAntibodies: 3
   antibody: {fileID: 3865815191752127855, guid: 33ccb7a99fd439842b8aa118098e3079,
     type: 3}
-  radius: 3
+  radius: 2
   spawnPoints:
   - {fileID: 0}
   - {fileID: 0}

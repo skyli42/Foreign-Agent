@@ -25,6 +25,11 @@ public class antibodyPatrol : MonoBehaviour
         GotoNextPoint();
     }
 
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, 1f);
+    }
 
     void GotoNextPoint()
     {

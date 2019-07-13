@@ -27,11 +27,7 @@ public class companionSpawn : MonoBehaviour
         companionList = new List<NavMeshAgent>();
 
     }
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, 2f);
-    }
+    
     void Update()
     {
         if (prevFrameNumCompanions == numCompanions - 1) // Aidan why would you do this to me
@@ -124,19 +120,20 @@ public class companionSpawn : MonoBehaviour
     IEnumerator findClosestEnemy(NavMeshAgent agent2)
     {
         agent2.isStopped = true;
-        Collider[] enemies = Physics.OverlapSphere(transform.position, 25, enemyMask);
+        Collider[] enemies = Physics.OverlapSphere(agent2.transform.position, 25, enemyMask);
+
         float minDist = float.MaxValue;
         Collider closestEnemy = null;
         for (int i = 0; i < enemies.Length; i++)
         {
-            agent2.destination = enemies[i].transform.position;
+            agent2.destination = enemies[i].transform.position + new Vector3(0, -1, 0);
+            companionToEnemy[agent2] = enemies[i].gameObject;
             yield return null;
             while(agent2.pathPending)
             {
                 yield return null;
             }
             float dist = agent2.remainingDistance;
-            yield return null;
             if (dist < minDist)
             {
                 Debug.Log(dist);
@@ -155,6 +152,10 @@ public class companionSpawn : MonoBehaviour
             agent2.radius = 0.5f;
             agent2.isStopped = false;
             agent2.destination = closestEnemy.transform.position;
+        }
+        else
+        {
+            companionToEnemy[agent2] = gameObject;
         }
     }
 
