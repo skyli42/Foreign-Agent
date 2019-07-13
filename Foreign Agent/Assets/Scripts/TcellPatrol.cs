@@ -37,41 +37,30 @@ public class TcellPatrol : MonoBehaviour
     void Update()
     {
         Collider[] cells = Physics.OverlapSphere(transform.position, 25, cellMask);
-        float minDist = float.MaxValue;
-        Collider closestCell = null;
         for (int i = 0; i < cells.Length; i++)
         {
-            float dist = Vector3.Distance(cells[i].transform.position, gameObject.transform.position);
-            if (dist < minDist)
-            {
-                minDist = dist;
-                closestCell = cells[i];
-            }
-        }
-        if (closestCell != null)
-        {
-            if (closestCell.gameObject.GetComponent<CellCapture>().startCap)
+            if (cells[i].gameObject.GetComponent<CellCapture>().startCap)
             {
                 if (firstCall)
                 {
                     previousPoint = agent.destination;
                     firstCall = false;
                 }
-                agent.destination = closestCell.transform.position;
-                
+                agent.destination = cells[i].transform.position;
+                break;
             }
             else if (!agent.pathPending && agent.remainingDistance < 0.5f)
             {
                 GotoNextPoint();
                 firstCall = true;
             }
-            else if (agent.destination.x == closestCell.transform.position.x && agent.destination.z == closestCell.transform.position.z)
+            else if (agent.destination.x == cells[i].transform.position.x && agent.destination.z == cells[i].transform.position.z)
             {
                 agent.destination = previousPoint;
                 firstCall = true;
             }
         }
-        else
+        if (cells.Length == 0)
         {
             if (!agent.pathPending && agent.remainingDistance < 0.5f)
                 GotoNextPoint();
