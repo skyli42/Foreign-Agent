@@ -132,6 +132,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(GameController.Instance.numCaptures == GameController.Instance.numCellsInLevel)
         {
+            GetComponent<Collider>().enabled = false;
             slider.gameObject.SetActive(false);
             this.enabled = false;
             Debug.Log("slider");

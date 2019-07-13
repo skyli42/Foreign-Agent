@@ -133,23 +133,26 @@ public class GameController : MonoBehaviour
                 }
                 else
                 {
-                    Collider[] colliders = Physics.OverlapSphere(spawn, 0.75f);
-                    bool collisionFound = false;
-                    foreach (Collider col in colliders)
+                    if (GroundCheck(spawn))
                     {
-                        // If this collider is tagged "Obstacle"
-                        if (col.tag == "Obstacle" || col.tag == "HumanCell")
+                        Collider[] colliders = Physics.OverlapSphere(spawn, 0.75f);
+                        bool collisionFound = false;
+                        foreach (Collider col in colliders)
                         {
-                            // Then this position is not a valid spawn position
-                            validSpawn = false;
-                            collisionFound = true;
-                            tries += 1;
-                            break;
+                            // If this collider is tagged "Obstacle"
+                            if (col.tag == "Obstacle" || col.tag == "HumanCell")
+                            {
+                                // Then this position is not a valid spawn position
+                                validSpawn = false;
+                                collisionFound = true;
+                                tries += 1;
+                                break;
+                            }
                         }
-                    }
-                    if (!collisionFound)
-                    {
-                        validSpawn = true;
+                        if (!collisionFound)
+                        {
+                            validSpawn = true;
+                        }
                     }
                 }
             }
@@ -162,6 +165,14 @@ public class GameController : MonoBehaviour
 
         }
         prevFramenumCaptures = numCaptures;
+    }
+    private bool GroundCheck(Vector3 spawn)
+    {
+        RaycastHit hit;
+        float distance = 2.5f;
+        Vector3 dir = new Vector3(0, -1);
+
+        return (Physics.Raycast(spawn, dir, out hit, distance));
     }
 
     public bool togglePause()
@@ -202,9 +213,10 @@ public class GameController : MonoBehaviour
 
     public IEnumerator movePlayerToPortal(GameObject portal)
     {
+        player.GetComponent<Collider>().enabled = false;
         //player.GetComponent<PlayerMovement>().enabled = false;
         player.GetComponent<companionSpawn>().enabled = false;
-        player.GetComponent<Collider>().enabled = false;
+       // player.GetComponent<Collider>().enabled = false;
         m_Rigidbody = player.GetComponent<Rigidbody>();
         m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
         m_Rigidbody.useGravity = false;
