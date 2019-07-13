@@ -66,7 +66,7 @@ public class plasmaSpawn : MonoBehaviour
                         {
                             tries++;
                         }
-                        Collider[] colliders = Physics.OverlapSphere(spawn, 1f);
+                        Collider[] colliders = Physics.OverlapSphere(spawn, 1.5f);
                         bool collisionFound = false;
                         foreach (Collider col in colliders)
                         {

@@ -113,52 +113,47 @@ public class companionSpawn : MonoBehaviour
             }
             if (agent2 != null)
             {
-                StartCoroutine(findClosestEnemy(agent2));
+                Collider closestEnemy = getObjectsDist(agent2);
+                if (closestEnemy != null)
+                {
+                    companionToEnemy[agent2] = closestEnemy.gameObject;
+                    numCompanions -= 1;
+                    agent2.autoBraking = false;
+                    agent2.stoppingDistance = 0;
+                    agent2.speed = 10;
+                    agent2.acceleration = 20;
+                    agent2.radius = 0.5f;
+                    agent2.isStopped = false;
+                    agent2.destination = closestEnemy.transform.position;
+                }
+
             }
         }
     }
-    IEnumerator findClosestEnemy(NavMeshAgent agent2)
+    public Collider getObjectsDist(NavMeshAgent agent2)
     {
-        agent2.isStopped = true;
-        Collider[] enemies = Physics.OverlapSphere(agent2.transform.position, 25, enemyMask);
-
+        NavMeshPath path = new NavMeshPath();
         float minDist = float.MaxValue;
         Collider closestEnemy = null;
+        Collider[] enemies = Physics.OverlapSphere(agent2.transform.position, 25, enemyMask);
         for (int i = 0; i < enemies.Length; i++)
         {
-            agent2.destination = enemies[i].transform.position + new Vector3(0, -1, 0);
-            companionToEnemy[agent2] = enemies[i].gameObject;
-            yield return null;
-            while(agent2.pathPending)
+            Transform trans = enemies[i].transform;
+            NavMesh.CalculatePath(agent2.transform.position, trans.position, agent2.areaMask, path);
+            float dist = 0f;
+            for (int j = 0; j < path.corners.Length - 1; j++)
             {
-                yield return null;
+                dist += Vector3.Distance(path.corners[j], path.corners[j + 1]);
             }
-            float dist = agent2.remainingDistance;
-            if (dist < minDist)
+            if(dist < minDist)
             {
-                Debug.Log(dist);
                 minDist = dist;
                 closestEnemy = enemies[i];
             }
+            
         }
-        if (closestEnemy != null)
-        {
-            companionToEnemy[agent2] = closestEnemy.gameObject;
-            numCompanions -= 1;
-            agent2.autoBraking = false;
-            agent2.stoppingDistance = 0;
-            agent2.speed = 10;
-            agent2.acceleration = 20;
-            agent2.radius = 0.5f;
-            agent2.isStopped = false;
-            agent2.destination = closestEnemy.transform.position;
-        }
-        else
-        {
-            companionToEnemy[agent2] = gameObject;
-            agent2.isStopped = false;
-        }
+        return closestEnemy;
     }
-
+    
 }
 

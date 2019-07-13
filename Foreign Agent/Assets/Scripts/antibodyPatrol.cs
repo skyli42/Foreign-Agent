@@ -16,6 +16,7 @@ public class antibodyPatrol : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        agent.avoidancePriority = Random.Range(0, 101);
         player = GameObject.FindGameObjectsWithTag("Player")[0];
         // Disabling auto-braking allows for continuous movement
         // between points (ie, the agent doesn't slow down as it
