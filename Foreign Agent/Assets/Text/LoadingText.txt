@@ -1,0 +1,20 @@
+The immune system is the body's defense against foreign agents like viruses!
+Viruses are not actually alive, since they can only reproduce by hijacking cell machinery.
+All cells of the immune system are different types of white blood cells.
+All white blood cells are born in bone marrow, although they may finish development elsewhere in the body.
+Macrophages are phagocytes - a type of white blood cell that engulfs foreign particles such as viruses. The process of engulfing particles is called phagocytosis.
+Macrophages were first discovered by Elie Metchnikoff, a Russian zoologist, in 1884.
+Macrophages identify targets based on proteins on the surface of the particle - if the particle doesn't show body cell proteins, it's phagocytosis time.
+Once activated, B cells secrete antibodies into the blood stream. Antibodies bind to foreign particles to allow macrophages to easily identify them.
+Antibodies are a class of Y-shaped proteins that are secreted to bind to foreign particle. Different types of antibodies bind to different particles.
+Antibodies are glycoproteins, meaning that they are proteins that have carbohydrate (sugar) chains attached to them. 
+B Cells can be activated either by binding directly to a foreign particle or by Helper T cells. Once activated, they turn into plasma cells.
+Antigens are any foreign agent that antibodies can bind to.
+Macrophages activate Helper T cells by displaying pieces of the agents it engulfs for the Helper T cells to bind to.
+B and T cells are called lymphocytes since they are primarily found in the lymphatic system of the body.
+T cells - both Helper and Killer - fully mature in the thymus gland.
+Killer T cells are also known as Cytotoxic T Cells, since they release cytotoxins to kill infected cells.
+Similar to macrophages, killer T cells recognize their targets by proteins on the surface of infected cells.
+After B cells and Helper T cells are activated and defeat an infection, some of them are turned into memory cells to aid in the case of a second infection.
+Memory cells stay in the body for years, and will allow the body to quickly respond to an infection that it has already seen.
+Vaccines simulate an infection in order to stimulate the development of memory cells so that the body can easily defeat a real infection.
