@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 1933733361}
   m_Layer: 0
   m_Name: Bcell
-  m_TagString: Untagged
+  m_TagString: Bcell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,7 +190,6 @@ MonoBehaviour:
   numAntibodies: 3
   antibody: {fileID: 3865815191752127855, guid: 33ccb7a99fd439842b8aa118098e3079,
     type: 3}
-  radius: 2
   spawnPoints:
   - {fileID: 0}
   - {fileID: 0}

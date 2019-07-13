@@ -71,7 +71,7 @@ public class plasmaSpawn : MonoBehaviour
                         foreach (Collider col in colliders)
                         {
                             // If this collider is tagged "Obstacle"
-                            if (col.tag == "Obstacle" || col.tag == "HumanCell" || col.tag == "antibody" || col.tag == "Player" || col.tag == "Macrophage")
+                            if (col.tag == "Obstacle" || col.tag == "HumanCell" || col.tag == "antibody" || col.tag == "Player" || col.tag == "Bcell")
                             {
                                 // Then this position is not a valid spawn position
                                 validSpawn = false;
