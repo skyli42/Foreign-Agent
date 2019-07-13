@@ -156,6 +156,7 @@ public class companionSpawn : MonoBehaviour
         else
         {
             companionToEnemy[agent2] = gameObject;
+            agent2.isStopped = false;
         }
     }
 

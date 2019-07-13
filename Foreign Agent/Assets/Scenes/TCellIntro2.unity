@@ -4188,7 +4188,7 @@ MonoBehaviour:
   callbackBeforeTalk:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1354533731}
         m_MethodName: CancelControls
         m_Mode: 1
         m_Arguments:
