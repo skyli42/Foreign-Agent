@@ -1,0 +1,8 @@
+[title=IntroTalkStart]
+This is the second time infecting this area and will be your final and most difficult challenge yet!
+Good luck agent!
+[title=IntroTalkEnd]
+[title=endLevelStart]
+You successfully infected this human and completed your last mission.
+You're free to go now. Good luck in the future agent!
+[title=endLevelEnd]
