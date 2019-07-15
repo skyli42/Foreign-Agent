@@ -6,7 +6,7 @@ Macrophages are phagocytes - a type of white blood cell that engulfs foreign par
 Macrophages were first discovered by Elie Metchnikoff, a Russian zoologist, in 1884.
 Macrophages identify targets based on proteins on the surface of the particle - if the particle doesn't show body cell proteins, it's phagocytosis time.
 Once activated, B cells secrete antibodies into the blood stream. Antibodies bind to foreign particles to allow macrophages to easily identify them.
-Antibodies are a class of Y-shaped proteins that are secreted to bind to foreign particle. Different types of antibodies bind to different particles.
+Antibodies are a class of Y-shaped proteins that are secreted to bind to foreign particles. Different types of antibodies bind to different particles.
 Antibodies are glycoproteins, meaning that they are proteins that have carbohydrate (sugar) chains attached to them. 
 B Cells can be activated either by binding directly to a foreign particle or by Helper T cells. Once activated, they turn into plasma cells.
 Antigens are any foreign agent that antibodies can bind to.

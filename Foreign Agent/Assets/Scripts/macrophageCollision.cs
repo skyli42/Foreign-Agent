@@ -23,7 +23,7 @@ public class macrophageCollision : MonoBehaviour
         sonar = transform.Find("Sonar").gameObject.GetComponent<AudioSource>();
         companionDeath = transform.Find("companionDeath").gameObject.GetComponent<AudioSource>();
 
-    }
+    }  
 
     private void OnCollisionEnter(Collision other)
     {

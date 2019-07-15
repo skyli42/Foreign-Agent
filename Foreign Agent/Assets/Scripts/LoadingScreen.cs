@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class LoadingScreen : MonoBehaviour
 {
-
+	public Image[] loadingImages;
+	public Image loadParent;
 	public TextAsset txtFile;
 	public TextMeshProUGUI tutorialText;
 	private readonly Dictionary<int, List<int>> loadTextIndex = new Dictionary<int, List<int>> // level index --> possible text
@@ -58,6 +59,7 @@ public class LoadingScreen : MonoBehaviour
     private bool didTriggerFadeOutAnimation;
     public GameObject prevMenu;
 	private string[] loadingTexts;
+	private Image loadImg;
     private void Awake()
     {
         // Singleton logic:
@@ -81,7 +83,19 @@ public class LoadingScreen : MonoBehaviour
 		int index = (int)Random.Range(0, loadingTexts.Length);
 		Debug.Log(loadingTexts[index]);
 		tutorialText.text = loadingTexts[index];
-		//TODO: add picture too
+
+		loadImg = Instantiate(loadingImages[loadTextIndex[y][index]]);
+
+		Rect spriteRect = loadImg.sprite.rect;
+		float spriteWidth = spriteRect.width;
+		float spriteHeight = spriteRect.height;
+		loadImg.enabled = true;
+		loadImg.transform.SetParent(loadParent.transform);
+
+		loadImg.rectTransform.sizeDelta = new Vector2(500.0f/spriteRect.height*spriteWidth, 500);
+		loadImg.rectTransform.localPosition = new Vector3(0, 250, 0);
+
+		loadImg.transform.gameObject.AddComponent<fadeWithBackground>();
 	}
 	private void Configure()
     {
