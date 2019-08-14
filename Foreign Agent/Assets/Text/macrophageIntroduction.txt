@@ -5,6 +5,6 @@ Good luck agent!
 [title=IntroTalkEnd]
 
 [title=endLevelStart]
-Congratulations! You've successfully completed your training with macrophages!
-You will now move onto your second round of training.
+Congratulations on clearing the room! 
+We'll have some more macrophages for you to practice with next.
 [title=endLevelEnd]

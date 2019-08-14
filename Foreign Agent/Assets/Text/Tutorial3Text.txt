@@ -13,6 +13,4 @@ The T-cell will now patrol further away from the cell. You will have to time you
 
 [title=endLevelStart]
 Note that when T-helper cells are activated, Killer T-cells will get a boost in awareness and speed so be careful!
-Congratulations! You've successfully completed your last round of basic training!
-You are now prepared for your first real mission. Good luck Agent!!
 [title=endLevelEnd]

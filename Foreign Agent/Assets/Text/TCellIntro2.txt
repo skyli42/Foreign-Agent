@@ -2,3 +2,8 @@
 We've found some more T cells for you to avoid.
 Remember to use walls to your advantage!
 [title=IntroTalkEnd]
+
+[title=endLevelStart]
+Congratulations! You've successfully completed your last round of basic training!
+You are now prepared for your first real mission. Good luck Agent!!
+[title=endLevelEnd]

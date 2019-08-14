@@ -711,7 +711,12 @@ PrefabInstance:
       propertyPath: Priority
       value: 150
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1293402503, guid: dddeda6d0629a09438dbf97ce84d81fd, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1293402502, guid: dddeda6d0629a09438dbf97ce84d81fd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dddeda6d0629a09438dbf97ce84d81fd, type: 3}
 --- !u!1 &7846485451287338848 stripped
 GameObject:

@@ -1,3 +1,4 @@
+    
 [title=IntroTalkStart]
 Since your last mission was such a success, we've decided to train you to deal with more advanced defenses.
 [title=IntroTalkEnd]
@@ -21,7 +22,7 @@ Press space to send out your companion virus to see what happens.
 [title=THelperStart]
 <color=#ff00ffff><b>T-Helper</b></color> cells have been activated after the virus was engulfed by the macrophage!
 T-Helper cells stimulate all B-cells to differentiate into Plasma Cells!
-Run past the harmless macrophage and infect the final cell to complete your training.
+Run past the immobile macrophage and infect the final cell to complete your training.
 [title=THelperEnd]
 
 [title=deathStart]
@@ -29,5 +30,5 @@ I don't know how, but you managed to die from the completely stationary macropha
 [title=deathEnd]
 
 [title=endLevelStart]
-Congratulations! You've successfully completed your second round of training!
+Now that we've taught you about B cells, let's see how you fare in a more realistic scenario.
 [title=endLevelEnd]

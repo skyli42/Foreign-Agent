@@ -1621,7 +1621,6 @@ GameObject:
   - component: {fileID: 5998719074173864476}
   - component: {fileID: 5998719074173864477}
   - component: {fileID: 5998719074173864478}
-  - component: {fileID: 5998719074173864479}
   m_Layer: 5
   m_Name: NextLevelButton
   m_TagString: Untagged
@@ -1742,18 +1741,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &5998719074173864479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5998719074173864473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db3120a85d83f104f90e520ad73ba5ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5998719074195688573
 GameObject:
   m_ObjectHideFlags: 0
@@ -1845,7 +1832,6 @@ GameObject:
   - component: {fileID: 5998719074693310863}
   - component: {fileID: 5998719074693310856}
   - component: {fileID: 5998719074693310857}
-  - component: {fileID: 5998719074693310858}
   m_Layer: 5
   m_Name: RestartButton
   m_TagString: Untagged
@@ -1966,18 +1952,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &5998719074693310858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5998719074693310852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db3120a85d83f104f90e520ad73ba5ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5998719074721605618
 GameObject:
   m_ObjectHideFlags: 0
